@@ -1,0 +1,433 @@
+%!Adobe-FontList 1.18
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:FaktPro-Blond
+FamilyName:Fakt Pro
+StyleName:Blond
+MenuName:Fakt Pro Bln
+StyleBits:0
+WeightClass:350
+WidthClass:5
+AngleClass:0
+FullName:Fakt Pro Blond
+WritingScript:Roman
+OutlineFileName:\FaktPro-Blond.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:127420
+FileModTime:1303100166
+NameArray:0,Mac,18,Fakt Pro Bln
+NameArray:0,Mac,4,Fakt Pro Blond
+NameArray:0,Win,1,Fakt Pro Bln
+NameArray:0,Win,16,Fakt Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:FaktPro-BlondItalic
+FamilyName:Fakt Pro
+StyleName:Blond Italic
+MenuName:Fakt Pro Bln
+StyleBits:1
+WeightClass:350
+WidthClass:5
+AngleClass:0
+FullName:Fakt Pro Blond Italic
+WritingScript:Roman
+OutlineFileName:\FaktPro-BlondItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:130564
+FileModTime:1303100166
+NameArray:0,Mac,18,Fakt Pro Nor Bln
+NameArray:0,Mac,4,Fakt Pro Blond Italic
+NameArray:0,Win,1,Fakt Pro Bln
+NameArray:0,Win,16,Fakt Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:FaktPro-Bold
+FamilyName:Fakt Pro
+StyleName:Bold
+MenuName:Fakt Pro Bd
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Fakt Pro Bold
+WritingScript:Roman
+OutlineFileName:\FaktPro-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:131288
+FileModTime:1303100166
+NameArray:0,Mac,18,Fakt Pro Bd
+NameArray:0,Mac,4,Fakt Pro Bold
+NameArray:0,Win,1,Fakt Pro Bd
+NameArray:0,Win,16,Fakt Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:FaktPro-BoldItalic
+FamilyName:Fakt Pro
+StyleName:Bold Italic
+MenuName:Fakt Pro Bd
+StyleBits:3
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Fakt Pro Bold Italic
+WritingScript:Roman
+OutlineFileName:\FaktPro-BoldItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:134832
+FileModTime:1303100166
+NameArray:0,Mac,18,Fakt Pro Bd Ita
+NameArray:0,Mac,4,Fakt Pro Bold Italic
+NameArray:0,Win,1,Fakt Pro Bd
+NameArray:0,Win,16,Fakt Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:FaktPro-Medium
+FamilyName:Fakt Pro
+StyleName:Medium
+MenuName:Fakt Pro Med
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Fakt Pro Medium
+WritingScript:Roman
+OutlineFileName:\FaktPro-Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:128116
+FileModTime:1303100166
+NameArray:0,Mac,18,Fakt Pro Med
+NameArray:0,Mac,4,Fakt Pro Medium
+NameArray:0,Win,1,Fakt Pro Med
+NameArray:0,Win,16,Fakt Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:FaktPro-Normal
+FamilyName:Fakt Pro
+StyleName:Normal
+MenuName:Fakt Pro Nor
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Fakt Pro Normal
+WritingScript:Roman
+OutlineFileName:\FaktPro-Normal.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:122944
+FileModTime:1303100166
+NameArray:0,Mac,18,Fakt Pro Nor
+NameArray:0,Mac,4,Fakt Pro Normal
+NameArray:0,Win,1,Fakt Pro Nor
+NameArray:0,Win,16,Fakt Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:FaktPro-SemiBold
+FamilyName:Fakt Pro
+StyleName:SemiBold
+MenuName:Fakt Pro SmBd
+StyleBits:0
+WeightClass:600
+WidthClass:5
+AngleClass:0
+FullName:Fakt Pro SemiBold
+WritingScript:Roman
+OutlineFileName:\FaktPro-SemiBold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:131000
+FileModTime:1303100166
+NameArray:0,Mac,18,Fakt Pro SmBd
+NameArray:0,Mac,4,Fakt Pro SemiBold
+NameArray:0,Win,1,Fakt Pro SmBd
+NameArray:0,Win,16,Fakt Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:LyonDisplay-Regular
+FamilyName:Lyon Display
+StyleName:Regular
+MenuName:Lyon Display Regular
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Lyon Display
+WritingScript:Roman
+OutlineFileName:\LyonDisplay-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:161856
+FileModTime:1351870872
+NameArray:0,Mac,18,Lyon Display Regular
+NameArray:0,Mac,4,Lyon Display
+NameArray:0,Win,1,Lyon Display Regular
+NameArray:0,Win,16,Lyon Display
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:LyonDisplay-RegularItalic
+FamilyName:Lyon Display
+StyleName:Regular Italic
+MenuName:Lyon Display Regular
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:Lyon Display Regular Italic
+WritingScript:Roman
+OutlineFileName:\LyonDisplay-RegularItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:197108
+FileModTime:1351870872
+NameArray:0,Mac,4,Lyon Display Regular Italic
+NameArray:0,Win,1,Lyon Display Regular
+NameArray:0,Win,16,Lyon Display
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ProximaNova-Bold
+FamilyName:Proxima Nova
+StyleName:Bold
+MenuName:Proxima Nova Rg
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Proxima Nova Bold
+WritingScript:Roman
+OutlineFileName:\Mark Simonson - Proxima Nova Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:96640
+FileModTime:1335915302
+NameArray:0,Mac,4,Proxima Nova Bold
+NameArray:0,Win,1,Proxima Nova Rg
+NameArray:0,Win,16,Proxima Nova
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ProximaNova-Regular
+FamilyName:Proxima Nova
+StyleName:Regular
+MenuName:Proxima Nova Rg
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Proxima Nova Regular
+WritingScript:Roman
+OutlineFileName:\Mark Simonson - Proxima Nova Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:94668
+FileModTime:1335915302
+NameArray:0,Mac,4,Proxima Nova Regular
+NameArray:0,Win,1,Proxima Nova Rg
+NameArray:0,Win,16,Proxima Nova
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ProximaNova-Semibold
+FamilyName:Proxima Nova
+StyleName:Semibold
+MenuName:Proxima Nova Lt
+StyleBits:2
+WeightClass:600
+WidthClass:5
+AngleClass:0
+FullName:Proxima Nova Semibold
+WritingScript:Roman
+OutlineFileName:\Mark Simonson - Proxima Nova Semibold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:91904
+FileModTime:1335915302
+NameArray:0,Mac,4,Proxima Nova Semibold
+NameArray:0,Win,1,Proxima Nova Lt
+NameArray:0,Win,16,Proxima Nova
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:HaasGrotText-55Roman
+FamilyName:Haas Grot Text
+StyleName:55 Roman
+MenuName:Haas Grot Text 55 Roman
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Haas Grot Text 55 Roman
+WritingScript:Roman
+OutlineFileName:\Neue Haas Grot Text-55 Roman.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:119020
+FileModTime:1387845378
+NameArray:0,Mac,4,Haas Grot Text 55 Roman
+NameArray:0,Win,1,Haas Grot Text 55 Roman
+NameArray:0,Win,16,Haas Grot Text
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Theinhardt-Medium
+FamilyName:Theinhardt
+StyleName:Medium
+MenuName:Theinhardt Medium
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Theinhardt Medium
+WritingScript:Roman
+OutlineFileName:\TheinhardtMed.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:50924
+FileModTime:1245240584
+NameArray:0,Mac,4,Theinhardt Medium
+NameArray:0,Win,1,Theinhardt Medium
+NameArray:0,Win,16,Theinhardt
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Theinhardt-MediumItalic
+FamilyName:Theinhardt
+StyleName:Medium Italic
+MenuName:Theinhardt Medium Italic
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Theinhardt Medium Italic
+WritingScript:Roman
+OutlineFileName:\TheinhardtMedIt.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:52084
+FileModTime:1245240610
+NameArray:0,Mac,4,Theinhardt Medium Italic
+NameArray:0,Win,1,Theinhardt Medium Italic
+NameArray:0,Win,16,Theinhardt
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Theinhardt-Regular
+FamilyName:Theinhardt
+StyleName:Regular
+MenuName:Theinhardt Regular
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Theinhardt Regular
+WritingScript:Roman
+OutlineFileName:\TheinhardtReg.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:51140
+FileModTime:1245240644
+NameArray:0,Mac,4,Theinhardt Regular
+NameArray:0,Win,1,Theinhardt Regular
+NameArray:0,Win,16,Theinhardt
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Wingdings-Regular
+FamilyName:Wingdings
+StyleName:Regular
+MenuName:Wingdings
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Wingdings
+WritingScript:Roman
+OutlineFileName:\Wingdings.ttf
+DataFormat:sfntData
+hasSVG:no
+FileLength:86384
+FileModTime:1490209409
+NameArray:0,Mac,4,Wingdings
+NameArray:0,Win,1,Wingdings
+%EndFont
+
