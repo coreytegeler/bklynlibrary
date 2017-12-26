@@ -15,7 +15,7 @@ var htmlreplace = require('gulp-html-replace');
 
 var paths = {
   pug: '*.pug',
-  sass: 'source/sass/*.sass',
+  sass: 'source/sass/*.scss',
   coffee: 'source/coffee/*.coffee',
 }
 
@@ -23,7 +23,7 @@ var dest = {
   html: './',
   css: './assets/css',
   js: './assets/js',
-  imgs: './assets/imgs'
+  imgs: './assets/imgs/'
 }
 
 gulp.task('compile-pug', function() {
@@ -33,7 +33,7 @@ gulp.task('compile-pug', function() {
     .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'style.min.css' })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'script.min.js' })))
-    .pipe(replace('imgs/', dest.imgs))
+    .pipe(replace('/imgs/', dest.imgs))
     .pipe(gulp.dest(dest.html))
   .on('end', function() {
     log('HTML done');

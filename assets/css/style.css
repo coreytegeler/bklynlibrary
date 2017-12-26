@@ -52,5 +52,146 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-html {
-  transition: color 100ms ease-in; }
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: url("/assets/fonts/ITCFranklinGothicStd-DmXCp.woff2") format("woff2"), url("/assets/fonts/ITCFranklinGothicStd-DmXCp.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+body.theme-now-next {
+  color: #000; }
+  body.theme-now-next header#HEADER {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; }
+  body.theme-now-next header .block {
+    display: none; }
+  body.theme-now-next header #HEADER-IMAGE {
+    background: #e6ebfe;
+    min-height: auto;
+    padding-bottom: 95px; }
+    body.theme-now-next header #HEADER-IMAGE img {
+      display: none; }
+  body.theme-now-next header #HEADER-TITLE {
+    height: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center; }
+    body.theme-now-next header #HEADER-TITLE * {
+      color: #000; }
+    body.theme-now-next header #HEADER-TITLE h1#page-title.page__title.title {
+      font-size: 2em;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 900; }
+  body.theme-now-next #CONTENT {
+    padding-top: 105px; }
+    body.theme-now-next #CONTENT .container.page-list {
+      position: fixed;
+      top: 95px;
+      z-index: 100;
+      margin-bottom: 0; }
+      body.theme-now-next #CONTENT .container.page-list li {
+        background-color: #e6ebfe; }
+    body.theme-now-next #CONTENT .page-content {
+      margin: 0 0 0 18px; }
+      body.theme-now-next #CONTENT .page-content .row #nextnow {
+        width: 100%;
+        max-width: 600px;
+        margin: 50px 0; }
+        body.theme-now-next #CONTENT .page-content .row #nextnow object {
+          width: 100%;
+          height: auto; }
+      body.theme-now-next #CONTENT .page-content .row ul.inline_nav {
+        width: 100%;
+        font-size: 1em; }
+        body.theme-now-next #CONTENT .page-content .row ul.inline_nav li {
+          width: 100%;
+          font-family: "Franklin Gothic";
+          font-size: 1em !important;
+          margin: 0;
+          display: table; }
+          body.theme-now-next #CONTENT .page-content .row ul.inline_nav li::before, body.theme-now-next #CONTENT .page-content .row ul.inline_nav li::after {
+            display: none; }
+          body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a {
+            display: table;
+            text-transform: uppercase;
+            position: relative; }
+            body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a h1 {
+              font-size: 4em;
+              font-family: "Franklin Gothic";
+              display: inline; }
+            body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a::after, body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a::before {
+              width: .65em;
+              height: .65em;
+              font-size: 4em;
+              display: inline-block;
+              content: '';
+              opacity: 0;
+              background-image: url(/./assets/imgs/arrow_down.svg);
+              background-size: contain;
+              background-position: center; }
+            body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a::before {
+              display: none; }
+            body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a:hover::after, body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a:hover::before {
+              opacity: 1; }
+      body.theme-now-next #CONTENT .page-content .row ul.toc {
+        max-width: 600px;
+        padding: 1em 0;
+        display: table;
+        clear: both; }
+        body.theme-now-next #CONTENT .page-content .row ul.toc.top li a {
+          float: left;
+          text-align: left; }
+        body.theme-now-next #CONTENT .page-content .row ul.toc.bottom li a {
+          float: right;
+          text-align: right; }
+          body.theme-now-next #CONTENT .page-content .row ul.toc.bottom li a::before {
+            background-image: url(/./assets/imgs/arrow_up.svg);
+            display: inline-block; }
+          body.theme-now-next #CONTENT .page-content .row ul.toc.bottom li a::after {
+            display: none; }
+      body.theme-now-next #CONTENT .page-content .row .chapter {
+        max-width: 600px;
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 0 0 1em 0;
+        color: black; }
+        body.theme-now-next #CONTENT .page-content .row .chapter h2 {
+          width: 100%;
+          font-weight: bold;
+          display: table;
+          padding: 2em 0; }
+        body.theme-now-next #CONTENT .page-content .row .chapter p {
+          margin: 1em 0;
+          font-size: 1.2em;
+          line-height: 1.4em; }
+        body.theme-now-next #CONTENT .page-content .row .chapter blockquote {
+          width: 50%;
+          font-size: 4em;
+          font-family: "Franklin Gothic";
+          padding: 0 .25em 0 0;
+          float: left; }
+        body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li {
+          font-size: inherit;
+          margin: 0 0 2em 0;
+          padding: 0; }
+          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li::before {
+            display: none; }
+          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li .inside {
+            height: 0;
+            opacity: 0;
+            transition: all 250ms ease-in-out, opacity 150ms ease-in-out;
+            transform: translateY(-2em); }
+          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li.opened a::after {
+            transform: rotateZ(180deg); }
+          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li.opened .inside {
+            opacity: 1;
+            transition: all 250ms ease-in-out, opacity 150ms 150ms ease-in-out;
+            transform: translateY(0); }
+  body.theme-now-next .nav-main li a, body.theme-now-next .branding .icon-logo {
+    color: #000; }
+  body.theme-now-next .bkgd-primary {
+    background-color: #e6ebfe; }
+  body.theme-now-next .primary {
+    color: #000; }

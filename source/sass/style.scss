@@ -1,2 +1,242 @@
 @import 'utils/reset';
-@import 'base';
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: url('/assets/fonts/ITCFranklinGothicStd-DmXCp.woff2') format('woff2'),
+      url('/assets/fonts/ITCFranklinGothicStd-DmXCp.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+$lightColor: #e6ebfe;
+$mediumColor: #c1cdfd;
+$darkColor: #000;
+
+$sansSerif: Helvetica, Arial, sans-serif;
+$display: 'Franklin Gothic';
+
+body.theme-now-next {
+	color: $darkColor;
+	// top header section
+	header {
+    &#HEADER {
+    	width: 100%;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    z-index: 100;
+    }
+		// search, login, other utilities
+		.block {
+			display: none;
+		}
+		// background image of header
+		#HEADER-IMAGE {
+			background: $lightColor;
+			min-height: auto;
+			padding-bottom: 95px; //slightly shorter than 105px tall logo
+			img {
+				display: none;
+			}
+		}
+		#HEADER-TITLE {
+			height: 100%;
+			bottom: 0;
+			display: flex;
+			align-items: center;
+			.row {
+				
+			}
+			* {
+				color: $darkColor;
+			}
+			h1#page-title.page__title.title {
+				font-size: 2em;
+				font-family: $sansSerif;
+				font-weight: 900;
+			}
+		}
+	}
+	#CONTENT {
+		padding-top: 105px;
+		.container  {
+			// sub navigation
+			&.page-list {
+				position: fixed;
+				top: 95px;
+				z-index: 100;
+				margin-bottom: 0;	
+				li {
+					background-color: $lightColor;
+				}
+			}
+		}
+		.page-content {
+			margin: 0 0 0 18px;
+			// main page content
+			.row {
+				// now->next svg
+				#nextnow {
+					width: 100%;
+					max-width: 600px;
+					margin: 50px 0;
+					object {
+						width: 100%;
+						height: auto;
+						// &.arrow {
+						// 	animation: spin 5000ms linear infinite;
+						// 	transform: rotateZ(0deg);
+						// }
+					}
+				}
+
+				// @keyframes spin {
+				// 	0% {
+				// 		transform: rotateZ(0deg);
+				// 	}
+				// 	100% {
+				// 		transform: rotateZ(360deg);
+				// 	}
+				// }
+
+				// table of contents
+				ul.inline_nav {
+					width: 100%;
+					font-size: 1em;
+					li {
+						width: 100%;
+						font-family: $display;
+						font-size: 1em !important;
+						margin: 0;
+						display: table;
+						&::before, &::after {
+							display: none;
+						}
+						a {
+							display: table;
+							text-transform: uppercase;
+							position: relative;
+							h1 {
+								font-size: 4em;
+								font-family: $display;
+								display: inline;
+							}
+							&::after, &::before {
+								width: .65em;
+								height: .65em;
+								font-size: 4em;
+								display: inline-block;
+								content: '';
+								opacity: 0;
+								background-image: url(/imgs/arrow_down.svg);
+								background-size: contain;
+								background-position: center;
+							}
+							&::before {
+								display: none;
+							}
+							&:hover {
+								&::after, &::before {
+									opacity: 1;
+								}
+							}
+						}
+					}
+				}
+				ul.toc {
+					max-width: 600px;
+					padding: 1em 0;
+					display: table;
+					clear: both;
+					&.top {
+						li a {
+							float: left;
+							text-align: left;
+						}
+					}
+					&.bottom {
+						li a {
+							float: right;
+							text-align: right;
+							&::before {
+								background-image: url(/imgs/arrow_up.svg);
+								display: inline-block;
+							}
+							&::after {
+								display: none;
+							}
+						}
+					}
+				}
+				.chapter {
+					max-width: 600px;
+					font-family: $sansSerif;
+					padding: 0 0 1em 0;
+					color: black;
+					h2 {
+						width: 100%;
+						font-weight: bold;
+						display: table;
+						padding: 2em 0;
+					}
+					p {
+						margin: 1em 0;
+						font-size: 1.2em;
+						line-height: 1.4em;
+					}
+					blockquote {
+						width: 50%;
+						font-size: 4em;
+						font-family: $display;
+						padding: 0 .25em 0 0;
+						float: left;
+					}
+					ul.accordion {
+						li {
+							font-size: inherit;
+							margin: 0 0 2em 0;
+							padding: 0;
+							&::before {
+								display: none;
+							}
+							.toggle {
+
+							}
+							.inside {
+								height: 0;
+								opacity: 0;
+								transition: all 250ms ease-in-out, opacity 150ms ease-in-out;
+								transform: translateY(-2em);
+							}
+							&.opened {
+								a {
+									&::after {
+										transform: rotateZ(180deg);
+									}
+								}
+								.inside {
+									opacity: 1;
+									transition: all 250ms ease-in-out, opacity 150ms 150ms ease-in-out;
+									transform: translateY(0);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	// side navigation and logo
+	.nav-main li a, .branding .icon-logo {
+		color: $darkColor;
+	}
+
+	.bkgd-primary {
+		background-color: $lightColor;
+	}
+
+	.primary {
+		color: $darkColor;	
+	}
+}

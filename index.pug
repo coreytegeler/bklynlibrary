@@ -41,7 +41,9 @@ html.js(lang='en-us', style='height: 100%; visibility: visible;')
     link(type='text/css', rel='stylesheet', charset='UTF-8', href='./assets/translateelement(1).css')
     script(type='text/javascript', charset='UTF-8', src='./assets/main(1).js')
     script(type='text/javascript', charset='UTF-8', src='./assets/element_main(1).js')
-  body.html.not-front.not-logged-in.no-sidebars.page-node.page-node-.page-node-76352.node-type-page.section-about.page-panels.theme-green.drawer-closed.modal-closed(style='position: relative; min-height: 100%; top: 0px;')
+    link(type='text/css', rel='stylesheet', charset='UTF-8', href='./assets/css/style.css')
+    script(src='./assets/js/script.js')
+  body.html.not-front.not-logged-in.no-sidebars.page-node.page-node-.page-node-76352.node-type-page.section-about.page-panels.theme-now-next.drawer-closed.modal-closed(style='position: relative; min-height: 100%; top: 0px;')
     #body(style='display: block;')
       header#HEADER.bkgd-primary
         #block-block-4.block.block-block.block-block-4.first.last.odd
@@ -79,7 +81,7 @@ html.js(lang='en-us', style='height: 100%; visibility: visible;')
           .row
             .span-6
               div
-                h1#page-title.page__title.title Leadership
+                h1#page-title.page__title.title='NOW —> NEXT: Strategic Plan 2018'
         #HEADER-SHARE
           p(role='share')
             b.sharetip.tooltipstered(data-tooltip-content='#share_content')
@@ -119,20 +121,101 @@ html.js(lang='en-us', style='height: 100%; visibility: visible;')
                 #block-menu-block-33.block.block-menu-block.block-menu-block-33.first.last.odd(role='navigation')
                   .menu-block-wrapper.menu-block-33.menu-name-menu-about.parent-mlid-0.menu-level-1
                     ul.menu.list-horizontal.page-tabs.page-filters.inline
-                      li.menu__item.is-leaf.first.leaf.menu-mlid-5787
-                        a.menu__link(href='https://www.bklynlibrary.org/about') About
-                      li.menu__item.is-leaf.is-active-trail.is-active.leaf.active-trail.active.menu-mlid-5788
-                        a.menu__link.is-active-trail.active-trail.active(href='https://www.bklynlibrary.org/about/leadership') Leadership
-                      li.menu__item.is-leaf.leaf.menu-mlid-5790
-                        a.menu__link(href='https://www.bklynlibrary.org/about/media') News & Media
-                      li.menu__item.is-leaf.leaf.menu-mlid-5789
-                        a.menu__link(href='https://www.bklynlibrary.org/about/reports-publications') Reports & Publications
-                      li.menu__item.is-leaf.last.leaf.menu-mlid-5791
-                        a.menu__link(href='https://www.bklynlibrary.org/about/careers') Work for BPL
+                      li.menu__item.is-leaf.first.leaf
+                        a.menu__link(href='#') Preface
+                      li.menu__item.is-leaf.is-active.leaf
+                        a.menu__link(href='#') Intro
+                      li.menu__item.is-leaf.leaf
+                        a.menu__link(href='#') Now
+                      li.menu__item.is-leaf.leaf
+                        a.menu__link(href='#') Next
+                      li.menu__item.is-leaf.leaf
+                        a.menu__link(href='#') Appendix
+                      li.menu__item.is-leaf.leaf
+                        a.menu__link(href='#') Spotlight
+                      li.menu__item.is-leaf.last.leaf
+                        a.menu__link(href='#') PDF
         article.page-content
           a#main-content
           .container
             .row
+              //MAIN CONTENT STARTS HERE
+              #nextnow
+                object.next(type='image/svg+xml' data='/imgs/next.svg')
+                object.arrow(type='image/svg+xml' data='/imgs/arrow_right_inline.svg')
+                object.now(type='image/svg+xml' data='/imgs/now.svg')
+
+
+              ul.toc.top.inline_nav
+                li
+                  a(href='#')
+                    h1 Intro
+                li
+                  a(href='#')
+                    h1 Now: Core Principles
+                li
+                  a(href='#')
+                    h1 Next: Focus Areas
+                li
+                  a(href='#')
+                    h1 Appendix
+                li
+                  a(href='#')
+                    h1 Spotlight
+
+              .chapter
+                p Shortly after its establishment in 1896, Brooklyn Public Library published its  rst annual report, declaring its undertaking “to improve the quality of the minds of the people... and lay the foundation of a better civilization for the future,” which still seems apt 120 years later. BPL has remained committed to this founding mission, though how we execute that mission has remarkably evolved.
+                p Public libraries developed during a century of nearly incomprehensible change. When our  rst branch was erected, Brooklyn had no cars on its streets, planes in its skies, or windows bright with electricity, nevermind wi -enabled tablets or 3D printers. A manufacturing economy of dockyards and factories has given way to an information economy, resulting in unprecedented income disparity. Today, one in  ve Brooklyn
+
+              .chapter
+                h2 Part One: Core Principles
+                p At BPL, we believe there are many ways to learn, that welcoming people from all beliefs and backgrounds is crucial for democracy, and that listening and taking an interest are fundamental characteristics of strong communities. We protect our patrons’ personal privacy, including their digital privacy, because we believe in intellectual freedom and take seriously our role in supporting learners and information seekers of all kinds. We take pride in sparking people’s curiosity and believe learning is most e ective when it’s fun.
+                blockquote.left THE PURSUIT OF KNOWING WAS FREEDOM TO ME, THE RIGHT TO DECLARE YOUR OWN CURIOSITIES AND FOLLOW THEM
+                p This section of the plan expresses our values in  ve core principles and examines how we put them into action. In making these principles explicit, we provide our patrons with a clearer sense of what makes us who we are, and give our sta  and service partners a better idea of how we might improve in the future. Over the last decade, one of BPL’s strengths has been its ability to meet and improve existing services and programs, and dream up and execute new ones, we will ensure they spring from the following core principles.
+
+                h2 Our Five Core Principals:
+                ul.inline_nav.accordion
+                  li
+                    a(href='#')
+                      h1 I.TO FOSTER LITERACY AND THE LOVE OF LEARNING
+                    .inside
+                      .chapter
+                        p One important insight behind the founding of this and other public libraries across the country is the idea that reading is transformational, that through reading we can not only learn new things but discover new worlds. In his award-winning essay collection, “Between the World and Me,” Ta-Nehisi Coates writes about this aspect of the library and what it meant to his own intellectual development. “The pursuit of knowing was freedom to me,” he writes, “the right to declare your own curiosities and follow them through all manner of books. I was made for the library, not the classroom.”
+                        p Like Coates, many patrons rely on BPL as an alternative to school, a place where they are surrounded by books and other resources, and can follow their intuitions and interests at their own pace. For patrons who want to pursue knowledge alongside others, or need more direction, the Library users an enormous range of programs that.
+                  li
+                    a(href='#')
+                      h1 II.TO SUPPLY TRUSTED, UP-TO-DATE INFORMATION RESOURCES AND GUIDE PATRONS TO THE ONES THEY NEED
+                    .inside
+                      .chapter
+                        p One important insight behind the founding of this and other public libraries across the country is the idea that reading is transformational, that through reading we can not only learn new things but discover new worlds. In his award-winning essay collection, “Between the World and Me,” Ta-Nehisi Coates writes about this aspect of the library and what it meant to his own intellectual development. “The pursuit of knowing was freedom to me,” he writes, “the right to declare your own curiosities and follow them through all manner of books. I was made for the library, not the classroom.”
+                        p Like Coates, many patrons rely on BPL as an alternative to school, a place where they are surrounded by books and other resources, and can follow their intuitions and interests at their own pace. For patrons who want to pursue knowledge alongside others, or need more direction, the Library users an enormous range of programs that.
+                  li
+                    a(href='#')
+                      h1 III.TO CONNECT RESIDENTS TO EDUCATIONAL AND ECONOMIC OPPORTUNITIES
+                    .inside
+                      .chapter
+                        p One important insight behind the founding of this and other public libraries across the country is the idea that reading is transformational, that through reading we can not only learn new things but discover new worlds. In his award-winning essay collection, “Between the World and Me,” Ta-Nehisi Coates writes about this aspect of the library and what it meant to his own intellectual development. “The pursuit of knowing was freedom to me,” he writes, “the right to declare your own curiosities and follow them through all manner of books. I was made for the library, not the classroom.”
+                        p Like Coates, many patrons rely on BPL as an alternative to school, a place where they are surrounded by books and other resources, and can follow their intuitions and interests at their own pace. For patrons who want to pursue knowledge alongside others, or need more direction, the Library users an enormous range of programs that.
+
+              ul.toc.bottom.inline_nav
+                li
+                  a(href='#')
+                    h1 Intro
+                li
+                  a(href='#')
+                    h1 Now: Core Principles
+                li
+                  a(href='#')
+                    h1 Next: Focus Areas
+                li
+                  a(href='#')
+                    h1 Appendix
+                li
+                  a(href='#')
+                    h1 Spotlight  
+
+
+              //MAIN CONTENT ENDS HERE
       footer#FOOTER
         #block-block-2.block.block-block.block-block-2.first.last.odd
           // chat widget placeholder
