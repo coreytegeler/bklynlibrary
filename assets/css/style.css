@@ -54,7 +54,7 @@ table {
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url("/assets/fonts/ITCFranklinGothicStd-DmXCp.woff2") format("woff2"), url("/assets/fonts/ITCFranklinGothicStd-DmXCp.woff") format("woff");
+  src: url("./../fonts/ITCFranklinGothicStd-DmXCp.woff2") format("woff2"), url("./../fonts/ITCFranklinGothicStd-DmXCp.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -129,7 +129,7 @@ body.theme-now-next {
               display: inline-block;
               content: '';
               opacity: 0;
-              background-image: url(/./assets/imgs/arrow_down.svg);
+              background-image: url(./../imgs/arrow_down.svg);
               background-size: contain;
               background-position: center; }
             body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a::before {
@@ -148,7 +148,7 @@ body.theme-now-next {
           float: right;
           text-align: right; }
           body.theme-now-next #CONTENT .page-content .row ul.toc.bottom li a::before {
-            background-image: url(/./assets/imgs/arrow_up.svg);
+            background-image: url(./../imgs/arrow_up.svg);
             display: inline-block; }
           body.theme-now-next #CONTENT .page-content .row ul.toc.bottom li a::after {
             display: none; }

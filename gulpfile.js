@@ -23,7 +23,7 @@ var dest = {
   html: './',
   css: './assets/css',
   js: './assets/js',
-  imgs: './assets/imgs/'
+  imgs: './assets/imgs'
 }
 
 gulp.task('compile-pug', function() {
@@ -33,7 +33,7 @@ gulp.task('compile-pug', function() {
     .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'style.min.css' })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'script.min.js' })))
-    .pipe(replace('/imgs/', dest.imgs))
+    .pipe(replace('/imgs/', './assets/imgs/'))
     .pipe(gulp.dest(dest.html))
   .on('end', function() {
     log('HTML done');
@@ -51,7 +51,7 @@ gulp.task('compile-sass', function() {
     .pipe(plumber())
     .pipe(sass(options))
     .pipe(gulpif(argv.prod, rename('style.min.css')))
-    .pipe(replace('imgs/', dest.imgs))
+    .pipe(replace('/imgs/', './../imgs/'))
     .pipe(gulp.dest(dest.css))
   .on('end', function() {
     log('Sass done');
