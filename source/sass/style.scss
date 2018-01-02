@@ -61,6 +61,22 @@ body.theme-now-next {
 	#CONTENT {
 		padding-top: 105px;
 		.container  {
+			h1.nn_title {
+				font-size: 4em;
+				font-family: $display;
+				text-transform: uppercase;
+				color: $darkColor;
+				margin: 0;
+				padding: 0;
+			}
+			h2.nn_sub_title {
+				font-size: 1.5em;
+				// font-family: $display;
+				// text-transform: uppercase;
+				color: $darkColor;
+				margin: 0;
+				padding: 0;
+			}
 			// sub navigation
 			&.page-list {
 				position: fixed;
@@ -119,7 +135,6 @@ body.theme-now-next {
 							position: relative;
 							h1 {
 								font-size: 4em;
-								font-family: $display;
 								display: inline;
 							}
 							&::after, &::before {
@@ -169,7 +184,7 @@ body.theme-now-next {
 						}
 					}
 				}
-				.chapter {
+				.content {
 					max-width: 600px;
 					font-family: $sansSerif;
 					padding: 0 0 1em 0;
@@ -178,10 +193,10 @@ body.theme-now-next {
 						width: 100%;
 						font-weight: bold;
 						display: table;
-						padding: 2em 0;
+						padding: 1em 0;
 					}
 					p {
-						margin: 1em 0;
+						margin: 0 0 1em 0;
 						font-size: 1.2em;
 						line-height: 1.4em;
 					}
@@ -191,6 +206,9 @@ body.theme-now-next {
 						font-family: $display;
 						padding: 0 .25em 0 0;
 						float: left;
+					}
+					.chapter {
+						padding: 2em 0;
 					}
 					ul.accordion {
 						li {

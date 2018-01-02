@@ -87,6 +87,18 @@ body.theme-now-next {
       font-weight: 900; }
   body.theme-now-next #CONTENT {
     padding-top: 105px; }
+    body.theme-now-next #CONTENT .container h1.nn_title {
+      font-size: 4em;
+      font-family: "Franklin Gothic";
+      text-transform: uppercase;
+      color: #000;
+      margin: 0;
+      padding: 0; }
+    body.theme-now-next #CONTENT .container h2.nn_sub_title {
+      font-size: 1.5em;
+      color: #000;
+      margin: 0;
+      padding: 0; }
     body.theme-now-next #CONTENT .container.page-list {
       position: fixed;
       top: 95px;
@@ -120,7 +132,6 @@ body.theme-now-next {
             position: relative; }
             body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a h1 {
               font-size: 4em;
-              font-family: "Franklin Gothic";
               display: inline; }
             body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a::after, body.theme-now-next #CONTENT .page-content .row ul.inline_nav li a::before {
               width: .65em;
@@ -152,40 +163,42 @@ body.theme-now-next {
             display: inline-block; }
           body.theme-now-next #CONTENT .page-content .row ul.toc.bottom li a::after {
             display: none; }
-      body.theme-now-next #CONTENT .page-content .row .chapter {
+      body.theme-now-next #CONTENT .page-content .row .content {
         max-width: 600px;
         font-family: Helvetica, Arial, sans-serif;
         padding: 0 0 1em 0;
         color: black; }
-        body.theme-now-next #CONTENT .page-content .row .chapter h2 {
+        body.theme-now-next #CONTENT .page-content .row .content h2 {
           width: 100%;
           font-weight: bold;
           display: table;
-          padding: 2em 0; }
-        body.theme-now-next #CONTENT .page-content .row .chapter p {
-          margin: 1em 0;
+          padding: 1em 0; }
+        body.theme-now-next #CONTENT .page-content .row .content p {
+          margin: 0 0 1em 0;
           font-size: 1.2em;
           line-height: 1.4em; }
-        body.theme-now-next #CONTENT .page-content .row .chapter blockquote {
+        body.theme-now-next #CONTENT .page-content .row .content blockquote {
           width: 50%;
           font-size: 4em;
           font-family: "Franklin Gothic";
           padding: 0 .25em 0 0;
           float: left; }
-        body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li {
+        body.theme-now-next #CONTENT .page-content .row .content .chapter {
+          padding: 2em 0; }
+        body.theme-now-next #CONTENT .page-content .row .content ul.accordion li {
           font-size: inherit;
           margin: 0 0 2em 0;
           padding: 0; }
-          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li::before {
+          body.theme-now-next #CONTENT .page-content .row .content ul.accordion li::before {
             display: none; }
-          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li .inside {
+          body.theme-now-next #CONTENT .page-content .row .content ul.accordion li .inside {
             height: 0;
             opacity: 0;
             transition: all 250ms ease-in-out, opacity 150ms ease-in-out;
             transform: translateY(-2em); }
-          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li.opened a::after {
+          body.theme-now-next #CONTENT .page-content .row .content ul.accordion li.opened a::after {
             transform: rotateZ(180deg); }
-          body.theme-now-next #CONTENT .page-content .row .chapter ul.accordion li.opened .inside {
+          body.theme-now-next #CONTENT .page-content .row .content ul.accordion li.opened .inside {
             opacity: 1;
             transition: all 250ms ease-in-out, opacity 150ms 150ms ease-in-out;
             transform: translateY(0); }
