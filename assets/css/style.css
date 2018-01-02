@@ -108,11 +108,11 @@ body.theme-now-next {
         background-color: #e6ebfe; }
     body.theme-now-next #CONTENT .page-content {
       margin: 0 0 0 18px; }
-      body.theme-now-next #CONTENT .page-content .row #nextnow {
+      body.theme-now-next #CONTENT .page-content .row #now-next {
         width: 100%;
         max-width: 600px;
         margin: 50px 0; }
-        body.theme-now-next #CONTENT .page-content .row #nextnow object {
+        body.theme-now-next #CONTENT .page-content .row #now-next object {
           width: 100%;
           height: auto; }
       body.theme-now-next #CONTENT .page-content .row ul.inline_nav {
