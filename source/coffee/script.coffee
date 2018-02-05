@@ -3,26 +3,26 @@ $ ->
 	$('body').on 'click', '.accordion a', (e) ->
 		e.preventDefault()
 		$link = $(this)
-		$li = $link.parents('li')
-		$inside = $li.find('.inside')
-		$accordion = $li.parents('.accordion')
+		$wrapper = $link.parents('.content_wrapper')
+		$inside = $wrapper.find('.inside')
+		$accordion = $wrapper.parents('.accordion')
 
 		linkHeight = $link.innerHeight()
-		insideHeight = $inside.find('.content').innerHeight()
-		console.log $inside
-
-		if $li.is('.opened')
+		insideHeight = $inside.find('.hidden_content').innerHeight()
+		if $wrapper.is('.opened')
 			newHeight = 0
 		else
 			newHeight = insideHeight
 			if $opened = $accordion.find('.opened')
+				console.log $opened
 				$opened.removeClass('opened')
 				$opened.find('.inside').css
 					height: 0
 				
 		$inside.css
 			height: newHeight
-		$li.toggleClass('opened')
+		console.log $wrapper
+		$wrapper.toggleClass('opened')
 
 
 	$('.inline_nav.toc a').on 'click', (e) ->

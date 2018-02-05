@@ -1,0 +1,51 @@
+section#CONTENT.main.scroller
+	//- nav.container.page-list
+	//-   .row
+	//-     .span-6
+	//-       .region.region-bklynpagetabs
+	//-         #block-menu-block-33.block.block-menu-block.block-menu-block-33.first.last.odd(role='navigation')
+	//-           .menu-block-wrapper.menu-block-33.menu-name-menu-about.parent-mlid-0.menu-level-1
+	//-             ul.menu.list-horizontal.page-tabs.page-filters.inline
+	//-               li.menu__item.is-leaf.first.leaf
+	//-                 a.menu__link(href='#') Preface
+	//-               li.menu__item.is-leaf.is-active.leaf
+	//-                 a.menu__link(href='#') Intro
+	//-               li.menu__item.is-leaf.leaf
+	//-                 a.menu__link(href='#') Now
+	//-               li.menu__item.is-leaf.leaf
+	//-                 a.menu__link(href='#') Next
+	//-               li.menu__item.is-leaf.leaf
+	//-                 a.menu__link(href='#') Appendix
+	//-               li.menu__item.is-leaf.leaf
+	//-                 a.menu__link(href='#') Spotlights
+	//-               li.menu__item.is-leaf.last.leaf
+	//-                 a.menu__link(href='#') PDF
+	article.page-content
+		a#main-content
+		.container
+			.row
+				ul.toc.side.inline-nav
+					li.title
+						a.now-next-text(href='#nownext')
+							span.now NOW
+							span.next NEXT
+					li
+						a(href='#now') Now: Core Principles
+					li
+						a(href='#next') Next: Focus Areas
+					li
+						a(href='#howwegothere') How We Got Here
+					li.spotlights
+						a(href='#spotlights')
+							div Spotlights
+							h1 Our Core Principles In Action
+
+
+				//- #large-title
+				//- 	object.now(type='image/svg+xml' data='/imgs/now.svg')
+				//- 	object.arrow(type='image/svg+xml' data='/imgs/arrow_right_inline.svg')
+				//- 	object.next(type='image/svg+xml' data='/imgs/next.svg')
+				//- include chapters/now-next
+				//- include chapters/intro
+				include chapters/now
+				//- include chapters/next
