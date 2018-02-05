@@ -1,0 +1,312 @@
+//MAIN CONTENT ENDS HERE
+footer#FOOTER
+  #block-block-2.block.block-block.block-block-2.first.last.odd
+    // chat widget placeholder
+    nav.container
+      .row
+        .span-6
+          ul.list-horizontal.buttons
+            li
+              a.btn.btn-link.btn-muted.btn-rounded(href='https://www.bklynlibrary.org/use-the-library/borrow') Get a Library Card
+            li
+              a.btn.btn-link.btn-muted.btn-rounded(href='https://www.bklynlibrary.org/contact') Contact Us
+            li
+              a.btn.btn-link.btn-muted.btn-rounded(href='https://www.bklynlibrary.org/connect') Social Media
+            li
+              a.btn.btn-link.btn-muted.btn-rounded(href='https://www.bklynlibrary.org/support') Donate Now
+            li.select-languages
+              #google_translate_element
+                .skiptranslate.goog-te-gadget(dir='ltr')
+                  .langButton(id=':0.targetLanguage', style='white-space: nowrap;')
+                    span(style='vertical-align: middle;')
+                      a.langLinks(aria-haspopup='true', href='javascript:void(0)')
+                        span Languages
+                    span(style='vertical-align: middle;')
+                      a.langLinks(aria-haspopup='true', href='javascript:void(0)')
+                        span.langDropArrow.icon-drop(style='color: rgb(155, 155, 155);')
+                        span(aria-hidden='true', style='color: rgb(118, 118, 118);') ▼
+                .skiptranslate.goog-te-gadget(dir='ltr')
+                  .langButton(id=':0.targetLanguage')
+              script(type='text/javascript').
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,bn,el,en,es,fr,hi,ht,hu,it,iw,ja,ko,pl,pt,ru,ur,vi,yi,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-27105001-1'}, 'google_translate_element');
+                }
+      .row.last
+        .span-6
+          p © 2017 Brooklyn Public Library
+  // </div> END #body
+  // Navigation Main/Body & Drawer; followed by Body Fog & Body Modal
+  #bodynav
+  // Activated by 'SCROLLSPY' in the main JavaScript file
+  nav#GLOBAL-navigation-main.main.scroll-spy(role='navigation')
+    header.branding
+      a(href='https://www.bklynlibrary.org/', title='Brooklyn Public Library')
+        span.icon-logo
+    ul.nav-main.menu-main
+      li.nav-borrow(data-url='#/borrow')
+        a#nav-borrow-link(href='https://www.bklynlibrary.org/about/leadership#/borrow', title='Borrow', data-url='#/borrow', data-trigger='nav-Borrow')
+          span.icon-borrow
+          |  Borrow
+      li.nav-learn(data-url='#/learn')
+        a#nav-learn-link(href='https://www.bklynlibrary.org/about/leadership#/learn', title='Learn', data-url='#/learn', data-trigger='nav-Learn')
+          span.icon-learn
+          |  Learn
+      li.nav-attend(data-url='#/attend')
+        a#nav-attend-link(href='https://www.bklynlibrary.org/about/leadership#/attend', title='Attend', data-url='#/attend', data-trigger='nav-Attend')
+          span.icon-attend
+          |  Attend
+      li.nav-more(data-url='#/more')
+        a#nav-more-link(href='https://www.bklynlibrary.org/about/leadership#/more', title='More', data-url='#/more', data-trigger='nav-More')
+          span.icon-ellipsis
+          |  More
+  #drawer
+  // Activated by 'DRAWER' in the main JavaScript file
+  // Close
+  .close
+    a.close-button(href='https://www.bklynlibrary.org/about/leadership#/')  
+  // Navigation, Header & List
+  nav#GLOBAL-navigation-sub.main(role='navigation')
+    #nav-Borrow.navigation-section.hide
+      .menu-block-wrapper.menu-block-1.menu-name-main-menu.parent-mlid-509.menu-level-1
+        ul#custom-id.nav-main.menu-sub.section-navigation
+          li.menu__item.is-leaf.first.leaf.menu-mlid-512.launch
+            a#launchcat.menu__link(href='https://brooklyn.bibliocommons.com/')
+              | Launch the Catalog 
+              span.icon-open
+              span.icon-open
+          li.menu__item.is-leaf.leaf.menu-mlid-5930
+            a.menu__link(href='https://www.bklynlibrary.org/use-the-library/borrow') Get a Library Card
+          li.menu__item.is-leaf.leaf.menu-mlid-513
+            a.menu__link(href='https://brooklyn.bibliocommons.com/') Books
+          li.menu__item.is-leaf.leaf.menu-mlid-1041
+            a.menu__link(href='https://www.bklynlibrary.org/ebooks') E-books & Audiobooks
+          li.menu__item.is-leaf.leaf.menu-mlid-1595
+            a.menu__link(href='https://brooklyn.bibliocommons.com/search?custom_query=formatcode%3A(VIDEO_DOWNLOAD+OR+DVD+OR+VC+)&suppress=true&custom_edit=false') Movies
+          li.menu__item.is-leaf.last.leaf.menu-mlid-3512
+            a.menu__link(href='https://brooklyn.bibliocommons.com/search?custom_query=formatcode%3A(VIDEO_DOWNLOAD+OR+DVD+OR+MUSIC_CS+OR+MUSIC_CD+OR+MN+OR+VC+)&suppress=true&custom_edit=false') Music & Recordings
+      .menu-block-wrapper.menu-block-5.menu-name-main-menu.parent-mlid-1045.menu-level-1
+        ul.nav-main.menu-sub.section-links
+          li.menu__item.is-leaf.first.leaf.menu-mlid-1042
+            a.menu__link(href='https://brooklyn.bibliocommons.com/explore/index/newly_acquired') New Titles
+          li.menu__item.is-leaf.leaf.menu-mlid-1043
+            a.menu__link(href='https://brooklyn.bibliocommons.com/list/share/659822928_violet_fox_507/661388037_scariest_books_ever') Staff Favorites
+          li.menu__item.is-leaf.leaf.menu-mlid-1044
+            a.menu__link(href='https://brooklyn.bibliocommons.com/explore/index/awards') Award Winners
+          li.menu__item.is-leaf.last.leaf.menu-mlid-1594.plain
+            a.menu__link(href='https://brooklyn.bibliocommons.com/explore/bestsellers') Bestsellers
+      .menu-block-wrapper.menu-block-6.menu-name-main-menu.parent-mlid-1046.menu-level-1
+        ul.nav-main.menu-sub.section-links
+          li.menu__item.is-leaf.first.leaf.menu-mlid-1049.header
+            span.menu__link.nolink More from the library
+          li.menu__item.is-leaf.leaf.menu-mlid-3300
+            a.menu__link(href='https://www.bklynlibrary.org/use-the-library/borrow') Borrowing Information
+          li.menu__item.is-leaf.leaf.menu-mlid-3513
+            a.menu__link(href='https://brooklyn.bibliocommons.com/search?custom_query=formatcode%3A(BOOK_CD+OR+BR+)&suppress=true') Braille & Talking Books
+          li.menu__item.is-leaf.leaf.menu-mlid-5775
+            a.menu__link(href='https://www.bklynlibrary.org/brooklyncollection') Brooklyn Collection
+          li.menu__item.is-leaf.last.leaf.menu-mlid-3299
+            a.menu__link(href='https://www.bklynlibrary.org/bookmatch') Personalized Recommendations
+    #nav-Learn.navigation-section.hide
+      .menu-block-wrapper.menu-block-2.menu-name-main-menu.parent-mlid-510.menu-level-1
+        ul.nav-main.menu-sub.section-links
+          li.menu__item.is-leaf.first.leaf.menu-mlid-514.menu-item
+            a.menu__link(href='https://www.bklynlibrary.org/learning-resources') Learning Resources
+          li.menu__item.is-leaf.leaf.menu-mlid-525
+            a.menu__link(href='https://www.bklynlibrary.org/use-the-library/borrow') How to use the Library
+          li.menu__item.is-leaf.leaf.menu-mlid-6111
+            a.menu__link(href='https://bpl.bklynlibrary.org/enewsletter/') Get email updates
+          li.menu__item.is-leaf.last.leaf.menu-mlid-526
+            a.menu__link(href='https://www.bklynlibrary.org/locations/central/dept/infocommons') Info Commons
+      .menu-block-wrapper.menu-block-7.menu-name-main-menu.parent-mlid-1050.menu-level-1
+        ul.nav-main.menu-sub.section-navigation
+          li.menu__item.is-expanded.first.last.expanded.menu-mlid-527.header
+            span.menu__link.nolink Start Here
+            ul.nav-main.menu-sub.section-navigation
+              li.menu__item.is-leaf.first.leaf.menu-mlid-528
+                a.menu__link(href='https://www.bklynlibrary.org/learn/kids') Kids
+              li.menu__item.is-leaf.leaf.menu-mlid-565
+                a.menu__link(href='https://www.bklynlibrary.org/learn/teens') Teens & Young Adults
+              li.menu__item.is-leaf.leaf.menu-mlid-1053
+                a.menu__link(href='https://www.bklynlibrary.org/learn/parents') Parents
+              li.menu__item.is-leaf.leaf.menu-mlid-3516
+                a.menu__link(href='https://www.bklynlibrary.org/learn/adults') Adults
+              li.menu__item.is-leaf.leaf.menu-mlid-3515
+                a.menu__link(href='https://www.bklynlibrary.org/learn/educators') Educators
+              li.menu__item.is-leaf.last.leaf.menu-mlid-5856
+                a.menu__link(href='https://www.bklynlibrary.org/learn/immigrants') Immigrants
+      .menu-block-wrapper.menu-block-8.menu-name-main-menu.parent-mlid-1051.menu-level-1
+        ul.nav-main.menu-sub.section-links
+          li.menu__item.is-expanded.first.last.expanded.menu-mlid-530.header
+            span.menu__link.nolink More from the library
+            ul.nav-main.menu-sub.section-links
+              li.menu__item.is-leaf.first.leaf.menu-mlid-4895
+                a.menu__link(href='https://www.bklynlibrary.org/adult-learning') Adult Learning
+              li.menu__item.is-leaf.leaf.menu-mlid-531
+                a.menu__link(href='https://www.bklynlibrary.org/bal') Book a Librarian
+              li.menu__item.is-leaf.leaf.menu-mlid-5776
+                a.menu__link(href='https://www.bklynlibrary.org/brooklyncollection') Brooklyn Collection
+              li.menu__item.is-leaf.leaf.menu-mlid-4752
+                a.menu__link(href='https://www.bklynlibrary.org/business') Business & Career Services
+              li.menu__item.is-leaf.leaf.menu-mlid-1052
+                a.menu__link(href='https://www.bklynlibrary.org/inclusive-services') Inclusive Services
+              li.menu__item.is-leaf.leaf.menu-mlid-5929
+                a.menu__link(href='https://www.bklynlibrary.org/incubator-submissions') Incubator
+              li.menu__item.is-leaf.last.leaf.menu-mlid-5784
+                a.menu__link(href='https://www.bklynlibrary.org/outreach') Library Outreach
+    #nav-Attend.navigation-section.hide
+      ul.nav-main.menu-sub.section-links
+        li.header Upcoming
+        li.menu-item
+          a(href='https://www.bklynlibrary.org/calendar/esol-2017-fall-bay-ridge-library-081417', title='ESOL - 2017 Fall Registration')
+            strong ESOL - 2017 Fall Registration
+            br
+            span.date-display-single Mon, Aug 14
+            |  at 
+            span.date-display-single 10:30 am
+        li.menu-item
+          a(href='https://www.bklynlibrary.org/calendar/where-my-feet-rest-red-hook-library-081517', title='Where My Feet Rest: Stories of Migration')
+            strong Where My Feet Rest: Stories of Migration
+            br
+            span.date-display-single Tue, Aug 15
+            |  at 
+            span.date-display-single 6:00 pm
+        li.menu-item
+          a(href='https://www.bklynlibrary.org/calendar/photo-exhibition-anatoli-kings-bay-library-081917', title='Photo Exhibition by Anatoli A. Iasenik and presentation of his new book Imena (The names). Russian program.')
+            strong
+              | Photo Exhibition by Anatoli A. Iasenik and presentation of his new book Imena (The names). Russian program.
+            br
+            span.date-display-single Sat, Aug 19
+            |  at 
+            span.date-display-single 1:00 pm
+        li.menu-item
+          a(href='https://www.bklynlibrary.org/calendar/solar-eclipse-viewing-clinton-hill-library-082117', title='Solar Eclipse Viewing Party!')
+            strong Solar Eclipse Viewing Party!
+            br
+            span.date-display-single Mon, Aug 21
+            |  at 
+            span.date-display-single 1:30 pm
+      // Section Navigation
+      .menu-block-wrapper.menu-block-9.menu-name-main-menu.parent-mlid-511.menu-level-1
+        ul.nav-main.menu-sub.section-navigation
+          li#nav-Attend-subnavigation.menu__item.is-expanded.first.expanded.menu-mlid-6103
+            a.menu__link(href='https://www.bklynlibrary.org/calendar/list') Events & Classes
+            ul.nav-main.menu-sub.section-navigation
+              li.menu__item.is-leaf.first.leaf.menu-mlid-6104.plain
+                a.menu__link(href='https://www.bklynlibrary.org/calendar/list?age%5B%5D=10046') For Kids
+              li.menu__item.is-leaf.leaf.menu-mlid-6105.plain
+                a.menu__link(href='https://www.bklynlibrary.org/calendar/list?age%5B%5D=10047') For Teens & Young Adults
+              li.menu__item.is-leaf.last.leaf.menu-mlid-6106.plain
+                a.menu__link(href='https://www.bklynlibrary.org/calendar/list?age%5B%5D=10048') For Adults
+          li.menu__item.is-leaf.leaf.menu-mlid-4764
+            a.menu__link(href='https://www.bklynlibrary.org/bpl-presents') BPL Presents
+          li.menu__item.is-leaf.last.leaf.menu-mlid-1054
+            a.menu__link(href='https://www.bklynlibrary.org/locations') Locations & Hours
+      .menu-block-wrapper.menu-block-39.menu-name-main-menu.parent-mlid-5908.menu-level-1
+        ul.nav-main.menu-sub.section-links
+          li.menu__item.is-leaf.first.last.leaf.menu-mlid-5907
+            a.menu__link(href='https://www.bklynlibrary.org/locations/closings') Closings & Renovations
+    #nav-More.navigation-section.hide
+      .menu-block-wrapper.menu-block-10.menu-name-main-menu.parent-mlid-1057.menu-level-1
+        ul.nav-main.menu-sub.section-navigation
+          li.menu__item.is-leaf.first.leaf.menu-mlid-1059
+            a.menu__link(href='https://apps.brooklynpubliclibrary.org/donate/') Donate
+          li.menu__item.is-leaf.leaf.menu-mlid-1058
+            a.menu__link(href='https://www.bklynlibrary.org/use-the-library/borrow') Get a Library Card
+          li.menu__item.is-leaf.last.leaf.menu-mlid-1060
+            a.menu__link.chat-widget(href='http://www.questionpoint.org/crs/servlet/org.oclc.admin.BuildForm?&page=accessable&institution=10136&type=2&language=1')
+              | Chat with a Librarian
+              br
+              small.font-weight-normal or call (718) 230-2100
+              br
+              small.font-weight-normal or call (718) 230-2100
+      .menu-block-wrapper.menu-block-11.menu-name-main-menu.parent-mlid-1062.menu-level-1
+        ul.nav-main.menu-sub.section-links.inline
+          li.menu__item.is-expanded.first.last.expanded.menu-mlid-1061.header
+            span.menu__link.nolink Information
+            ul.nav-main.menu-sub.section-links.inline
+              li.menu__item.is-leaf.first.leaf.menu-mlid-1063
+                a.menu__link(href='https://www.bklynlibrary.org/use-the-library/borrow') Borrowing & Library policies
+              li.menu__item.is-leaf.leaf.menu-mlid-1064
+                a.menu__link(href='https://www.bklynlibrary.org/use-the-library/borrow#tab-3') Fines & Fees
+              li.menu__item.is-leaf.leaf.menu-mlid-1065
+                a.menu__link(href='https://www.bklynlibrary.org/use-the-library/tech') Computers & Internet
+              li.menu__item.is-leaf.last.leaf.menu-mlid-3297
+                a.menu__link(href='https://www.bklynlibrary.org/passport') Passport Services
+      .menu-block-wrapper.menu-block-12.menu-name-main-menu.parent-mlid-1069.menu-level-1
+        ul.nav-main.menu-sub.section-links.inline
+          li.menu__item.is-expanded.first.last.expanded.menu-mlid-1066.header
+            span.menu__link.nolink Support the Library
+            ul.nav-main.menu-sub.section-links.inline
+              li.menu__item.is-leaf.first.leaf.menu-mlid-5785
+                a.menu__link(href='https://www.bklynlibrary.org/support') Get Involved
+              li.menu__item.is-leaf.leaf.menu-mlid-1067
+                a.menu__link(href='https://www.bklynlibrary.org/support/become-donor') Become a Donor
+              li.menu__item.is-leaf.leaf.menu-mlid-1068
+                a.menu__link(href='https://www.bklynlibrary.org/support/volunteer') Volunteer
+              li.menu__item.is-leaf.leaf.menu-mlid-3294
+                a.menu__link(href='https://go.bklynlibrary.org/standup') Advocacy
+              li.menu__item.is-leaf.last.leaf.menu-mlid-3296
+                a.menu__link(href='https://www.bklynlibrary.org/support/corporate-sponsors') Sponsorship Opportunities
+      .menu-block-wrapper.menu-block-20.menu-name-main-menu.parent-mlid-3289.menu-level-1
+        ul.nav-main.menu-sub.section-links.inline
+          li.menu__item.is-expanded.is-active-trail.first.last.expanded.active-trail.menu-mlid-3288.header
+            span.menu__link.is-active-trail.active-trail.nolink About the Library
+            ul.nav-main.menu-sub.section-links.inline
+              li.menu__item.is-leaf.first.leaf.menu-mlid-3290
+                a.menu__link(href='https://www.bklynlibrary.org/about') About
+              li.menu__item.is-leaf.is-active-trail.is-active.leaf.active-trail.active.menu-mlid-3291
+                a.menu__link.is-active-trail.active-trail.active(href='https://www.bklynlibrary.org/about/leadership') Leadership
+              li.menu__item.is-leaf.leaf.menu-mlid-3520
+                a.menu__link(href='https://www.bklynlibrary.org/about/reports-publications') Reports & Publications
+              li.menu__item.is-leaf.leaf.menu-mlid-3298
+                a.menu__link(href='https://www.bklynlibrary.org/about/media') News & Media
+              li.menu__item.is-leaf.last.leaf.menu-mlid-5792
+                a.menu__link(href='https://www.bklynlibrary.org/about/careers') Work for BPL
+  #bodyfog(aria-hidden='true')  
+  #bodymodal.bkgd-primary(aria-hidden='true')  
+  script(defer='', type='text/javascript', src='./assets/element.js')
+  script(src='./assets/js_8TxfYC9zYi0iFuqdYWhvptlZk4cRuk6lMXUvWfZ768Q.js')
+  #goog-gt-tt.skiptranslate(dir='ltr')
+  div(style='padding: 8px;')
+    div
+      .logo
+        img(src='./assets/translate_24dp.png', width='20', height='20', alt='Google Translate')
+  .top(style='padding: 8px; float: left; width: 100%;')
+    h1.title.gray Original text
+  .middle(style='padding: 8px;')
+    .original-text
+  .bottom(style='padding: 8px;')
+    .activity-links
+      span.activity-link Contribute a better translation
+      span.activity-link
+    .started-activity-container
+      hr(style='color: #CCC; background-color: #CCC; height: 1px; border: none;')
+      .activity-root
+  .status-message(style='display: none;')
+  .goog-te-spinner-pos
+  .goog-te-spinner-animation
+    svg.goog-te-spinner(xmlns='http://www.w3.org/2000/svg', width='96px', height='96px', viewbox='0 0 66 66')
+      circle.goog-te-spinner-path(fill='none', stroke-width='6', stroke-linecap='round', cx='33', cy='33', r='30')
+  #goog-gt-tt.skiptranslate(dir='ltr')
+  div(style='padding: 8px;')
+    div
+      .logo
+        img(src='./assets/translate_24dp(1).png', width='20', height='20', alt='Google Translate')
+  .top(style='padding: 8px; float: left; width: 100%;')
+    h1.title.gray Original text
+  .middle(style='padding: 8px;')
+    .original-text
+  .bottom(style='padding: 8px;')
+    .activity-links
+      span.activity-link Contribute a better translation
+      span.activity-link
+    .started-activity-container
+      hr(style='color: #CCC; background-color: #CCC; height: 1px; border: none;')
+      .activity-root
+  .status-message(style='display: none;')
+  iframe.goog-te-menu-frame.skiptranslate(frameborder='0', title='Language Translate Widget', style='visibility: visible; box-sizing: content-box; width: 237px; height: 263px; display: none;', src='./assets/saved_resource.html')
+  .goog-te-spinner-pos
+  .goog-te-spinner-animation
+    svg.goog-te-spinner(xmlns='http://www.w3.org/2000/svg', width='96px', height='96px', viewbox='0 0 66 66')
+      circle.goog-te-spinner-path(fill='none', stroke-width='6', stroke-linecap='round', cx='33', cy='33', r='30')
+  iframe.goog-te-menu-frame.skiptranslate(frameborder='0', title='Language Translate Widget', style='visibility: visible; box-sizing: content-box; width: 237px; height: 263px; display: none;', src='./assets/saved_resource(1).html')

@@ -1,0 +1,29 @@
+$gutter: 32px;
+$toc: 250px;
+
+$lightestColor: #fff;
+$lightColor: #839cfc;
+$mediumColor: #385bbb;
+$darkColor: #000;
+
+$sansSerif: Helvetica, Arial, sans-serif;
+$display: 'Franklin Gothic';
+
+@mixin mediumText {
+	font-size: 22px;
+	line-height: 35px;
+}
+@mixin displayText {
+	text-transform: uppercase;
+	font-family: $display;
+	font-size: 79px;
+	line-height: 69px;
+}
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: url('./../fonts/ITCFranklinGothicStd-DmXCp.woff2') format('woff2'),
+      url('./../fonts/ITCFranklinGothicStd-DmXCp.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
