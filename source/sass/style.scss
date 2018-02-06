@@ -10,13 +10,13 @@ body.theme-now-next {
 	@include mediumText;
 	// top header section
 	header {
-    &#HEADER {
-    	width: 100%;
-	    position: relative;
-	    top: 0;
-	    left: 0;
-	    z-index: 100;
-    }
+		&#HEADER {
+			width: 100%;
+			position: relative;
+			top: 0;
+			left: 0;
+			z-index: 100;
+		}
 		// search, login, other utilities
 		.block {
 			display: none;
@@ -140,6 +140,7 @@ body.theme-now-next {
 					position: absolute;
 					right: 0;
 					top: 0;
+					z-index: 200;
 					li {
 						width: calc(100% - #{$gutter*2});
 						margin: 0 $gutter $gutter $gutter;
@@ -258,17 +259,75 @@ body.theme-now-next {
 								}
 							}
 						}
-						.wide-carousel {
-							width: 100%;
-							height: 450px;
+						.carousel-placer {
 							position: relative;
-							.slides-wrapper {
+							height: 25vh;
+							.carousel-wrapper {
 								width: 100vw;
 								height: 100%;
+								padding-right: 0;
 								position: absolute;
-								left: -233px;
 								top: 0;
-								background: $mediumColor;
+								left: -233px;
+								z-index: 100;
+								overflow: hidden;
+								.carousel.full-width {
+									padding: 0;
+									margin: 0;
+									.carousel-cell {
+										margin: 0;
+										padding: 0;
+										border: none;
+										position: relative;
+										background-color: rgba(0,0,0,.25);
+										img {
+											margin: 0;
+											filter: grayscale(1);
+										}
+										p {
+											margin: 0;
+											position: absolute;
+											bottom: 0;
+											left: 0;
+											border: 0;
+											color: white;
+											box-shadow: 10px 10px 10px $pink;
+											font-weight: bold;
+										}
+										&:hover {
+											p {
+												border: 0;
+											}
+										}
+									}
+								}
+								img.gradient {
+									pointer-events: none;
+									position: absolute;
+									filter: none !important;
+									&.bottom {
+										width: 100%;
+										height: 100%;
+										left: 0;
+										top: 0;
+									}
+									&.left {
+										width: auto;
+										height: 100%;
+										left: 0;
+										top: 0;
+										transform: rotate(90deg);
+										z-index: 10;
+									}
+									&.right {
+										width: auto;
+										height: 100%;
+										right: 0;
+										top: 0;
+										transform: rotate(-90deg);
+										z-index: 10;
+									}
+								}
 							}
 						}
 					}
@@ -297,8 +356,8 @@ body.theme-now-next {
 			content: '';
 			background-image: url(/imgs/arrow_right.svg);
 			background-position: center;
-		  background-size: contain;
-		  background-repeat: no-repeat;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 	}
 }
