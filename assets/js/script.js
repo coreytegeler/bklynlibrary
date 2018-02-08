@@ -7,7 +7,7 @@ $(function() {
     var $accordion, $inside, $link, $opened, $wrapper, insideHeight, linkHeight, newHeight;
     e.preventDefault();
     $link = $(this);
-    $wrapper = $link.parents('.content_wrapper');
+    $wrapper = $link.parents('.content-wrapper');
     $inside = $wrapper.find('.inside');
     $accordion = $wrapper.parents('.accordion');
     linkHeight = $link.innerHeight();
@@ -17,7 +17,6 @@ $(function() {
     } else {
       newHeight = insideHeight;
       if ($opened = $accordion.find('.opened')) {
-        console.log($opened);
         $opened.removeClass('opened');
         $opened.find('.inside').css({
           height: 0
@@ -27,10 +26,9 @@ $(function() {
     $inside.css({
       height: newHeight
     });
-    console.log($wrapper);
     return $wrapper.toggleClass('opened');
   });
-  return $('.inline_nav.toc a').on('click', function(e) {
+  $('.inline_nav.toc a').on('click', function(e) {
     var $header, $nav, hash, target, top;
     hash = this.hash.slice(1);
     target = $('.chapter#' + hash);
@@ -50,4 +48,19 @@ $(function() {
       scrollTop: top
     }, 500);
   });
+  return $(window).on('resize', function() {
+    return $('.carousel.full-width').each(function(i, carousel) {
+      var $carousel, $placer, $wrapper;
+      $carousel = $(carousel);
+      $placer = $carousel.parents('.carousel-placer');
+      $wrapper = $carousel.parents('.carousel-wrapper');
+      return setTimeout(function() {
+        var carousel_height;
+        carousel_height = $carousel.innerHeight();
+        return $placer.css({
+          height: carousel_height
+        });
+      }, 100);
+    });
+  }).resize();
 });
