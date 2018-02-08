@@ -3,7 +3,7 @@ $ ->
 	$('body').on 'click', '.accordion a', (e) ->
 		e.preventDefault()
 		$link = $(this)
-		$wrapper = $link.parents('.content_wrapper')
+		$wrapper = $link.parents('.content-wrapper')
 		$inside = $wrapper.find('.inside')
 		$accordion = $wrapper.parents('.accordion')
 
@@ -14,14 +14,12 @@ $ ->
 		else
 			newHeight = insideHeight
 			if $opened = $accordion.find('.opened')
-				console.log $opened
 				$opened.removeClass('opened')
 				$opened.find('.inside').css
 					height: 0
 				
 		$inside.css
 			height: newHeight
-		console.log $wrapper
 		$wrapper.toggleClass('opened')
 
 
@@ -40,19 +38,6 @@ $ ->
 		$('html, body').animate
 			scrollTop: top
 		, 500
-		# , () ->
-			# // Callback after animation
-			# // Must change focus!
-			# $target = $(target)
-			# $target.focus()
-			# if $target.is(':focus')
-			# 	# // Checking if the target was focused
-			#   return false
-			# else
-			#   $target.attr('tabindex','-1') 
-			#   # // Adding tabindex for elements not focusable
-			#   $target.focus() 
-				# // Set focus again
 	
 	$(window).on 'resize', () ->
 		$('.carousel.full-width').each (i, carousel) ->

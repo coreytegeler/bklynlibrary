@@ -1,9 +1,6 @@
 @import 'reset';
 @import 'vars';
 
-
-
-
 body.theme-now-next {
 	color: $darkColor;
 	font-family: $sansSerif;
@@ -55,7 +52,7 @@ body.theme-now-next {
 		}
 	}
 	#CONTENT {
-		padding-top: $gutter;
+		padding-top: $width1;
 		.container  {
 			.row {
 				margin: 0;
@@ -93,13 +90,14 @@ body.theme-now-next {
 			.row {
 				// now->next svg
 				position: relative;
-				#large-title {
+				.large-title {
 					width: 100%;
 					max-width: 700px;
-					margin: 52px 0;
+					margin: 0 0 $width2 0;
 					object, svg {
 						width: 100%;
 						height: auto;
+						display: table;
 					}
 				}
 				ul.inline-nav {
@@ -135,15 +133,15 @@ body.theme-now-next {
 					}
 				}
 				ul.toc {
-					width: calc(100% - 700px - #{$gutter});
+					width: calc(100% - 700px - #{$width1});
 					min-width: $toc;
 					position: absolute;
 					right: 0;
 					top: 0;
 					z-index: 200;
 					li {
-						width: calc(100% - #{$gutter*2});
-						margin: 0 $gutter $gutter $gutter;
+						width: calc(100% - #{$width1*2});
+						margin: 0 $width1;
 						line-height: 1em;
 						display: inline-table;
 						a {
@@ -158,7 +156,7 @@ body.theme-now-next {
 						}
 						&.spotlights {
 							color: $lightColor;
-							padding-top: 52px;
+							padding-top: $width2;
 							a {
 								color: $lightColor;
 								h1 {
@@ -172,23 +170,41 @@ body.theme-now-next {
 					}
 				}
 				.accordion {
-					h1 {
-						@include displayText;
+					a {
+						h1 {
+							@include displayText;
+							line-height: 75px;
+							display: inline;
+						}
+						&:hover {
+							h1 {
+								background: linear-gradient(to right, black, black) no-repeat;
+						    background-size: 100% 6px;
+						    background-position: left .8em;
+						  }
+						}
 					}
-					.content_wrapper {
+					.content-wrapper {
 						list-style: none;
 						font-size: inherit;
-						margin: 0 0 2em 0;
+						margin: 0 0 $width2 0;
 						padding: 0;
 						a {
 							display: table;
-						}
-						a::after {
-							content: '';
-							width: .65em;
-							height: .65em;
-							font-size: 4em;
-							background-image: url(/imgs/arrow_down.svg);
+							&::after {
+								content: '';
+								width: $width2;
+								height: $width2;
+								display: inline-block;
+								opacity: 0;
+								background-image: url(/imgs/arrow_down.svg);
+								background-repeat: no-repeat;
+								background-position: center;
+						    background-size: 35px;
+						  }
+						  &:hover::after {
+						  	opacity: 1;
+						  }
 						}
 						.inside {
 							height: 0;
@@ -198,10 +214,9 @@ body.theme-now-next {
 							pointer-events: none;
 						}
 						&.opened {
-							a {
-								&::after {
-									transform: rotateZ(180deg);
-								}
+							a::after {
+								opacity: 1;
+								transform: rotateZ(180deg);
 							}
 							.inside {
 								opacity: 1;
@@ -213,11 +228,11 @@ body.theme-now-next {
 					}
 				}
 				.chapter {
-					padding: 2em 0;
+					padding: 0 0 #{$width2*3} 0;
 					.content {
-						max-width: calc(700px - #{$gutter});
-						width: calc(100% - #{$toc} - #{$gutter});
-						margin-right: $gutter;
+						max-width: calc(700px - #{$width1});
+						width: calc(100% - #{$toc} - #{$width1});
+						margin-right: $width1;
 						font-family: $sansSerif;
 						color: black;
 						h2 {
@@ -227,7 +242,7 @@ body.theme-now-next {
 							padding: 1em 0;
 						}
 						p {
-							margin: 0 0 52px 0;
+							margin: 0 0 $width2 0;
 						}
 						strong {
 							font-weight: bold;
@@ -241,9 +256,9 @@ body.theme-now-next {
 						ul {
 							font-size: inherit;
 							padding: 0;
-							margin: 0 0 52px 0;
+							margin: 0 0 $width2 0;
 							li {
-								padding: 0 0 0 52px;
+								padding: 0 0 0 $width2;
 								font-size: inherit;
 								margin: 0;
 								&::before {
@@ -271,6 +286,27 @@ body.theme-now-next {
 								left: -233px;
 								z-index: 100;
 								overflow: hidden;
+								.carousel-nav {
+									width: #{$width1*3};
+									span {
+										width: $width1;
+										height: $width1;
+										left: $width1;
+										margin-top: -#{$width1/2};
+										background-position: center;
+										background-size: contain;
+										background-repeat: no-repeat;
+										&::before {
+											display: none;
+										}
+										&.icon-arrow-left {
+											background-image: url(/imgs/arrow_left.svg);
+										}
+										&.icon-arrow-right {
+											background-image: url(/imgs/arrow_right.svg);
+										}
+									}
+								}
 								.carousel.full-width {
 									padding: 0;
 									margin: 0;

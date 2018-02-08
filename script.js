@@ -82,7 +82,7 @@ $(function () {
     var $accordion, $inside, $link, $opened, $wrapper, insideHeight, linkHeight, newHeight;
     e.preventDefault();
     $link = $(this);
-    $wrapper = $link.parents('.content_wrapper');
+    $wrapper = $link.parents('.content-wrapper');
     $inside = $wrapper.find('.inside');
     $accordion = $wrapper.parents('.accordion');
     linkHeight = $link.innerHeight();
@@ -92,7 +92,6 @@ $(function () {
     } else {
       newHeight = insideHeight;
       if ($opened = $accordion.find('.opened')) {
-        console.log($opened);
         $opened.removeClass('opened');
         $opened.find('.inside').css({
           height: 0
@@ -102,7 +101,6 @@ $(function () {
     $inside.css({
       height: newHeight
     });
-    console.log($wrapper);
     return $wrapper.toggleClass('opened');
   });
   $('.inline_nav.toc a').on('click', function (e) {
