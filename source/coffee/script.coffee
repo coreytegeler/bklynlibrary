@@ -1,53 +1,66 @@
 $ = jQuery
 $ ->
-	$('body').on 'click', '.accordion a', (e) ->
-		e.preventDefault()
-		$link = $(this)
-		$wrapper = $link.parents('.content-wrapper')
-		$inside = $wrapper.find('.inside')
-		$accordion = $wrapper.parents('.accordion')
+	$header = $('header#HEADER')
 
-		linkHeight = $link.innerHeight()
-		insideHeight = $inside.find('.hidden_content').innerHeight()
-		if $wrapper.is('.opened')
+	$('body').on 'click', '.nn-accordion .nn-toggle-title', (e) ->
+		e.preventDefault()
+		$title = $(this)
+		$wrapper = $title.parents('.nn-content-wrapper')
+		$inside = $wrapper.find('.nn-inside')
+		$accordion = $wrapper.parents('.nn-accordion')
+
+		linkHeight = $title.innerHeight()
+		insideHeight = $inside.find('.nn-hidden-content').innerHeight()
+		if $wrapper.is('.nn-opened')
 			newHeight = 0
 		else
 			newHeight = insideHeight
-			if $opened = $accordion.find('.opened')
-				$opened.removeClass('opened')
-				$opened.find('.inside').css
+			if $opened = $accordion.find('.nn-opened')
+				$opened.removeClass('nn-opened')
+				$opened.find('.nn-inside').css
 					height: 0
 				
 		$inside.css
 			height: newHeight
-		$wrapper.toggleClass('opened')
+		$wrapper.toggleClass('nn-opened')
 
 
-	$('.inline_nav.toc a').on 'click', (e) ->
+	$('#nn-toc a').on 'click', (e) ->
 		hash = this.hash.slice(1)
 		target = $('.chapter#'+hash)
-		console.log target
 		if !target.length
 			return
 		event.preventDefault()
 		top = target.offset().top
-		if $header = $('header#HEADER')
-			top -= $header.innerHeight()
-		if $nav = $('nav.page-list')
-			top -= $nav.innerHeight()
 		$('html, body').animate
 			scrollTop: top
 		, 500
 	
+	$(window).on 'scroll', () ->
+		headerBottom = $header.offset().top + $header.innerHeight()
+		scrolled = $(window).scrollTop()
+		$toc = $('#toc')
+		if scrolled >= headerBottom
+			$toc.addClass('fixed')
+		else
+			$toc.removeClass('fixed')
+
 	$(window).on 'resize', () ->
-		$('.carousel.full-width').each (i, carousel) ->
+		$('.nn-carousel').each (i, carousel) ->
 			$carousel = $(carousel)
-			$placer = $carousel.parents('.carousel-placer')
+			$placer = $carousel.parents('.nn-carousel-placer')
 			$wrapper = $carousel.parents('.carousel-wrapper')
 			setTimeout () ->
 				carousel_height = $carousel.innerHeight()
 				$placer.css
 					height: carousel_height
 			, 100
+
+		if $opened_wrapper = $('.nn-content-wrapper.nn-opened')
+			$inside = $opened_wrapper.find('.nn-inside')
+			insideHeight = $inside.find('.nn-hidden-content').innerHeight()
+			console.log insideHeight
+			$inside.css
+				height: insideHeight
 	.resize()
 			

@@ -15,18 +15,32 @@ var htmlreplace = require('gulp-html-replace');
 
 var paths = {
   pug: '*.pug',
+  sl_pug: 'spotlights/*.pug',
   sass: 'source/sass/*.scss',
   coffee: 'source/coffee/*.coffee',
 }
 
 var dest = {
   html: './',
+  sl_html: './spotlights/',
   css: './assets/css',
   js: './assets/js',
   imgs: './assets/imgs'
 }
 
 gulp.task('compile-pug', function() {
+  gulp.src(paths.sl_pug)
+    .pipe(plumber())
+    .pipe(pug())
+    .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
+    .pipe(gulpif(argv.prod, htmlreplace({ css: 'style.min.css' })))
+    .pipe(gulpif(argv.prod, htmlreplace({ css: 'script.min.js' })))
+    // .pipe(replace('/imgs/', './assets/imgs/'))
+    .pipe(gulp.dest(dest.sl_html))
+  .on('end', function() {
+    log('HTML done');
+    if (argv.prod) log('HTML minified');
+  });
   return gulp.src(paths.pug)
     .pipe(plumber())
     .pipe(pug())
@@ -72,6 +86,7 @@ gulp.task('compile-coffee', function() {
 
 gulp.task('watch', function() {
   gulp.watch(paths.pug, ['compile-pug']);
+  gulp.watch(paths.sl_pug, ['compile-pug']);
   gulp.watch(paths.sass, ['compile-sass']);
   gulp.watch(paths.coffee, ['compile-coffee']);
 });

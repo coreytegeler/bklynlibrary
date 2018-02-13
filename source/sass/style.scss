@@ -1,8 +1,10 @@
 @import 'reset';
 @import 'vars';
 
+
+//CLASS NEEDS TO BE ADDED TO ALL PAGES OF THIS TYPE
 body.theme-now-next {
-	color: $darkColor;
+	color: $black;
 	font-family: $sansSerif;
 	@include mediumText;
 	// top header section
@@ -20,11 +22,13 @@ body.theme-now-next {
 		}
 		// background image of header
 		#HEADER-IMAGE {
-			background: $lightColor;
+			background: $lightBlue;
 			min-height: auto;
-			padding-bottom: 95px; //slightly shorter than 105px tall logo
+			padding-bottom: 0; //slightly shorter than 105px tall logo
+			display: table;
 			img {
-				display: none;
+				width: 100%;
+				height: auto;
 			}
 		}
 		#HEADER-TITLE {
@@ -36,7 +40,7 @@ body.theme-now-next {
 				
 			}
 			* {
-				color: $lightestColor;
+				color: $white;
 			}
 			h1#page-title.page__title.title {
 				font-size: 2em;
@@ -52,37 +56,28 @@ body.theme-now-next {
 		}
 	}
 	#CONTENT {
-		padding-top: $width1;
+		padding-top: $width2;
 		.container  {
 			.row {
 				margin: 0;
 			}
-			h1.nn_title {
+			h1.nn-title {
 				font-size: 4em;
 				font-family: $display;
 				text-transform: uppercase;
-				color: $darkColor;
+				color: $black;
 				margin: 0;
 				padding: 0;
 			}
-			h2.nn_sub_title {
+			h2.nn-sub-title {
 				font-size: 1.5em;
 				font-family: $display;
 				text-transform: uppercase;
-				color: $darkColor;
+				color: $black;
 				margin: 0;
 				padding: 0;
 			}
 			// sub navigation
-			&.page-list {
-				position: fixed;
-				top: 95px;
-				z-index: 100;
-				margin-bottom: 0;	
-				li {
-					background-color: $lightColor;
-				}
-			}
 		}
 		.page-content {
 			margin: 0 0 0 18px;
@@ -90,17 +85,18 @@ body.theme-now-next {
 			.row {
 				// now->next svg
 				position: relative;
-				.large-title {
+				.nn-large-title {
 					width: 100%;
 					max-width: 700px;
-					margin: 0 0 $width2 0;
+					margin: 0 0 $width3 0;
 					object, svg {
 						width: 100%;
 						height: auto;
 						display: table;
+						fill: $black;
 					}
 				}
-				ul.inline-nav {
+				ul.nn-inline-nav {
 					width: 100%;
 					font-size: 1em;
 					li {
@@ -111,7 +107,7 @@ body.theme-now-next {
 						&::before, &::after {
 							display: none;
 						}
-						a {
+						a, .nn-toggle-title {
 							display: table;
 							position: relative;
 							&::after, &::before {
@@ -120,6 +116,7 @@ body.theme-now-next {
 								opacity: 0;
 								background-size: contain;
 								background-position: center;
+								position: absolute;
 							}
 							&::before {
 								display: none;
@@ -132,16 +129,16 @@ body.theme-now-next {
 						}
 					}
 				}
-				ul.toc {
-					width: calc(100% - 700px - #{$width1});
+				ul#nn-toc {
+					width: calc(100% - 700px - #{$width2});
 					min-width: $toc;
 					position: absolute;
 					right: 0;
 					top: 0;
 					z-index: 200;
 					li {
-						width: calc(100% - #{$width1*2});
-						margin: 0 $width1;
+						width: calc(100% - #{$width2*2});
+						margin: 0 $width2;
 						line-height: 1em;
 						display: inline-table;
 						a {
@@ -149,16 +146,16 @@ body.theme-now-next {
 							text-align: left;
 							font-weight: bold;
 						}
-						&.title {
+						&.nn-title {
 							a {
-								border-bottom: solid 3px $darkColor;
+								border-bottom: solid 3px $black;
 							}
 						}
-						&.spotlights {
-							color: $lightColor;
-							padding-top: $width2;
+						&.nn-spotlights {
+							color: $lightBlue;
+							padding-top: $width3;
 							a {
-								color: $lightColor;
+								color: $lightBlue;
 								h1 {
 									display: block;
 									clear: both;
@@ -168,15 +165,26 @@ body.theme-now-next {
 							}
 						}
 					}
+					&.nn-fixed {
+						width: calc(100% - #{700px + 230px + 18px + $width2});
+						position: fixed;
+						top: $width2;
+						right: 15px;
+					}
 				}
-				.accordion {
-					a {
+				.nn-accordion {
+					.nn-toggle-title {
+						position: relative;
+						&::before, &::after {
+							position: absolute;
+						}
 						h1 {
 							@include displayText;
 							line-height: 75px;
 							display: inline;
 						}
 						&:hover {
+							cursor: pointer;
 							h1 {
 								background: linear-gradient(to right, black, black) no-repeat;
 						    background-size: 100% 6px;
@@ -184,20 +192,20 @@ body.theme-now-next {
 						  }
 						}
 					}
-					.content-wrapper {
+					.nn-content-wrapper {
 						list-style: none;
 						font-size: inherit;
-						margin: 0 0 $width2 0;
+						margin: 0 0 $width3 0;
 						padding: 0;
-						a {
+						.nn-toggle-title {
 							display: table;
 							&::after {
 								content: '';
-								width: $width2;
-								height: $width2;
+								width: $width3;
+								height: $width3;
 								display: inline-block;
 								opacity: 0;
-								background-image: url(/imgs/arrow_down.svg);
+								background-image: url(/imgs/arrow_down_black.png);
 								background-repeat: no-repeat;
 								background-position: center;
 						    background-size: 35px;
@@ -206,19 +214,23 @@ body.theme-now-next {
 						  	opacity: 1;
 						  }
 						}
-						.inside {
+						.nn-inside {
 							height: 0;
 							opacity: 0;
 							transition: all 250ms ease-in-out, opacity 150ms ease-in-out;
 							transform: translateY(-2em);
 							pointer-events: none;
+							overflow: hidden;
+							a {
+								border: none;
+							}
 						}
-						&.opened {
-							a::after {
+						&.nn-opened {
+							.nn-toggle-title::after {
 								opacity: 1;
 								transform: rotateZ(180deg);
 							}
-							.inside {
+							.nn-inside {
 								opacity: 1;
 								transition: all 250ms ease-in-out, opacity 150ms 150ms ease-in-out;
 								transform: translateY(0);
@@ -228,11 +240,10 @@ body.theme-now-next {
 					}
 				}
 				.chapter {
-					padding: 0 0 #{$width2*3} 0;
 					.content {
-						max-width: calc(700px - #{$width1});
-						width: calc(100% - #{$toc} - #{$width1});
-						margin-right: $width1;
+						max-width: calc(700px - #{$width2});
+						width: calc(100% - #{$toc} - #{$width2});
+						margin-right: $width2;
 						font-family: $sansSerif;
 						color: black;
 						h2 {
@@ -242,7 +253,7 @@ body.theme-now-next {
 							padding: 1em 0;
 						}
 						p {
-							margin: 0 0 $width2 0;
+							margin: 0 0 $width3 0;
 						}
 						strong {
 							font-weight: bold;
@@ -253,19 +264,38 @@ body.theme-now-next {
 							padding: 0 32px 32px 0;
 							float: left;
 						}
+						//Inline superscript link to citation footnote
+						a.nn-cite {
+							@include smallText;
+							sup {
+								font-weight: normal;
+							}
+						}
 						ul {
 							font-size: inherit;
 							padding: 0;
-							margin: 0 0 $width2 0;
+							margin: 0 0 $width3 0;
 							li {
-								padding: 0 0 0 $width2;
+								padding: 0 0 0 $width3;
 								font-size: inherit;
 								margin: 0;
+								position: relative;
+								&.nn-no-indent {
+									padding: 0;
+								}
+								.nn-indent {
+									padding-left: $width3;
+								}
+								.nn-li-number {
+									position: absolute;
+									left: 0;
+									top: 0;
+								}
 								&::before {
 									display: none;
 								}
 							}	
-							&.bullets {
+							&.nn-bullets {
 								li {
 									background-image: url(/imgs/circle.png);
 									background-size: 5px;
@@ -274,9 +304,21 @@ body.theme-now-next {
 								}
 							}
 						}
-						.carousel-placer {
+						.nn-image {
+							width: 100%;
+							margin: 0 0 $width3 0;
+							img {
+								width: 100%;
+							}
+							.nn-image-caption {
+								color: $gray;
+								@include smallText;
+							}
+						}
+						.nn-carousel-placer {
 							position: relative;
 							height: 25vh;
+							margin-bottom: #{$width3*3};
 							.carousel-wrapper {
 								width: 100vw;
 								height: 100%;
@@ -284,15 +326,16 @@ body.theme-now-next {
 								position: absolute;
 								top: 0;
 								left: -233px;
-								z-index: 100;
+								z-index: 1000;
 								overflow: hidden;
-								.carousel-nav {
-									width: #{$width1*3};
+								.carousel-nav.next, .carousel-nav.prev {
+									width: #{$width2*3};
+									display: block !important;
 									span {
-										width: $width1;
-										height: $width1;
-										left: $width1;
-										margin-top: -#{$width1/2};
+										width: $width2;
+										height: $width2;
+										left: $width2;
+										margin-top: -#{$width2/2};
 										background-position: center;
 										background-size: contain;
 										background-repeat: no-repeat;
@@ -300,14 +343,14 @@ body.theme-now-next {
 											display: none;
 										}
 										&.icon-arrow-left {
-											background-image: url(/imgs/arrow_left.svg);
+											background-image: url(/imgs/arrow_left_white.png);
 										}
 										&.icon-arrow-right {
-											background-image: url(/imgs/arrow_right.svg);
+											background-image: url(/imgs/arrow_right_white.png);
 										}
 									}
 								}
-								.carousel.full-width {
+								.carousel.nn-full-width {
 									padding: 0;
 									margin: 0;
 									.carousel-cell {
@@ -316,6 +359,9 @@ body.theme-now-next {
 										border: none;
 										position: relative;
 										background-color: rgba(0,0,0,.25);
+										a {
+											display: table;
+										}
 										img {
 											margin: 0;
 											filter: grayscale(1);
@@ -327,7 +373,7 @@ body.theme-now-next {
 											left: 0;
 											border: 0;
 											color: white;
-											box-shadow: 10px 10px 10px $pink;
+											// box-shadow: 10px 10px 10px $pink;
 											font-weight: bold;
 										}
 										&:hover {
@@ -341,6 +387,7 @@ body.theme-now-next {
 									pointer-events: none;
 									position: absolute;
 									filter: none !important;
+									display: none;
 									&.bottom {
 										width: 100%;
 										height: 100%;
@@ -366,23 +413,36 @@ body.theme-now-next {
 								}
 							}
 						}
+						img.nn-signature {
+							width: 250px;
+						}
+
+						.nn-preface-links {
+							clear: both;
+							display: table;
+							margin-bottom: $width3;
+							.nn-preface-link {
+								float: left;
+								margin-right: $width3;
+								a {
+									border-bottom: 2px solid black;
+								}
+							}
+						}
+
+						ul.nn-footnotes {
+							padding-bottom: $width3;
+							li {
+								@include smallText;
+								padding-bottom: $width1;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 	// side navigation and logo
-	.nav-main li a, .branding .icon-logo {
-		color: $darkColor;
-	}
-
-	.bkgd-primary {
-		background-color: $lightColor;
-	}
-
-	.primary {
-		color: $darkColor;	
-	}
 
 	.now-next-text {
 		.now::after {
@@ -390,10 +450,45 @@ body.theme-now-next {
 			height: .7em;
 			display: inline-block;
 			content: '';
-			background-image: url(/imgs/arrow_right.svg);
+			background-image: url(/imgs/arrow_right_black.png);
 			background-position: center;
 			background-size: contain;
 			background-repeat: no-repeat;
+		}
+	}
+
+	//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGES
+	.nn-spotlight {
+		width: calc(100% - #{$toc} - #{$width2});
+		max-width: calc(700px - #{$width2});
+		margin: 0 $width2 $width3 0;
+		background-color: $lightBlue;
+		color: $lighterBlue;
+		display: flex;
+		flex-direction: row;
+		.nn-sl-text {
+			width: calc(#{100%*(2/3)} - #{$width1 + $width2});
+			padding: $width1 $width1 $width3 $width2;
+			font-size: 22px;
+	    line-height: 29px;
+			.nn-sl-label {
+				margin: 0 0 $width1 0;
+			}
+			.nn-sl-title {
+				@include displayText;
+			}
+			.nn-sl-desc {
+				
+			}
+		}
+		.nn-sl-image {
+			background-position: cover;
+			background-position: center top;
+			background-repeat: no-repeat;
+			flex: 1;
+			.nn-sl-img {
+
+			}
 		}
 	}
 }
