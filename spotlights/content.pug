@@ -1,0 +1,33 @@
+section#CONTENT.main.scroller
+	article.page-content
+		a#main-content
+		.container
+			.row
+				ul#nn-toc.nn-inline-nav
+					li.nn-spotlights
+						a(href='./spotlights') Spotlights
+
+					li.nn-title
+						a.now-next-text(href='./../#preface')
+							span.now NOW
+							span.next NEXT
+					li
+						a(href='./../#now') Now: Core Principles
+					li
+						a(href='./../#next') Next: Focus Areas
+					li
+						a(href='./../#howwegothere') How We Got Here
+
+				- var spotlights = []
+				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
+				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
+				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
+				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
+				each spotlight, index in spotlights
+					- index++
+					a(href='#').nn-spotlight
+						.nn-sl-text
+							.nn-sl-label Spotlight
+							.nn-sl-title= spotlight.title
+							.nn-sl-desc= spotlight.desc
+						.nn-sl-image(style='background-image:url(/assets/imgs/spotlights'+index+'.jpg)')
