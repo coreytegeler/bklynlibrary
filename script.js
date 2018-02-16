@@ -122,11 +122,11 @@ $(function () {
     var $toc, headerBottom, scrolled;
     headerBottom = $header.offset().top + $header.innerHeight();
     scrolled = $(window).scrollTop();
-    $toc = $('#toc');
+    $toc = $('#nn-toc');
     if (scrolled >= headerBottom) {
-      return $toc.addClass('fixed');
+      return $toc.addClass('nn-fixed');
     } else {
-      return $toc.removeClass('fixed');
+      return $toc.removeClass('nn-fixed');
     }
   });
   return $(window).on('resize', function () {

@@ -39,11 +39,11 @@ $ ->
 	$(window).on 'scroll', () ->
 		headerBottom = $header.offset().top + $header.innerHeight()
 		scrolled = $(window).scrollTop()
-		$toc = $('#toc')
+		$toc = $('#nn-toc')
 		if scrolled >= headerBottom
-			$toc.addClass('fixed')
+			$toc.addClass('nn-fixed')
 		else
-			$toc.removeClass('fixed')
+			$toc.removeClass('nn-fixed')
 
 	$(window).on 'resize', () ->
 		$('.nn-carousel').each (i, carousel) ->
