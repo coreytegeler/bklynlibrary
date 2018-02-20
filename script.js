@@ -78,11 +78,12 @@ var $;
 $ = jQuery;
 
 $(function () {
-  var $header, $toc;
+  var $header, $toc, chapterPadding;
   $header = $('header#HEADER');
   $toc = $('#nn-toc');
+  chapterPadding = 32;
   $('body').on('click', '.nn-accordion .nn-toggle-title', function (e) {
-    var $accordion, $inside, $opened, $title, $wrapper, insideHeight, linkHeight, newHeight;
+    var $accordion, $inside, $title, $wrapper, insideHeight, linkHeight, newHeight;
     e.preventDefault();
     $title = $(this);
     $wrapper = $title.parents('.nn-content-wrapper');
@@ -94,12 +95,6 @@ $(function () {
       newHeight = 0;
     } else {
       newHeight = insideHeight;
-      if ($opened = $accordion.find('.nn-opened')) {
-        $opened.removeClass('nn-opened');
-        $opened.find('.nn-inside').css({
-          height: 0
-        });
-      }
     }
     $inside.css({
       height: newHeight
@@ -114,7 +109,7 @@ $(function () {
       return;
     }
     event.preventDefault();
-    top = target.offset().top;
+    top = target.offset().top - chapterPadding;
     return $('html, body').animate({
       scrollTop: top
     }, 500);
@@ -146,7 +141,7 @@ $(function () {
     $('.nn-chapter').each(function (i, chapter) {
       var chapterDistance, chapterTop;
       chapterTop = $(chapter).offset().top;
-      chapterDistance = chapterTop - scrolled;
+      chapterDistance = chapterTop - chapterPadding - scrolled;
       if (chapterDistance <= 0) {
         return passedChapters.push(chapter);
       }
@@ -154,11 +149,16 @@ $(function () {
     if (passedChapters.length) {
       $currentChapter = $(passedChapters[passedChapters.length - 1]);
       thisId = $currentChapter.attr('id');
+      if (location.hash.substr(1) !== thisId) {
+        history.replaceState(void 0, void 0, '#' + thisId);
+      }
       $currentLink = $toc.find('li.' + thisId);
       if (!$currentLink.is('.current')) {
         $toc.find('li.current').removeClass('current');
         return $currentLink.addClass('current');
       }
+    } else {
+      return history.replaceState(void 0, void 0, '#');
     }
   }).scroll();
   return $(window).on('resize', function () {

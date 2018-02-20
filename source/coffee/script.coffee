@@ -2,6 +2,8 @@ $ = jQuery
 $ ->
 	$header = $('header#HEADER')
 	$toc = $('#nn-toc')
+	chapterPadding = 32
+
 	$('body').on 'click', '.nn-accordion .nn-toggle-title', (e) ->
 		e.preventDefault()
 		$title = $(this)
@@ -15,10 +17,6 @@ $ ->
 			newHeight = 0
 		else
 			newHeight = insideHeight
-			if $opened = $accordion.find('.nn-opened')
-				$opened.removeClass('nn-opened')
-				$opened.find('.nn-inside').css
-					height: 0
 				
 		$inside.css
 			height: newHeight
@@ -30,7 +28,7 @@ $ ->
 		if !target.length
 			return
 		event.preventDefault()
-		top = target.offset().top
+		top = target.offset().top - chapterPadding
 		$('html, body').animate
 			scrollTop: top
 		, 500
@@ -59,17 +57,21 @@ $ ->
 		passedChapters = []
 		$('.nn-chapter').each (i, chapter) ->
 			chapterTop = $(chapter).offset().top
-			chapterDistance = chapterTop - scrolled
-			# console.log chapterDistance
+			chapterDistance = chapterTop - chapterPadding - scrolled
+			# if $(chapter).attr('id') == 'intro'
 			if chapterDistance <= 0
 				passedChapters.push(chapter)
 		if passedChapters.length
 			$currentChapter = $(passedChapters[passedChapters.length-1])
 			thisId = $currentChapter.attr('id')
+			if location.hash.substr(1) != thisId
+				history.replaceState(undefined, undefined, '#'+thisId)
 			$currentLink = $toc.find('li.'+thisId)
 			if !$currentLink.is('.current')
 				$toc.find('li.current').removeClass('current')
 				$currentLink.addClass('current')
+		else
+			history.replaceState(undefined, undefined, '#')
 	.scroll()
 
 
