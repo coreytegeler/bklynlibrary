@@ -15,6 +15,7 @@ body.theme-now-next {
 			top: 0;
 			left: 0;
 			z-index: 100;
+			background: $lightBlue;
 		}
 		// search, login, other utilities
 		.block {
@@ -55,9 +56,15 @@ body.theme-now-next {
 			display: none;
 		}
 	}
+	#bodynav {
+		pointer-events: none;
+		a {
+			pointer-events: all;
+		}
+	}
 	#CONTENT {
 		padding-top: $width2;
-		.container  {
+		.container {
 			.row {
 				margin: 0;
 			}
@@ -80,7 +87,6 @@ body.theme-now-next {
 			// sub navigation
 		}
 		.page-content {
-			margin: 0 0 0 18px;
 			// main page content
 			.row {
 				// now->next svg
@@ -129,47 +135,57 @@ body.theme-now-next {
 						}
 					}
 				}
-				ul#nn-toc {
-					width: calc(100% - 700px - #{$width2});
-					min-width: $toc;
+				#nn-toc {
 					position: absolute;
 					right: 0;
 					top: 0;
 					z-index: 200;
-					li {
-						width: calc(100% - #{$width2*2});
-						margin: 0 $width2;
-						line-height: 1em;
-						display: inline-table;
-						a {
-							float: left;
-							text-align: left;
-							font-weight: bold;
-						}
-						&.nn-title {
+					padding: 0;
+					pointer-events: none;
+					ul {
+						max-width: 240px;
+						li {
+							width: calc(100% - #{$width2});
+							margin: 0 $width2 0 0;
+							line-height: 1em;
+							display: inline-table;
 							a {
-								border-bottom: solid 3px $black;
+								display: inline;
+								text-align: left;
+								font-weight: bold;
+								border-bottom: solid 3px transparent;
+								line-height: 1.4em;
+								transition: none;
+								pointer-events: all;
 							}
-						}
-						&.nn-spotlights {
-							color: $lightBlue;
-							padding-top: $width3;
-							a {
+							&.current {
+								a {
+									border-bottom-color: $black;
+								}
+							}
+							&.nn-spotlights {
 								color: $lightBlue;
-								h1 {
-									display: block;
-									clear: both;
-									padding: 32px 0 0 0;
-									@include displayText;
+								padding-top: $width3;
+								a {
+									color: $lightBlue;
+									h1 {
+										display: block;
+										clear: both;
+										padding: 32px 0 0 0;
+										@include displayText;
+									}
 								}
 							}
 						}
 					}
 					&.nn-fixed {
-						width: calc(100% - #{700px + 230px + 18px + $width2});
+						width: calc((100% - 230px)/3);
 						position: fixed;
 						top: $width2;
 						right: 15px;
+						ul {
+
+						}
 					}
 				}
 				.nn-accordion {
@@ -205,7 +221,7 @@ body.theme-now-next {
 								height: $width3;
 								display: inline-block;
 								opacity: 0;
-								background-image: url(/imgs/arrow_down_black.png);
+								background-image: url(/imgs/nn-arrow-down-black.png);
 								background-repeat: no-repeat;
 								background-position: center;
 						    background-size: 35px;
@@ -217,10 +233,13 @@ body.theme-now-next {
 						.nn-inside {
 							height: 0;
 							opacity: 0;
-							transition: all 250ms ease-in-out, opacity 150ms ease-in-out;
+							transition: height 250ms $ease, transform 250ms 250ms $ease, opacity 350ms $ease;
 							transform: translateY(-2em);
 							pointer-events: none;
 							overflow: hidden;
+							.nn-inside-content {
+								padding-bottom: 32px;
+							}
 							a {
 								border: none;
 							}
@@ -232,210 +251,222 @@ body.theme-now-next {
 							}
 							.nn-inside {
 								opacity: 1;
-								transition: all 250ms ease-in-out, opacity 150ms 150ms ease-in-out;
+								transition: height 250ms $ease, transform 250ms 100ms $ease, opacity 250ms 150ms $ease;
 								transform: translateY(0);
 								pointer-events: all;
 							}
 						}
 					}
 				}
-				.chapter {
-					.content {
-						max-width: calc(700px - #{$width2});
-						width: calc(100% - #{$toc} - #{$width2});
-						margin-right: $width2;
-						font-family: $sansSerif;
-						color: black;
-						h2 {
-							width: 100%;
-							font-weight: bold;
-							display: table;
-							padding: 1em 0;
+				.nn-chapter {
+					margin-bottom: 300px;
+				}
+				.nn-content {
+					// max-width: calc(700px - #{$width2});
+					// width: calc(100% - #{$toc} - #{$width2});
+					margin-right: $width2;
+					font-family: $sansSerif;
+					color: black;
+					h2 {
+						width: 100%;
+						font-weight: bold;
+						display: table;
+						padding: 1em 0;
+					}
+					p {
+						margin: 0 0 $width3 0;
+					}
+					strong {
+						font-weight: bold;
+					}
+					blockquote {
+						width: 50%;
+						@include displayText;
+						padding: 16px 32px 32px 0;
+						float: left;
+					}
+					//Inline superscript link to citation footnote
+					a.nn-cite {
+						@include smallText;
+						sup {
+							font-weight: normal;
 						}
-						p {
-							margin: 0 0 $width3 0;
-						}
-						strong {
-							font-weight: bold;
-						}
-						blockquote {
-							width: 50%;
-							@include displayText;
-							padding: 0 32px 32px 0;
-							float: left;
-						}
-						//Inline superscript link to citation footnote
-						a.nn-cite {
-							@include smallText;
-							sup {
-								font-weight: normal;
+					}
+					ul {
+						font-size: inherit;
+						padding: 0;
+						margin: 0 0 $width3 0;
+						li {
+							padding: 0 0 0 $width3;
+							font-size: inherit;
+							margin: 0;
+							position: relative;
+							&.nn-no-indent {
+								padding: 0;
+							}
+							.nn-indent {
+								padding-left: $width3;
+							}
+							.nn-li-number {
+								position: absolute;
+								left: 0;
+								top: 0;
+							}
+							&::before {
+								display: none;
+							}
+						}	
+						&.nn-bullets {
+							li {
+								background-image: url(/imgs/nn-circle.png);
+								background-size: 5px;
+								background-position: 0 15px;
+								background-repeat: no-repeat;
 							}
 						}
-						ul {
-							font-size: inherit;
-							padding: 0;
-							margin: 0 0 $width3 0;
-							li {
-								padding: 0 0 0 $width3;
-								font-size: inherit;
+					}
+					.nn-image {
+						width: 100%;
+						margin: 0 0 $width3 0;
+						img {
+							width: 100%;
+						}
+						.nn-image-caption {
+							color: $gray;
+							@include smallText;
+						}
+					}
+					.nn-carousel-placer {
+						position: relative;
+						height: 300px;
+						.carousel-wrapper {
+							width: 100vw;
+							height: 100%;
+							padding-right: 0;
+							position: absolute;
+							top: 0;
+							left: -233px;
+							overflow: hidden;
+							.carousel-nav.next, .carousel-nav.prev {
+								width: #{$width2*3};
+								display: block !important;
+								span {
+									width: $width2;
+									height: $width2;
+									left: $width2;
+									margin-top: -#{$width2/2};
+									background-position: center;
+									background-size: contain;
+									background-repeat: no-repeat;
+									&::before {
+										display: none;
+									}
+									&.icon-arrow-left {
+										background-image: url(/imgs/nn-arrow-left-white.png);
+									}
+									&.icon-arrow-right {
+										background-image: url(/imgs/nn-arrow-right-white.png);
+									}
+								}
+							}
+							.carousel.nn-full-width {
+								height: 100%;
+								padding: 0;
 								margin: 0;
-								position: relative;
-								&.nn-no-indent {
+								.slick-list, .slick-track {
+									height: 100%;
+								}
+								.carousel-cell {
+									margin: 0;
 									padding: 0;
+									border: none;
+									position: relative;
+									background-color: rgba(0,0,0,.25);
+									a {
+										display: table;
+									}
+									img {
+										margin: 0;
+										filter: grayscale(1);
+									}
+									.caption {
+										width: 100%;
+										height: 100%;
+										margin: 0;
+										position: absolute;
+										top: 0;
+										left: 0;
+										border: 0;
+										box-shadow: inset 0 -130px 130px -70px rgba($black,1);
+										p {
+											position: absolute;
+											left: 0;
+											bottom: 0;
+											width: calc(100% - 10px);
+											margin: 0 5px 5px 5px;
+											color: white;
+											font-weight: bold;
+										}
+									}
+									&:hover {
+										p {
+											border: 0;
+										}
+									}
 								}
-								.nn-indent {
-									padding-left: $width3;
-								}
-								.nn-li-number {
-									position: absolute;
+							}
+							img.gradient {
+								pointer-events: none;
+								position: absolute;
+								filter: none !important;
+								display: none;
+								&.bottom {
+									width: 100%;
+									height: 100%;
 									left: 0;
 									top: 0;
 								}
-								&::before {
-									display: none;
+								&.left {
+									width: auto;
+									height: 100%;
+									left: 0;
+									top: 0;
+									transform: rotate(90deg);
+									z-index: 10;
 								}
-							}	
-							&.nn-bullets {
-								li {
-									background-image: url(/imgs/circle.png);
-									background-size: 5px;
-									background-position: 0 15px;
-									background-repeat: no-repeat;
-								}
-							}
-						}
-						.nn-image {
-							width: 100%;
-							margin: 0 0 $width3 0;
-							img {
-								width: 100%;
-							}
-							.nn-image-caption {
-								color: $gray;
-								@include smallText;
-							}
-						}
-						.nn-carousel-placer {
-							position: relative;
-							height: 25vh;
-							margin-bottom: #{$width3*3};
-							.carousel-wrapper {
-								width: 100vw;
-								height: 100%;
-								padding-right: 0;
-								position: absolute;
-								top: 0;
-								left: -233px;
-								z-index: 1000;
-								overflow: hidden;
-								.carousel-nav.next, .carousel-nav.prev {
-									width: #{$width2*3};
-									display: block !important;
-									span {
-										width: $width2;
-										height: $width2;
-										left: $width2;
-										margin-top: -#{$width2/2};
-										background-position: center;
-										background-size: contain;
-										background-repeat: no-repeat;
-										&::before {
-											display: none;
-										}
-										&.icon-arrow-left {
-											background-image: url(/imgs/arrow_left_white.png);
-										}
-										&.icon-arrow-right {
-											background-image: url(/imgs/arrow_right_white.png);
-										}
-									}
-								}
-								.carousel.nn-full-width {
-									padding: 0;
-									margin: 0;
-									.carousel-cell {
-										margin: 0;
-										padding: 0;
-										border: none;
-										position: relative;
-										background-color: rgba(0,0,0,.25);
-										a {
-											display: table;
-										}
-										img {
-											margin: 0;
-											filter: grayscale(1);
-										}
-										p {
-											margin: 0;
-											position: absolute;
-											bottom: 0;
-											left: 0;
-											border: 0;
-											color: white;
-											// box-shadow: 10px 10px 10px $pink;
-											font-weight: bold;
-										}
-										&:hover {
-											p {
-												border: 0;
-											}
-										}
-									}
-								}
-								img.gradient {
-									pointer-events: none;
-									position: absolute;
-									filter: none !important;
-									display: none;
-									&.bottom {
-										width: 100%;
-										height: 100%;
-										left: 0;
-										top: 0;
-									}
-									&.left {
-										width: auto;
-										height: 100%;
-										left: 0;
-										top: 0;
-										transform: rotate(90deg);
-										z-index: 10;
-									}
-									&.right {
-										width: auto;
-										height: 100%;
-										right: 0;
-										top: 0;
-										transform: rotate(-90deg);
-										z-index: 10;
-									}
+								&.right {
+									width: auto;
+									height: 100%;
+									right: 0;
+									top: 0;
+									transform: rotate(-90deg);
+									z-index: 10;
 								}
 							}
 						}
-						img.nn-signature {
-							width: 250px;
-						}
+					}
+					img.nn-signature {
+						width: 250px;
+					}
 
-						.nn-preface-links {
-							clear: both;
-							display: table;
-							margin-bottom: $width3;
-							.nn-preface-link {
-								float: left;
-								margin-right: $width3;
-								a {
-									border-bottom: 2px solid black;
-								}
+					.nn-preface-links {
+						clear: both;
+						display: table;
+						margin-bottom: $width3;
+						.nn-preface-link {
+							float: left;
+							margin-right: $width3;
+							a {
+								border-bottom: 2px solid black;
 							}
 						}
+					}
 
-						ul.nn-footnotes {
-							padding-bottom: $width3;
-							li {
-								@include smallText;
-								padding-bottom: $width1;
-							}
+					ul.nn-footnotes {
+						padding-bottom: $width3;
+						li {
+							@include smallText;
+							padding-bottom: $width1;
 						}
 					}
 				}
@@ -450,7 +481,7 @@ body.theme-now-next {
 			height: .7em;
 			display: inline-block;
 			content: '';
-			background-image: url(/imgs/arrow_right_black.png);
+			background-image: url(/imgs/nn-arrow-right-black.png);
 			background-position: center;
 			background-size: contain;
 			background-repeat: no-repeat;
@@ -458,9 +489,7 @@ body.theme-now-next {
 	}
 
 	//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGES
-	.nn-spotlight {
-		width: calc(100% - #{$toc} - #{$width2});
-		max-width: calc(700px - #{$width2});
+	.nn-sl-link {
 		margin: 0 $width2 $width3 0;
 		background-color: $lightBlue;
 		color: $lighterBlue;
@@ -490,5 +519,51 @@ body.theme-now-next {
 
 			}
 		}
+	}
+	.nn-sl-popup {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 900;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		background-color: $lightBlue;
+		display: none;
+		&.show {
+			display: block;
+		}
+		.nn-sl-container {
+			display: table;
+			padding: 66px 15px 132px 215px;
+			.nn-content {
+				color: $lighterBlue !important;
+				h1 {
+		    	@include displayText;
+		    	margin: 0 0 132px 0;
+		    }
+		    .nn-image {
+		    	.nn-image-caption {
+		    		color: $lighterBlue !important;
+		    	}
+		    }
+			}
+		}
+		.nn-sl-close {
+			width: 32px;
+			height: 32px;
+			position: fixed;
+			right: 32px;
+			top: 32px;
+			cursor: pointer;
+			background-image: url(/imgs/nn-close.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;			
+		}
+	}
+	&.nn-sl-popup-open {
+		overflow: hidden;
 	}
 }

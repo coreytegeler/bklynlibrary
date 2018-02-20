@@ -3,31 +3,48 @@ section#CONTENT.main.scroller
 		a#main-content
 		.container
 			.row
-				ul#nn-toc.nn-inline-nav
-					li.nn-spotlights
-						a(href='./spotlights') Spotlights
+				#nn-toc.span-2
+					ul.nn-inline-nav
+						li.nn-spotlights
+							a(href='#') Spotlights
+						li.preface.nn-title
+							a.now-next-text(href='./../#preface')
+								span.now NOW
+								span.next NEXT
+						li.intro
+							a(href='./chapters#intro') Intro
+						li.now
+							a(href='./chapters#now') Core Principles
+						li.next
+							a(href='./chapters#next') Focus Areas
+						li.how
+							a(href='./chapters#how') How We Got Here
 
-					li.nn-title
-						a.now-next-text(href='./../#preface')
-							span.now NOW
-							span.next NEXT
-					li
-						a(href='./../#now') Now: Core Principles
-					li
-						a(href='./../#next') Next: Focus Areas
-					li
-						a(href='./../#howwegothere') How We Got Here
-
-				- var spotlights = []
-				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
-				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
-				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
-				- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
-				each spotlight, index in spotlights
-					- index++
-					a(href='#').nn-spotlight
-						.nn-sl-text
-							.nn-sl-label Spotlight
-							.nn-sl-title= spotlight.title
-							.nn-sl-desc= spotlight.desc
-						.nn-sl-image(style='background-image:url(/assets/imgs/spotlights'+index+'.jpg)')
+				.span-4
+					- var spotlights = []
+					- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
+					- spotlights.push({title: 'A Platform For Partnerships'})
+					- spotlights.push({title: 'A Personal Guide in the Virtual World'})
+					- spotlights.push({title: 'Expanding the Library’s Reach'})
+					each spotlight, index in spotlights
+						a.nn-sl-link(href='#' data-spotlight=index)
+							.nn-sl-text
+								.nn-sl-label Spotlight
+								.nn-sl-title= spotlight.title
+								.nn-sl-desc= spotlight.desc
+							.nn-sl-image(style='background-image:url(/assets/imgs/spotlights'+index+'.jpg)')
+						.nn-sl-popup(data-spotlight=index)
+							.nn-sl-close
+							.nn-sl-container
+								.span-4
+									.nn-content
+										case index
+											when 0
+												include popup-1
+											when 1
+												include popup-2
+											when 2
+												include popup-3
+											when 3
+												include popup-4
+									
