@@ -3,8 +3,9 @@ var $;
 $ = jQuery;
 
 $(function() {
-  var $header;
+  var $header, $toc;
   $header = $('header#HEADER');
+  $toc = $('#nn-toc');
   $('body').on('click', '.nn-accordion .nn-toggle-title', function(e) {
     var $accordion, $inside, $opened, $title, $wrapper, insideHeight, linkHeight, newHeight;
     e.preventDefault();
@@ -33,7 +34,7 @@ $(function() {
   $('#nn-toc a').on('click', function(e) {
     var hash, target, top;
     hash = this.hash.slice(1);
-    target = $('.chapter#' + hash);
+    target = $('.nn-chapter#' + hash);
     if (!target.length) {
       return;
     }
@@ -43,17 +44,48 @@ $(function() {
       scrollTop: top
     }, 500);
   });
+  $('a.nn-sl-link').on('click', function(e) {
+    var $popup, sid;
+    e.preventDefault();
+    sid = $(this).attr('data-spotlight');
+    $popup = $('.nn-sl-popup[data-spotlight="' + sid + '"]');
+    $('body').addClass('nn-sl-popup-open');
+    return $popup.addClass('show');
+  });
+  $('.nn-sl-popup .nn-sl-close').on('click', function(e) {
+    var $popup;
+    $popup = $(this).parents('.nn-sl-popup');
+    $('body').removeClass('nn-sl-popup-open');
+    return $popup.removeClass('show');
+  });
   $(window).on('scroll', function() {
-    var $toc, headerBottom, scrolled;
+    var $currentChapter, $currentLink, headerBottom, passedChapters, scrolled, thisId;
     headerBottom = $header.offset().top + $header.innerHeight();
     scrolled = $(window).scrollTop();
-    $toc = $('#nn-toc');
     if (scrolled >= headerBottom) {
-      return $toc.addClass('nn-fixed');
+      $toc.addClass('nn-fixed');
     } else {
-      return $toc.removeClass('nn-fixed');
+      $toc.removeClass('nn-fixed');
     }
-  });
+    passedChapters = [];
+    $('.nn-chapter').each(function(i, chapter) {
+      var chapterDistance, chapterTop;
+      chapterTop = $(chapter).offset().top;
+      chapterDistance = chapterTop - scrolled;
+      if (chapterDistance <= 0) {
+        return passedChapters.push(chapter);
+      }
+    });
+    if (passedChapters.length) {
+      $currentChapter = $(passedChapters[passedChapters.length - 1]);
+      thisId = $currentChapter.attr('id');
+      $currentLink = $toc.find('li.' + thisId);
+      if (!$currentLink.is('.current')) {
+        $toc.find('li.current').removeClass('current');
+        return $currentLink.addClass('current');
+      }
+    }
+  }).scroll();
   return $(window).on('resize', function() {
     var $inside, $opened_wrapper, insideHeight;
     $('.nn-carousel').each(function(i, carousel) {
@@ -72,7 +104,6 @@ $(function() {
     if ($opened_wrapper = $('.nn-content-wrapper.nn-opened')) {
       $inside = $opened_wrapper.find('.nn-inside');
       insideHeight = $inside.find('.nn-hidden-content').innerHeight();
-      console.log(insideHeight);
       return $inside.css({
         height: insideHeight
       });

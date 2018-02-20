@@ -40,15 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	  });
   }
 });
-
 Drupal.behaviors.carouselBehavior = {
    attach: function () {
-
-	var carousels = [1, 2, 4, 5, 6, 8],
+	var carousels = [1, 2, 4, 5, 6, 8, 'x'],
 		carouselCols = [];
 		
 	// Initialize Carousels for all specified column variations
 	carousels.forEach(function(i) {
+		if(i == 'x'){i=4}
 		carouselCols[i] = $('.carousel.col-'+ i).not('.slick-applied').slick({
 			nextArrow: '<div class="carousel-nav next"><span class="icon-arrow-right"></span></div>',
 			prevArrow: '<div class="carousel-nav prev"><span class="icon-arrow-left"></span></div>',

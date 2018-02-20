@@ -1,6 +1,6 @@
 //- START INTRO CHAPTER
-.chapter#intro
-	.content
+.nn-chapter#intro
+	.nn-content
 		p
 			strong Introduction
 
@@ -47,7 +47,7 @@
 		p As we move toward a relationships-based service model, being a librarian means creating partnerships with outside organizations and engaging residents in addition to stocking and checking out materials. Our staff are constantly evolving in their roles and redefining boundaries and expectations. The plan is meant to clarify this process and deepen our capacity to respond to the changing needs of patrons in principled and coordinated ways.
 
 		div(class='nn-carousel-placer')
-			div(id='nn-carousel' class='carousel-wrapper')
+			div(class='nn-carousel carousel-wrapper')
 				div(class='carousel col-4 nn-full-width')
 					- var slides = []
 					- slides.push('Brooklyn Connections participants present their research at a culminating ceremony')
@@ -70,7 +70,7 @@
 					each caption, index in slides
 						div(class='carousel-cell' aria-hidden='true')
 							a(href='#')
-								img(alt='' class='' src='./assets/imgs/intro/slide'+index+'.jpg')
-							//- img(src='/assets/imgs/gradient.png' class='gradient bottom')
-							p= caption
+								img(alt='' class='' src='./../assets/imgs/intro/slide'+index+'.jpg')
+							.caption
+								p= caption
 //- END INTRO CHAPTER

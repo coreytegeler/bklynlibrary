@@ -1,7 +1,7 @@
 $width1: 16px;
 $width2: 32px;
 $width3: 52px;
-$toc: 250px;
+$toc: 300px;
 
 $white: #fff;
 $gray: #808080;
@@ -38,3 +38,5 @@ $display: 'Franklin Gothic';
   font-weight: normal;
   font-style: normal;
 }
+
+$ease: cubic-bezier(0.19, 1, 0.22, 1);
