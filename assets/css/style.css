@@ -58,114 +58,128 @@ table {
   font-weight: normal;
   font-style: normal; }
 
-body.theme-now-next {
+@font-face {
+  font-family: 'Bklyn';
+  src: url("https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.eot?kl8lamlza");
+  src: url("https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.eot?kl8lamlza#iefix") format("embedded-opentype"), url("https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.ttf?kl8lamlza") format("truetype"), url("https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.woff?kl8lamlza") format("woff"), url("https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.svg?kl8lamlza#Bklyn") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body.nn-theme {
   color: #231f20;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 22px;
   line-height: 35px; }
-  body.theme-now-next header#HEADER {
+  body.nn-theme header#HEADER {
     width: 100%;
     position: relative;
     top: 0;
     left: 0;
     z-index: 100;
     background: #839cfc; }
-  body.theme-now-next header .block {
-    display: none; }
-  body.theme-now-next header #HEADER-IMAGE {
+  body.nn-theme header .bkgd-primary {
+    background-color: transparent; }
+  body.nn-theme header #HEADER-IMAGE {
     background: #839cfc;
     min-height: auto;
     padding-bottom: 0;
     display: table; }
-    body.theme-now-next header #HEADER-IMAGE img {
+    body.nn-theme header #HEADER-IMAGE img {
       width: 100%;
       height: auto; }
-  body.theme-now-next header #HEADER-TITLE {
+    body.nn-theme header #HEADER-IMAGE #nn-subheader {
+      position: absolute;
+      left: 230px;
+      bottom: 16px;
+      font-size: 32px;
+      font-weight: bolder; }
+  body.nn-theme header #HEADER-TITLE {
     height: 100%;
     bottom: 0;
     display: flex;
     align-items: flex-end; }
-    body.theme-now-next header #HEADER-TITLE * {
+    body.nn-theme header #HEADER-TITLE * {
       color: #fff; }
-    body.theme-now-next header #HEADER-TITLE h1#page-title.page__title.title {
+    body.nn-theme header #HEADER-TITLE h1#page-title.page__title.title {
       font-size: 2em;
       margin-bottom: 15px;
       font-family: Helvetica, Arial, sans-serif;
       font-weight: 900; }
-  body.theme-now-next nav.main ul.nav-main.menu-main {
-    display: none; }
-  body.theme-now-next #bodynav {
+  body.nn-theme .nav-main li.scrolled a {
+    opacity: 0;
     pointer-events: none; }
-    body.theme-now-next #bodynav a {
+  body.nn-theme #bodynav {
+    pointer-events: none; }
+    body.nn-theme #bodynav a {
       pointer-events: all; }
-  body.theme-now-next #CONTENT {
+  body.nn-theme #CONTENT {
     padding-top: 32px; }
-    body.theme-now-next #CONTENT .container .row {
+    body.nn-theme #CONTENT .container .row {
       margin: 0; }
-    body.theme-now-next #CONTENT .container h1.nn-title {
+    body.nn-theme #CONTENT .container h1.nn-title {
       font-size: 4em;
       font-family: "Franklin Gothic";
       text-transform: uppercase;
       color: #231f20;
       margin: 0;
       padding: 0; }
-    body.theme-now-next #CONTENT .container h2.nn-sub-title {
+    body.nn-theme #CONTENT .container h2.nn-sub-title {
       font-size: 1.5em;
       font-family: "Franklin Gothic";
       text-transform: uppercase;
       color: #231f20;
       margin: 0;
       padding: 0; }
-    body.theme-now-next #CONTENT .page-content .row {
+    body.nn-theme #CONTENT .page-content .row {
       position: relative; }
-      body.theme-now-next #CONTENT .page-content .row .nn-large-title {
+      body.nn-theme #CONTENT .page-content .row .nn-large-title {
         width: 100%;
         max-width: 700px;
         margin: 0 0 52px 0; }
-        body.theme-now-next #CONTENT .page-content .row .nn-large-title object, body.theme-now-next #CONTENT .page-content .row .nn-large-title svg {
+        body.nn-theme #CONTENT .page-content .row .nn-large-title object, body.nn-theme #CONTENT .page-content .row .nn-large-title svg {
           width: 100%;
           height: auto;
           display: table;
           fill: #231f20; }
-      body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav {
+      body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav {
         width: 100%;
         font-size: 1em; }
-        body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li {
+        body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li {
           width: 100%;
           font-size: 1em !important;
           margin: 0;
           display: table; }
-          body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li::before, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li::after {
+          body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li::before, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li::after {
             display: none; }
-          body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li a, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title {
+          body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title {
             display: table;
             position: relative; }
-            body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li a::after, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li a::before, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::after, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
+            body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::before, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
               display: inline-block;
               content: '';
               opacity: 0;
               background-size: contain;
               background-position: center;
               position: absolute; }
-            body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li a::before, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
+            body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::before, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
               display: none; }
-            body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li a:hover::after, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li a:hover::before, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::after, body.theme-now-next #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::before {
+            body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a:hover::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a:hover::before, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::before {
               opacity: 1; }
-      body.theme-now-next #CONTENT .page-content .row #nn-toc {
+      body.nn-theme #CONTENT .page-content .row #nn-toc {
         position: absolute;
         right: 0;
         top: 0;
         z-index: 200;
         padding: 0;
         pointer-events: none; }
-        body.theme-now-next #CONTENT .page-content .row #nn-toc ul {
+        body.nn-theme #CONTENT .page-content .row #nn-toc ul {
           max-width: 240px; }
-          body.theme-now-next #CONTENT .page-content .row #nn-toc ul li {
+          body.nn-theme #CONTENT .page-content .row #nn-toc ul li {
             width: calc(100% - 32px);
             margin: 0 32px 0 0;
             line-height: 1em;
             display: inline-table; }
-            body.theme-now-next #CONTENT .page-content .row #nn-toc ul li a {
+            body.nn-theme #CONTENT .page-content .row #nn-toc ul li a {
               display: inline;
               text-align: left;
               font-weight: bold;
@@ -173,51 +187,53 @@ body.theme-now-next {
               line-height: 1.4em;
               transition: none;
               pointer-events: all; }
-            body.theme-now-next #CONTENT .page-content .row #nn-toc ul li.current a {
+            body.nn-theme #CONTENT .page-content .row #nn-toc ul li.current a {
               border-bottom-color: #231f20; }
-            body.theme-now-next #CONTENT .page-content .row #nn-toc ul li.nn-spotlights {
+            body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights {
               color: #839cfc;
-              padding-top: 52px; }
-              body.theme-now-next #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a {
+              padding-top: 16px; }
+              body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a {
                 color: #839cfc; }
-                body.theme-now-next #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a h1 {
-                  display: block;
+                body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a h1 {
+                  display: none;
                   clear: both;
-                  padding: 32px 0 0 0;
+                  padding: 16px 0 0 0;
                   text-transform: uppercase;
                   font-family: "Franklin Gothic";
                   font-size: 79px;
                   line-height: 69px; }
-        body.theme-now-next #CONTENT .page-content .row #nn-toc.nn-fixed {
+                body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover h1 {
+                  display: block; }
+        body.nn-theme #CONTENT .page-content .row #nn-toc.nn-fixed {
           width: calc((100% - 230px)/3);
           position: fixed;
           top: 32px;
           right: 15px; }
-      body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-toggle-title {
+      body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title {
         position: relative; }
-        body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before, body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-toggle-title::after {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before, body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::after {
           position: absolute; }
-        body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-toggle-title h1 {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title h1 {
           text-transform: uppercase;
           font-family: "Franklin Gothic";
           font-size: 79px;
           line-height: 69px;
           line-height: 75px;
           display: inline; }
-        body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover {
           cursor: pointer; }
-          body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover h1 {
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover h1 {
             background: linear-gradient(to right, black, black) no-repeat;
             background-size: 100% 6px;
             background-position: left .8em; }
-      body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper {
+      body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper {
         list-style: none;
         font-size: inherit;
         margin: 0 0 52px 0;
         padding: 0; }
-        body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-toggle-title {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-toggle-title {
           display: table; }
-          body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-toggle-title::after {
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-toggle-title::after {
             content: '';
             width: 52px;
             height: 52px;
@@ -227,43 +243,43 @@ body.theme-now-next {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 35px; }
-          body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-toggle-title:hover::after {
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-toggle-title:hover::after {
             opacity: 1; }
-        body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside {
           height: 0;
           opacity: 0;
           transition: height 250ms cubic-bezier(0.19, 1, 0.22, 1), transform 250ms 250ms cubic-bezier(0.19, 1, 0.22, 1), opacity 350ms cubic-bezier(0.19, 1, 0.22, 1);
           transform: translateY(-2em);
           pointer-events: none;
           overflow: hidden; }
-          body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside .nn-hidden-content {
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside .nn-hidden-content {
             padding-top: 32px; }
-          body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside a {
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside a {
             border: none; }
-        body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-opened .nn-toggle-title::after {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-opened .nn-toggle-title::after {
           opacity: 1;
           transform: rotateZ(180deg); }
-        body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-opened .nn-inside {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-opened .nn-inside {
           opacity: 1;
           transition: height 250ms cubic-bezier(0.19, 1, 0.22, 1), transform 250ms 100ms cubic-bezier(0.19, 1, 0.22, 1), opacity 250ms 150ms cubic-bezier(0.19, 1, 0.22, 1);
           transform: translateY(0);
           pointer-events: all; }
-      body.theme-now-next #CONTENT .page-content .row .nn-chapter {
+      body.nn-theme #CONTENT .page-content .row .nn-chapter:not(#how) {
         margin-bottom: 300px; }
-      body.theme-now-next #CONTENT .page-content .row .nn-content {
+      body.nn-theme #CONTENT .page-content .row .nn-content {
         margin-right: 32px;
         font-family: Helvetica, Arial, sans-serif;
         color: black; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content h2 {
+        body.nn-theme #CONTENT .page-content .row .nn-content h2 {
           width: 100%;
           font-weight: bold;
           display: table;
           padding: 1em 0; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content p {
-          margin: 0 0 52px 0; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content strong {
+        body.nn-theme #CONTENT .page-content .row .nn-content p {
+          margin: 0 0 32px 0; }
+        body.nn-theme #CONTENT .page-content .row .nn-content strong {
           font-weight: bold; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content blockquote {
+        body.nn-theme #CONTENT .page-content .row .nn-content blockquote {
           width: 50%;
           text-transform: uppercase;
           font-family: "Franklin Gothic";
@@ -271,48 +287,48 @@ body.theme-now-next {
           line-height: 69px;
           padding: 16px 32px 32px 0;
           float: left; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content a.nn-cite {
+        body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite {
           font-size: 16px !important;
           line-height: 21px !important; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content a.nn-cite sup {
+          body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite sup {
             font-weight: normal; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content ul {
+        body.nn-theme #CONTENT .page-content .row .nn-content ul {
           font-size: inherit;
           padding: 0;
           margin: 0 0 52px 0; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content ul li {
+          body.nn-theme #CONTENT .page-content .row .nn-content ul li {
             padding: 0 0 0 52px;
             font-size: inherit;
             margin: 0;
             position: relative; }
-            body.theme-now-next #CONTENT .page-content .row .nn-content ul li.nn-no-indent {
+            body.nn-theme #CONTENT .page-content .row .nn-content ul li.nn-no-indent {
               padding: 0; }
-            body.theme-now-next #CONTENT .page-content .row .nn-content ul li .nn-indent {
+            body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-indent {
               padding-left: 52px; }
-            body.theme-now-next #CONTENT .page-content .row .nn-content ul li .nn-li-number {
+            body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-li-number {
               position: absolute;
               left: 0;
               top: 0; }
-            body.theme-now-next #CONTENT .page-content .row .nn-content ul li::before {
+            body.nn-theme #CONTENT .page-content .row .nn-content ul li::before {
               display: none; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content ul.nn-bullets li {
+          body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-bullets li {
             background-image: url(./../imgs/nn-circle.png);
             background-size: 5px;
             background-position: 0 15px;
             background-repeat: no-repeat; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content .nn-image {
+        body.nn-theme #CONTENT .page-content .row .nn-content .nn-image {
           width: 100%;
           margin: 0 0 52px 0; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content .nn-image img {
+          body.nn-theme #CONTENT .page-content .row .nn-content .nn-image img {
             width: 100%; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content .nn-image .nn-image-caption {
+          body.nn-theme #CONTENT .page-content .row .nn-content .nn-image .nn-image-caption {
             color: #808080;
             font-size: 16px !important;
             line-height: 21px !important; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer {
+        body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
           position: relative;
-          height: 300px; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
+          height: 350px; }
+          body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
             width: 100vw;
             height: 100%;
             padding-right: 0;
@@ -320,10 +336,10 @@ body.theme-now-next {
             top: 0;
             left: -233px;
             overflow: hidden; }
-            body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next, body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev {
+            body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next, body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev {
               width: 96px;
               display: block !important; }
-              body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span, body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span {
+              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span, body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span {
                 width: 32px;
                 height: 32px;
                 left: 32px;
@@ -331,30 +347,30 @@ body.theme-now-next {
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat; }
-                body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span::before, body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span::before {
+                body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span::before, body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span::before {
                   display: none; }
-                body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span.icon-arrow-left, body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span.icon-arrow-left {
+                body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span.icon-arrow-left, body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span.icon-arrow-left {
                   background-image: url(./../imgs/nn-arrow-left-white.png); }
-                body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span.icon-arrow-right, body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span.icon-arrow-right {
+                body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span.icon-arrow-right, body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span.icon-arrow-right {
                   background-image: url(./../imgs/nn-arrow-right-white.png); }
-            body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width {
+            body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width {
               height: 100%;
               padding: 0;
               margin: 0; }
-              body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .slick-list, body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .slick-track {
+              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .slick-list, body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .slick-track {
                 height: 100%; }
-              body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell {
+              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell {
                 margin: 0;
                 padding: 0;
                 border: none;
                 position: relative;
                 background-color: rgba(0, 0, 0, 0.25); }
-                body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell a {
+                body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell a {
                   display: table; }
-                body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell img {
+                body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell img {
                   margin: 0;
                   filter: grayscale(1); }
-                body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell .caption {
+                body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell .caption {
                   width: 100%;
                   height: 100%;
                   margin: 0;
@@ -363,7 +379,7 @@ body.theme-now-next {
                   left: 0;
                   border: 0;
                   box-shadow: inset 0 -130px 130px -70px #231f20; }
-                  body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell .caption p {
+                  body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell .caption p {
                     position: absolute;
                     left: 0;
                     bottom: 0;
@@ -371,50 +387,50 @@ body.theme-now-next {
                     margin: 0 5px 5px 5px;
                     color: white;
                     font-weight: bold; }
-                body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell:hover p {
+                body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell:hover p {
                   border: 0; }
-            body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient {
+            body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient {
               pointer-events: none;
               position: absolute;
               filter: none !important;
               display: none; }
-              body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.bottom {
+              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.bottom {
                 width: 100%;
                 height: 100%;
                 left: 0;
                 top: 0; }
-              body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.left {
+              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.left {
                 width: auto;
                 height: 100%;
                 left: 0;
                 top: 0;
                 transform: rotate(90deg);
                 z-index: 10; }
-              body.theme-now-next #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.right {
+              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.right {
                 width: auto;
                 height: 100%;
                 right: 0;
                 top: 0;
                 transform: rotate(-90deg);
                 z-index: 10; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content img.nn-signature {
+        body.nn-theme #CONTENT .page-content .row .nn-content img.nn-signature {
           width: 250px; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content .nn-preface-links {
+        body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links {
           clear: both;
           display: table;
           margin-bottom: 52px; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link {
+          body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link {
             float: left;
             margin-right: 52px; }
-            body.theme-now-next #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link a {
+            body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link a {
               border-bottom: 2px solid black; }
-        body.theme-now-next #CONTENT .page-content .row .nn-content ul.nn-footnotes {
+        body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes {
           padding-bottom: 52px; }
-          body.theme-now-next #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
+          body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
             font-size: 16px !important;
             line-height: 21px !important;
             padding-bottom: 16px; }
-  body.theme-now-next .now-next-text .now::after {
+  body.nn-theme .now-next-text .now::after {
     width: 1.25em;
     height: .7em;
     display: inline-block;
@@ -423,32 +439,32 @@ body.theme-now-next {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat; }
-  body.theme-now-next.spotlights #nn-toc ul li.nn-spotlights {
+  body.nn-theme.nn-sl-theme #nn-toc ul li.nn-spotlights {
     padding-top: 0 !important; }
-  body.theme-now-next.spotlights .nn-sl-link {
+  body.nn-theme.nn-sl-theme .nn-sl-link {
     margin: 0 32px 32px 0;
     background-color: #839cfc;
     color: #f2f5ff;
     display: flex;
     flex-direction: row; }
-    body.theme-now-next.spotlights .nn-sl-link .nn-sl-text {
+    body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
       width: calc(66.66667% - 48px);
       padding: 16px 16px 52px 32px;
       font-size: 22px;
       line-height: 29px; }
-      body.theme-now-next.spotlights .nn-sl-link .nn-sl-text .nn-sl-label {
+      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-label {
         margin: 0 0 16px 0; }
-      body.theme-now-next.spotlights .nn-sl-link .nn-sl-text .nn-sl-title {
+      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-title {
         text-transform: uppercase;
         font-family: "Franklin Gothic";
         font-size: 79px;
         line-height: 69px; }
-    body.theme-now-next.spotlights .nn-sl-link .nn-sl-image {
+    body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
       background-position: cover;
       background-position: center top;
       background-repeat: no-repeat;
       flex: 1; }
-  body.theme-now-next.spotlights .nn-sl-popup {
+  body.nn-theme.nn-sl-theme .nn-sl-popup {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -459,22 +475,22 @@ body.theme-now-next {
     -webkit-overflow-scrolling: touch;
     background-color: #839cfc;
     display: none; }
-    body.theme-now-next.spotlights .nn-sl-popup.show {
+    body.nn-theme.nn-sl-theme .nn-sl-popup.show {
       display: block; }
-    body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container {
+    body.nn-theme.nn-sl-theme .nn-sl-popup .nn-sl-container {
       display: table;
       padding: 66px 15px 132px 215px; }
-      body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content {
+      body.nn-theme.nn-sl-theme .nn-sl-popup .nn-sl-container .nn-content {
         color: #f2f5ff !important; }
-        body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content h1 {
+        body.nn-theme.nn-sl-theme .nn-sl-popup .nn-sl-container .nn-content h1 {
           text-transform: uppercase;
           font-family: "Franklin Gothic";
           font-size: 79px;
           line-height: 69px;
           margin: 0 0 132px 0; }
-        body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content .nn-image .nn-image-caption {
+        body.nn-theme.nn-sl-theme .nn-sl-popup .nn-sl-container .nn-content .nn-image .nn-image-caption {
           color: #f2f5ff !important; }
-    body.theme-now-next.spotlights .nn-sl-popup .nn-sl-close {
+    body.nn-theme.nn-sl-theme .nn-sl-popup .nn-sl-close {
       width: 32px;
       height: 32px;
       position: fixed;
@@ -485,5 +501,5 @@ body.theme-now-next {
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain; }
-  body.theme-now-next.spotlights.nn-sl-popup-open {
+  body.nn-theme.nn-sl-theme.nn-sl-popup-open {
     overflow: hidden; }

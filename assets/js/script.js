@@ -3,7 +3,7 @@ var $;
 $ = jQuery;
 
 $(function() {
-  var $header, $toc, chapterPadding;
+  var $header, $linkedChapter, $toc, chapterPadding, hash, top;
   $header = $('header#HEADER');
   $toc = $('#nn-toc');
   chapterPadding = 32;
@@ -85,7 +85,20 @@ $(function() {
     } else {
       return history.replaceState(void 0, void 0, '#');
     }
-  }).scroll();
+  });
+  if (location.hash && location.hash.length) {
+    hash = location.hash;
+    if ($linkedChapter = $('.nn-chapter' + hash)) {
+      top = $linkedChapter.offset().top - chapterPadding + 5;
+      setTimeout(function() {
+        return $('html, body').animate({
+          scrollTop: top
+        }, 500);
+      }, 100);
+    }
+  } else {
+    $(window).scroll();
+  }
   return $(window).on('resize', function() {
     var $inside, $opened_wrapper, insideHeight;
     $('.nn-carousel').each(function(i, carousel) {

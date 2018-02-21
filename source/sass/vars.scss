@@ -39,4 +39,15 @@ $display: 'Franklin Gothic';
   font-style: normal;
 }
 
+@font-face {
+	font-family: 'Bklyn';
+	src: url('https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.eot?kl8lamlza');
+	src: url('https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.eot?kl8lamlza#iefix') format('embedded-opentype'),
+		 url('https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.ttf?kl8lamlza') format('truetype'),
+		 url('https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.woff?kl8lamlza') format('woff'),
+		 url('https://www.bklynlibrary.org/sites/all/themes/bklyn/icons/fonts/Bklyn.svg?kl8lamlza#Bklyn') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	}
+
 $ease: cubic-bezier(0.19, 1, 0.22, 1);

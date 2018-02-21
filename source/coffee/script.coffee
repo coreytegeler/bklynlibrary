@@ -72,7 +72,18 @@ $ ->
 				$currentLink.addClass('current')
 		else
 			history.replaceState(undefined, undefined, '#')
-	.scroll()
+
+	if location.hash && location.hash.length
+		hash = location.hash
+		if $linkedChapter = $('.nn-chapter'+hash)
+			top = $linkedChapter.offset().top - chapterPadding + 5
+			setTimeout () ->
+				$('html, body').animate
+					scrollTop: top
+				, 500
+			, 100
+	else
+		$(window).scroll()
 
 
 	$(window).on 'resize', () ->

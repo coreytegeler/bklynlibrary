@@ -3,7 +3,7 @@
 
 
 //CLASS NEEDS TO BE ADDED TO ALL PAGES OF THIS TYPE
-body.theme-now-next {
+body.nn-theme {
 	color: $black;
 	font-family: $sansSerif;
 	@include mediumText;
@@ -17,9 +17,8 @@ body.theme-now-next {
 			z-index: 100;
 			background: $lightBlue;
 		}
-		// search, login, other utilities
-		.block {
-			display: none;
+		.bkgd-primary {
+			background-color: transparent;
 		}
 		// background image of header
 		#HEADER-IMAGE {
@@ -30,6 +29,13 @@ body.theme-now-next {
 			img {
 				width: 100%;
 				height: auto;
+			}
+			#nn-subheader {
+				position: absolute;
+				left: 230px;
+				bottom: $width1;
+				font-size: 32px;
+				font-weight: bolder;
 			}
 		}
 		#HEADER-TITLE {
@@ -51,10 +57,9 @@ body.theme-now-next {
 			}
 		}
 	}
-	nav.main {
-		ul.nav-main.menu-main {
-			display: none;
-		}
+	.nav-main li.scrolled a {
+		opacity: 0;
+		pointer-events: none;
 	}
 	#bodynav {
 		pointer-events: none;
@@ -165,14 +170,19 @@ body.theme-now-next {
 							}
 							&.nn-spotlights {
 								color: $lightBlue;
-								padding-top: $width3;
+								padding-top: $width1;
 								a {
 									color: $lightBlue;
 									h1 {
-										display: block;
+										display: none;
 										clear: both;
-										padding: 32px 0 0 0;
+										padding: 16px 0 0 0;
 										@include displayText;
+									}
+									&:hover {
+										h1 {
+											display: block;
+										}
 									}
 								}
 							}
@@ -258,7 +268,7 @@ body.theme-now-next {
 						}
 					}
 				}
-				.nn-chapter {
+				.nn-chapter:not(#how) {
 					margin-bottom: 300px;
 				}
 				.nn-content {
@@ -274,7 +284,7 @@ body.theme-now-next {
 						padding: 1em 0;
 					}
 					p {
-						margin: 0 0 $width3 0;
+						margin: 0 0 $width2 0;
 					}
 					strong {
 						font-weight: bold;
@@ -338,7 +348,7 @@ body.theme-now-next {
 					}
 					.nn-carousel-placer {
 						position: relative;
-						height: 300px;
+						height: 350px;
 						.carousel-wrapper {
 							width: 100vw;
 							height: 100%;
@@ -473,8 +483,6 @@ body.theme-now-next {
 			}
 		}
 	}
-	// side navigation and logo
-
 	.now-next-text {
 		.now::after {
 			width: 1.25em;
@@ -487,7 +495,7 @@ body.theme-now-next {
 			background-repeat: no-repeat;
 		}
 	}
-	&.spotlights {
+	&.nn-sl-theme {
 		//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGES
 		#nn-toc ul li.nn-spotlights {
 			padding-top: 0 !important;
