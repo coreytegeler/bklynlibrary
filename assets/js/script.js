@@ -34,7 +34,7 @@ $(function() {
       return;
     }
     event.preventDefault();
-    top = target.offset().top - chapterPadding;
+    top = target.offset().top - chapterPadding + 5;
     return $('html, body').animate({
       scrollTop: top
     }, 500);

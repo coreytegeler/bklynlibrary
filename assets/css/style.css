@@ -236,8 +236,8 @@ body.theme-now-next {
           transform: translateY(-2em);
           pointer-events: none;
           overflow: hidden; }
-          body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside .nn-inside-content {
-            padding-bottom: 32px; }
+          body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside .nn-hidden-content {
+            padding-top: 32px; }
           body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside a {
             border: none; }
         body.theme-now-next #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-opened .nn-toggle-title::after {
@@ -423,30 +423,32 @@ body.theme-now-next {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat; }
-  body.theme-now-next .nn-sl-link {
-    margin: 0 32px 52px 0;
+  body.theme-now-next.spotlights #nn-toc ul li.nn-spotlights {
+    padding-top: 0 !important; }
+  body.theme-now-next.spotlights .nn-sl-link {
+    margin: 0 32px 32px 0;
     background-color: #839cfc;
     color: #f2f5ff;
     display: flex;
     flex-direction: row; }
-    body.theme-now-next .nn-sl-link .nn-sl-text {
+    body.theme-now-next.spotlights .nn-sl-link .nn-sl-text {
       width: calc(66.66667% - 48px);
       padding: 16px 16px 52px 32px;
       font-size: 22px;
       line-height: 29px; }
-      body.theme-now-next .nn-sl-link .nn-sl-text .nn-sl-label {
+      body.theme-now-next.spotlights .nn-sl-link .nn-sl-text .nn-sl-label {
         margin: 0 0 16px 0; }
-      body.theme-now-next .nn-sl-link .nn-sl-text .nn-sl-title {
+      body.theme-now-next.spotlights .nn-sl-link .nn-sl-text .nn-sl-title {
         text-transform: uppercase;
         font-family: "Franklin Gothic";
         font-size: 79px;
         line-height: 69px; }
-    body.theme-now-next .nn-sl-link .nn-sl-image {
+    body.theme-now-next.spotlights .nn-sl-link .nn-sl-image {
       background-position: cover;
       background-position: center top;
       background-repeat: no-repeat;
       flex: 1; }
-  body.theme-now-next .nn-sl-popup {
+  body.theme-now-next.spotlights .nn-sl-popup {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -457,22 +459,22 @@ body.theme-now-next {
     -webkit-overflow-scrolling: touch;
     background-color: #839cfc;
     display: none; }
-    body.theme-now-next .nn-sl-popup.show {
+    body.theme-now-next.spotlights .nn-sl-popup.show {
       display: block; }
-    body.theme-now-next .nn-sl-popup .nn-sl-container {
+    body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container {
       display: table;
-      padding: 66px 15px 132px 215px; }
-      body.theme-now-next .nn-sl-popup .nn-sl-container .nn-content {
+      padding: 66px 15px 1 32px 215px; }
+      body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content {
         color: #f2f5ff !important; }
-        body.theme-now-next .nn-sl-popup .nn-sl-container .nn-content h1 {
+        body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content h1 {
           text-transform: uppercase;
           font-family: "Franklin Gothic";
           font-size: 79px;
           line-height: 69px;
-          margin: 0 0 132px 0; }
-        body.theme-now-next .nn-sl-popup .nn-sl-container .nn-content .nn-image .nn-image-caption {
+          margin: 0 0 1 32px 0; }
+        body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content .nn-image .nn-image-caption {
           color: #f2f5ff !important; }
-    body.theme-now-next .nn-sl-popup .nn-sl-close {
+    body.theme-now-next.spotlights .nn-sl-popup .nn-sl-close {
       width: 32px;
       height: 32px;
       position: fixed;
@@ -483,5 +485,5 @@ body.theme-now-next {
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain; }
-  body.theme-now-next.nn-sl-popup-open {
+  body.theme-now-next.spotlights.nn-sl-popup-open {
     overflow: hidden; }

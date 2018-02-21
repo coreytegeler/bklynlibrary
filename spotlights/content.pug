@@ -12,33 +12,33 @@ section#CONTENT.main.scroller
 								span.now NOW
 								span.next NEXT
 						li.intro
-							a(href='./chapters#intro') Intro
+							a(href='./../chapters#intro') Intro
 						li.now
-							a(href='./chapters#now') Core Principles
+							a(href='./../chapters#now') Core Principles
 						li.next
-							a(href='./chapters#next') Focus Areas
+							a(href='./../chapters#next') Focus Areas
 						li.how
-							a(href='./chapters#how') How We Got Here
+							a(href='./../chapters#how') How We Got Here
 
 				.span-4
 					- var spotlights = []
-					- spotlights.push({title: 'From Inclusion to Empowerment', desc:'Some librarians have found ways to emphasize BPL’s core values of inclusion and diversity'})
-					- spotlights.push({title: 'A Platform For Partnerships'})
-					- spotlights.push({title: 'A Personal Guide in the Virtual World'})
-					- spotlights.push({title: 'Expanding the Library’s Reach'})
-					each spotlight, index in spotlights
+					- spotlights.push({title: 'Nullam eget tortor vel ipsum', desc: 'Proin nunc ante, condimentum vel nunc ac, vulputate hendrerit quam.', index: 1})
+					- spotlights.push({title: 'Maecenas imperdiet mauris', desc: 'Praesent fringilla, sem accumsan volutpat efficitur, odio augue egestas massa.', index: 2})
+					- spotlights.push({title: 'Aliquam id elementum turpis', desc: 'Curabitur urna est, fringilla eget congue ut, venenatis et elit.', index: 3})
+					- spotlights.push({title: 'Venenatis erat metus', desc: 'Aenean sit amet diam magna. Duis ut justo eget odio mattis ultricies.', index: 4})
+					each spotlight in spotlights
 						a.nn-sl-link(href='#' data-spotlight=index)
 							.nn-sl-text
 								.nn-sl-label Spotlight
 								.nn-sl-title= spotlight.title
 								.nn-sl-desc= spotlight.desc
-							.nn-sl-image(style='background-image:url(/assets/imgs/spotlights'+index+'.jpg)')
-						.nn-sl-popup(data-spotlight=index)
+							.nn-sl-image(style='background-image:url(./../assets/imgs/spotlights'+spotlight.index+'.jpg)')
+						.nn-sl-popup(data-spotlight=spotlight.index)
 							.nn-sl-close
 							.nn-sl-container
 								.span-4
 									.nn-content
-										case index
+										case spotlight.index
 											when 0
 												include popup-1
 											when 1

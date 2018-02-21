@@ -28,7 +28,7 @@ $ ->
 		if !target.length
 			return
 		event.preventDefault()
-		top = target.offset().top - chapterPadding
+		top = target.offset().top - chapterPadding + 5
 		$('html, body').animate
 			scrollTop: top
 		, 500

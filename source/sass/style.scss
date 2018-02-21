@@ -171,7 +171,7 @@ body.theme-now-next {
 									h1 {
 										display: block;
 										clear: both;
-										padding: 32px 0 0 0;
+										padding: $width2 0 0 0;
 										@include displayText;
 									}
 								}
@@ -237,8 +237,8 @@ body.theme-now-next {
 							transform: translateY(-2em);
 							pointer-events: none;
 							overflow: hidden;
-							.nn-inside-content {
-								padding-bottom: 32px;
+							.nn-hidden-content {
+								padding-top: $width2;
 							}
 							a {
 								border: none;
@@ -282,7 +282,7 @@ body.theme-now-next {
 					blockquote {
 						width: 50%;
 						@include displayText;
-						padding: 16px 32px 32px 0;
+						padding: 16px $width2 $width2 0;
 						float: left;
 					}
 					//Inline superscript link to citation footnote
@@ -487,83 +487,87 @@ body.theme-now-next {
 			background-repeat: no-repeat;
 		}
 	}
+	&.spotlights {
+		//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGES
+		#nn-toc ul li.nn-spotlights {
+			padding-top: 0 !important;
+		}
+		.nn-sl-link {
+			margin: 0 $width2 $width2 0;
+			background-color: $lightBlue;
+			color: $lighterBlue;
+			display: flex;
+			flex-direction: row;
+			.nn-sl-text {
+				width: calc(#{100%*(2/3)} - #{$width1 + $width2});
+				padding: $width1 $width1 $width3 $width2;
+				font-size: 22px;
+		    line-height: 29px;
+				.nn-sl-label {
+					margin: 0 0 $width1 0;
+				}
+				.nn-sl-title {
+					@include displayText;
+				}
+				.nn-sl-desc {
+					
+				}
+			}
+			.nn-sl-image {
+				background-position: cover;
+				background-position: center top;
+				background-repeat: no-repeat;
+				flex: 1;
+				.nn-sl-img {
 
-	//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGES
-	.nn-sl-link {
-		margin: 0 $width2 $width3 0;
-		background-color: $lightBlue;
-		color: $lighterBlue;
-		display: flex;
-		flex-direction: row;
-		.nn-sl-text {
-			width: calc(#{100%*(2/3)} - #{$width1 + $width2});
-			padding: $width1 $width1 $width3 $width2;
-			font-size: 22px;
-	    line-height: 29px;
-			.nn-sl-label {
-				margin: 0 0 $width1 0;
-			}
-			.nn-sl-title {
-				@include displayText;
-			}
-			.nn-sl-desc {
-				
+				}
 			}
 		}
-		.nn-sl-image {
-			background-position: cover;
-			background-position: center top;
-			background-repeat: no-repeat;
-			flex: 1;
-			.nn-sl-img {
-
-			}
-		}
-	}
-	.nn-sl-popup {
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		left: 0;
-		top: 0;
-		z-index: 900;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
-		background-color: $lightBlue;
-		display: none;
-		&.show {
-			display: block;
-		}
-		.nn-sl-container {
-			display: table;
-			padding: 66px 15px 132px 215px;
-			.nn-content {
-				color: $lighterBlue !important;
-				h1 {
-		    	@include displayText;
-		    	margin: 0 0 132px 0;
-		    }
-		    .nn-image {
-		    	.nn-image-caption {
-		    		color: $lighterBlue !important;
-		    	}
-		    }
-			}
-		}
-		.nn-sl-close {
-			width: 32px;
-			height: 32px;
+		.nn-sl-popup {
+			width: 100%;
+			height: 100%;
 			position: fixed;
-			right: 32px;
-			top: 32px;
-			cursor: pointer;
-			background-image: url(/imgs/nn-close.png);
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: contain;			
+			left: 0;
+			top: 0;
+			z-index: 900;
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+			background-color: $lightBlue;
+			display: none;
+			&.show {
+				display: block;
+			}
+			.nn-sl-container {
+				display: table;
+				padding: 66px 15px 1$width2 215px;
+				.nn-content {
+					color: $lighterBlue !important;
+					h1 {
+			    	@include displayText;
+			    	margin: 0 0 1$width2 0;
+			    }
+			    .nn-image {
+			    	.nn-image-caption {
+			    		color: $lighterBlue !important;
+			    	}
+			    }
+				}
+			}
+			.nn-sl-close {
+				width: $width2;
+				height: $width2;
+				position: fixed;
+				right: $width2;
+				top: $width2;
+				cursor: pointer;
+				background-image: url(/imgs/nn-close.png);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;			
+			}
 		}
-	}
-	&.nn-sl-popup-open {
-		overflow: hidden;
+		&.nn-sl-popup-open {
+			overflow: hidden;
+		}
 	}
 }
