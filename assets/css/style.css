@@ -463,7 +463,7 @@ body.theme-now-next {
       display: block; }
     body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container {
       display: table;
-      padding: 66px 15px 1 32px 215px; }
+      padding: 66px 15px 132px 215px; }
       body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content {
         color: #f2f5ff !important; }
         body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content h1 {
@@ -471,7 +471,7 @@ body.theme-now-next {
           font-family: "Franklin Gothic";
           font-size: 79px;
           line-height: 69px;
-          margin: 0 0 1 32px 0; }
+          margin: 0 0 132px 0; }
         body.theme-now-next.spotlights .nn-sl-popup .nn-sl-container .nn-content .nn-image .nn-image-caption {
           color: #f2f5ff !important; }
     body.theme-now-next.spotlights .nn-sl-popup .nn-sl-close {

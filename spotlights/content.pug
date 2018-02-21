@@ -27,7 +27,7 @@ section#CONTENT.main.scroller
 					- spotlights.push({title: 'Aliquam id elementum turpis', desc: 'Curabitur urna est, fringilla eget congue ut, venenatis et elit.', index: 3})
 					- spotlights.push({title: 'Venenatis erat metus', desc: 'Aenean sit amet diam magna. Duis ut justo eget odio mattis ultricies.', index: 4})
 					each spotlight in spotlights
-						a.nn-sl-link(href='#' data-spotlight=index)
+						a.nn-sl-link(href='#' data-spotlight=spotlight.index)
 							.nn-sl-text
 								.nn-sl-label Spotlight
 								.nn-sl-title= spotlight.title

@@ -171,7 +171,7 @@ body.theme-now-next {
 									h1 {
 										display: block;
 										clear: both;
-										padding: $width2 0 0 0;
+										padding: 32px 0 0 0;
 										@include displayText;
 									}
 								}
@@ -238,7 +238,7 @@ body.theme-now-next {
 							pointer-events: none;
 							overflow: hidden;
 							.nn-hidden-content {
-								padding-top: $width2;
+								padding-top: 32px;
 							}
 							a {
 								border: none;
@@ -282,7 +282,7 @@ body.theme-now-next {
 					blockquote {
 						width: 50%;
 						@include displayText;
-						padding: 16px $width2 $width2 0;
+						padding: 16px 32px 32px 0;
 						float: left;
 					}
 					//Inline superscript link to citation footnote
@@ -539,12 +539,12 @@ body.theme-now-next {
 			}
 			.nn-sl-container {
 				display: table;
-				padding: 66px 15px 1$width2 215px;
+				padding: 66px 15px 132px 215px;
 				.nn-content {
 					color: $lighterBlue !important;
 					h1 {
 			    	@include displayText;
-			    	margin: 0 0 1$width2 0;
+			    	margin: 0 0 132px 0;
 			    }
 			    .nn-image {
 			    	.nn-image-caption {
@@ -554,11 +554,11 @@ body.theme-now-next {
 				}
 			}
 			.nn-sl-close {
-				width: $width2;
-				height: $width2;
+				width: 32px;
+				height: 32px;
 				position: fixed;
-				right: $width2;
-				top: $width2;
+				right: 32px;
+				top: 32px;
 				cursor: pointer;
 				background-image: url(/imgs/nn-close.png);
 				background-repeat: no-repeat;
