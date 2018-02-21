@@ -66,7 +66,7 @@ table {
   font-style: normal; }
 
 body.nn-theme {
-  color: #231f20;
+  color: #000000;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 22px;
   line-height: 35px; }
@@ -120,14 +120,14 @@ body.nn-theme {
       font-size: 4em;
       font-family: "Franklin Gothic";
       text-transform: uppercase;
-      color: #231f20;
+      color: #000000;
       margin: 0;
       padding: 0; }
     body.nn-theme #CONTENT .container h2.nn-sub-title {
       font-size: 1.5em;
       font-family: "Franklin Gothic";
       text-transform: uppercase;
-      color: #231f20;
+      color: #000000;
       margin: 0;
       padding: 0; }
     body.nn-theme #CONTENT .page-content .row {
@@ -140,7 +140,7 @@ body.nn-theme {
           width: 100%;
           height: auto;
           display: table;
-          fill: #231f20; }
+          fill: #000000; }
       body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav {
         width: 100%;
         font-size: 1em; }
@@ -188,7 +188,7 @@ body.nn-theme {
               transition: none;
               pointer-events: all; }
             body.nn-theme #CONTENT .page-content .row #nn-toc ul li.current a {
-              border-bottom-color: #231f20; }
+              border-bottom-color: #000000; }
             body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights {
               color: #839cfc;
               padding-top: 16px; }
@@ -378,7 +378,7 @@ body.nn-theme {
                   top: 0;
                   left: 0;
                   border: 0;
-                  box-shadow: inset 0 -130px 130px -70px #231f20; }
+                  box-shadow: inset 0 -130px 130px -70px black; }
                   body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell .caption p {
                     position: absolute;
                     left: 0;
