@@ -6,7 +6,8 @@ section#CONTENT.main.scroller
 				#nn-toc.span-2
 					ul.nn-inline-nav
 						li.nn-spotlights
-							a(href='#') Spotlights
+							a(href='#spotlights')
+								span Spotlights
 						li.preface.nn-title
 							a.now-next-text(href='./../#preface')
 								span.now NOW
@@ -21,30 +22,32 @@ section#CONTENT.main.scroller
 							a(href='./../report#how') How We Got Here
 
 				.span-4
-					- var spotlights = []
-					- spotlights.push({title: 'Nullam eget tortor vel ipsum', desc: 'Proin nunc ante, condimentum vel nunc ac, vulputate hendrerit quam.', index: 1})
-					- spotlights.push({title: 'Maecenas imperdiet mauris', desc: 'Praesent fringilla, sem accumsan volutpat efficitur, odio augue egestas massa.', index: 2})
-					- spotlights.push({title: 'Aliquam id elementum turpis', desc: 'Curabitur urna est, fringilla eget congue ut, venenatis et elit.', index: 3})
-					- spotlights.push({title: 'Venenatis erat metus', desc: 'Aenean sit amet diam magna. Duis ut justo eget odio mattis ultricies.', index: 4})
-					each spotlight in spotlights
-						a.nn-sl-link(href='#' data-spotlight=spotlight.index)
-							.nn-sl-text
-								.nn-sl-label Spotlight
-								.nn-sl-title= spotlight.title
-								.nn-sl-desc= spotlight.desc
-							.nn-sl-image(style='background-image:url(./../assets/imgs/spotlights'+spotlight.index+'.jpg)')
-						.nn-sl-popup(data-spotlight=spotlight.index)
-							.nn-sl-close
-							.nn-sl-container
-								.span-4
-									.nn-content
-										case spotlight.index
-											when 0
-												include popup-1
-											when 1
-												include popup-2
-											when 2
-												include popup-3
-											when 3
-												include popup-4
-									
+					.nn-chapter#spotlights
+						.nn-content
+							- var spotlights = []
+							- spotlights.push({title: 'Nullam eget tortor vel ipsum', desc: 'Proin nunc ante, condimentum vel nunc ac, vulputate hendrerit quam.', index: 1})
+							- spotlights.push({title: 'Maecenas imperdiet mauris', desc: 'Praesent fringilla, sem accumsan volutpat efficitur, odio augue egestas massa.', index: 2})
+							- spotlights.push({title: 'Aliquam id elementum turpis', desc: 'Curabitur urna est, fringilla eget congue ut, venenatis et elit.', index: 3})
+							- spotlights.push({title: 'Venenatis erat metus', desc: 'Aenean sit amet diam magna. Duis ut justo eget odio mattis ultricies.', index: 4})
+							each spotlight in spotlights
+								a.nn-sl-link(href='#' data-spotlight=spotlight.index)
+									.nn-sl-text
+										.nn-sl-label Spotlight
+										.nn-sl-title= spotlight.title
+										.nn-sl-desc= spotlight.desc
+									.nn-sl-image(style='background-image:url(./../assets/imgs/spotlights/image'+spotlight.index+'.jpg)')
+								.nn-sl-modal(data-spotlight=spotlight.index)
+									.nn-sl-close
+									.nn-sl-container
+										.span-4
+											.nn-content
+												case spotlight.index
+													when 0
+														include modal-1
+													when 1
+														include modal-2
+													when 2
+														include modal-3
+													when 3
+														include modal-4
+											

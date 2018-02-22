@@ -22,6 +22,8 @@ $ ->
 			height: newHeight
 		$wrapper.toggleClass('nn-opened')
 
+
+	#animate scroll to "chapter" if exists on current page
 	$('#nn-toc a').on 'click', (e) ->
 		hash = this.hash.slice(1)
 		target = $('.nn-chapter#'+hash)
@@ -33,17 +35,19 @@ $ ->
 			scrollTop: top
 		, 500
 
+	#opens spotlight modal
 	$('a.nn-sl-link').on 'click', (e) ->
 		e.preventDefault()
 		sid = $(this).attr('data-spotlight')
-		$popup = $('.nn-sl-popup[data-spotlight="'+sid+'"]')
-		$('body').addClass('nn-sl-popup-open')
-		$popup.addClass('show')
+		$modal = $('.nn-sl-modal[data-spotlight="'+sid+'"]')
+		$('body').addClass('nn-sl-modal-open')
+		$modal.addClass('show')
 
-	$('.nn-sl-popup .nn-sl-close').on 'click', (e) ->
-		$popup = $(this).parents('.nn-sl-popup')
-		$('body').removeClass('nn-sl-popup-open')
-		$popup.removeClass('show')
+	#closes spotlight modal
+	$('.nn-sl-modal .nn-sl-close').on 'click', (e) ->
+		$modal = $(this).parents('.nn-sl-modal')
+		$('body').removeClass('nn-sl-modal-open')
+		$modal.removeClass('show')
 
 	
 	$(window).on 'scroll', () ->
