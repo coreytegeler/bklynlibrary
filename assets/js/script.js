@@ -26,18 +26,27 @@ $(function() {
     });
     return $wrapper.toggleClass('nn-opened');
   });
-  $('#nn-toc a').on('click', function(e) {
-    var hash, target, top;
-    hash = this.hash.slice(1);
-    target = $('.nn-chapter#' + hash);
+  $('#nn-toc a, .nn-cite').on('click', function(e) {
+    var $toggle, $wrapper, hash, target, top;
+    hash = this.hash;
+    target = $(hash);
     if (!target.length) {
       return;
     }
     event.preventDefault();
+    if ($wrapper = target.parents('.nn-content-wrapper:not(.nn-opened)')) {
+      $toggle = $wrapper.find('.nn-toggle-title');
+      $wrapper.addClass('nn-static');
+      $toggle.click();
+    }
     top = target.offset().top - chapterPadding + 5;
     return $('html, body').animate({
       scrollTop: top
-    }, 500);
+    }, 500, function() {
+      if ($wrapper.length) {
+        return $wrapper.removeClass('nn-static');
+      }
+    });
   });
   $('a.nn-sl-link').on('click', function(e) {
     var $modal, sid;

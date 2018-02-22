@@ -274,7 +274,9 @@ body.nn-theme {
           transition: height 250ms cubic-bezier(0.19, 1, 0.22, 1), transform 250ms 100ms cubic-bezier(0.19, 1, 0.22, 1), opacity 250ms 150ms cubic-bezier(0.19, 1, 0.22, 1);
           transform: translateY(0);
           pointer-events: all; }
-      body.nn-theme #CONTENT .page-content .row .nn-chapter:not(#how) {
+        body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-static .nn-inside {
+          transition: none !important; }
+      body.nn-theme #CONTENT .page-content .row .nn-chapter {
         margin-bottom: 300px; }
       body.nn-theme #CONTENT .page-content .row .nn-content {
         margin-right: 32px;
@@ -434,12 +436,10 @@ body.nn-theme {
             margin-right: 52px; }
             body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link a {
               border-bottom: 2px solid black; }
-        body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes {
-          padding-bottom: 52px; }
-          body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
-            font-size: 16px !important;
-            line-height: 21px !important;
-            padding-bottom: 16px; }
+        body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
+          font-size: 16px !important;
+          line-height: 21px !important;
+          padding-bottom: 16px; }
   body.nn-theme .now-next-text .now::after {
     width: 1.25em;
     height: .7em;

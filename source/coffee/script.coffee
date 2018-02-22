@@ -24,16 +24,23 @@ $ ->
 
 
 	#animate scroll to "chapter" if exists on current page
-	$('#nn-toc a').on 'click', (e) ->
-		hash = this.hash.slice(1)
-		target = $('.nn-chapter#'+hash)
+	$('#nn-toc a, .nn-cite').on 'click', (e) ->
+		hash = this.hash
+		target = $(hash)
 		if !target.length
 			return
 		event.preventDefault()
+		#if citation is in accordion, open w/o aniamtion
+		if $wrapper = target.parents('.nn-content-wrapper:not(.nn-opened)')
+			$toggle = $wrapper.find('.nn-toggle-title')
+			$wrapper.addClass('nn-static')
+			$toggle.click()
 		top = target.offset().top - chapterPadding + 5
 		$('html, body').animate
 			scrollTop: top
-		, 500
+		, 500, () ->
+			if $wrapper.length
+				$wrapper.removeClass('nn-static')
 
 	#opens spotlight modal
 	$('a.nn-sl-link').on 'click', (e) ->

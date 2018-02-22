@@ -279,9 +279,14 @@ body.nn-theme {
 								pointer-events: all;
 							}
 						}
+						&.nn-static {
+							.nn-inside {
+								transition: none !important;
+							}
+						}
 					}
 				}
-				.nn-chapter:not(#how) {
+				.nn-chapter {
 					margin-bottom: 300px;
 				}
 				.nn-content {
@@ -486,7 +491,6 @@ body.nn-theme {
 					}
 
 					ul.nn-footnotes {
-						padding-bottom: $width3;
 						li {
 							@include smallText;
 							padding-bottom: $width1;
