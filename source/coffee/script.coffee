@@ -66,12 +66,15 @@ $ ->
 			$toc.removeClass('nn-fixed')
 
 		passedChapters = []
+		nextChapters = []
 		$('.nn-chapter').each (i, chapter) ->
 			chapterTop = $(chapter).offset().top
 			chapterDistance = chapterTop - chapterPadding - scrolled
-			# if $(chapter).attr('id') == 'intro'
 			if chapterDistance <= 0
 				passedChapters.push(chapter)
+			if chapterDistance <= $(window).innerWidth()/2
+				nextChapters.push(chapter)
+
 		if passedChapters.length
 			$currentChapter = $(passedChapters[passedChapters.length-1])
 			thisId = $currentChapter.attr('id')
@@ -83,6 +86,11 @@ $ ->
 				$currentLink.addClass('current')
 		else
 			history.replaceState(undefined, undefined, '#')
+
+		# if nextChapters.length
+		# 	console.log nextChapters
+
+
 
 	if location.hash && location.hash.length
 		hash = location.hash

@@ -138,7 +138,7 @@ $(function () {
     return $modal.removeClass('show');
   });
   $(window).on('scroll', function () {
-    var $currentChapter, $currentLink, headerBottom, passedChapters, scrolled, thisId;
+    var $currentChapter, $currentLink, headerBottom, nextChapters, passedChapters, scrolled, thisId;
     headerBottom = $header.offset().top + $header.innerHeight();
     scrolled = $(window).scrollTop();
     if (scrolled >= headerBottom) {
@@ -147,12 +147,16 @@ $(function () {
       $toc.removeClass('nn-fixed');
     }
     passedChapters = [];
+    nextChapters = [];
     $('.nn-chapter').each(function (i, chapter) {
       var chapterDistance, chapterTop;
       chapterTop = $(chapter).offset().top;
       chapterDistance = chapterTop - chapterPadding - scrolled;
       if (chapterDistance <= 0) {
-        return passedChapters.push(chapter);
+        passedChapters.push(chapter);
+      }
+      if (chapterDistance <= $(window).innerWidth() / 2) {
+        return nextChapters.push(chapter);
       }
     });
     if (passedChapters.length) {
