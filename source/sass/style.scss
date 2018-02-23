@@ -1,13 +1,11 @@
 @import 'reset';
 @import 'vars';
 
-
-//CLASS NEEDS TO BE ADDED TO ALL PAGES OF THIS TYPE
+//CLASS NEEDS TO BE ADDED TO ALL PAGES OF STRATEGIC PLAN
 body.nn-theme {
 	color: $black;
 	font-family: $sansSerif;
 	@include mediumText;
-	// top header section
 	header {
 		&#HEADER {
 			width: 100%;
@@ -15,20 +13,22 @@ body.nn-theme {
 			top: 0;
 			left: 0;
 			z-index: 100;
-			background: $lightBlue;
+			// background: $lightBlue;
+			background-color: #7396f7;
 		}
 		.bkgd-primary {
 			background-color: transparent;
 		}
-		// background image of header
 		#HEADER-IMAGE {
 			background: $lightBlue;
 			min-height: auto;
-			padding-bottom: 0; //slightly shorter than 105px tall logo
+			padding-bottom: 0;
 			display: table;
 			img {
 				width: 100%;
 				height: auto;
+				display: table;
+				margin: auto;
 			}
 			#nn-subheader {
 				position: absolute;
@@ -61,12 +61,6 @@ body.nn-theme {
 		opacity: 0;
 		pointer-events: none;
 	}
-	// #bodynav {
-	// 	pointer-events: none;
-	// 	a {
-	// 		pointer-events: none;
-	// 	}
-	// }
 	#CONTENT {
 		padding-top: $width2;
 		.container {
@@ -89,12 +83,9 @@ body.nn-theme {
 				margin: 0;
 				padding: 0;
 			}
-			// sub navigation
 		}
 		.page-content {
-			// main page content
 			.row {
-				// now->next svg
 				position: relative;
 				.nn-large-title {
 					width: 100%;
@@ -140,6 +131,7 @@ body.nn-theme {
 						}
 					}
 				}
+				// RIGHT SIDE NAVIGATION (TABLE OF CONTENTS)
 				#nn-toc {
 					position: absolute;
 					right: 0;
@@ -163,14 +155,8 @@ body.nn-theme {
 								transition: none;
 								pointer-events: all;
 							}
-							&.current {
-								a {
-									border-bottom-color: $black;
-								}
-							}
 							&.nn-spotlights {
 								color: $lightBlue;
-								padding-top: $width1;
 								a {
 									color: $lightBlue;
 									h1 {
@@ -211,6 +197,7 @@ body.nn-theme {
 						}
 					}
 				}
+				// INLINE ACCORDION
 				.nn-accordion {
 					.nn-toggle-title {
 						position: relative;
@@ -364,6 +351,7 @@ body.nn-theme {
 							@include smallText;
 						}
 					}
+					// CUSTOMIZED SLICK.JS IMAGE SLIDER
 					.nn-carousel-placer {
 						position: relative;
 						height: 350px;
@@ -443,40 +431,11 @@ body.nn-theme {
 									}
 								}
 							}
-							img.gradient {
-								pointer-events: none;
-								position: absolute;
-								filter: none !important;
-								display: none;
-								&.bottom {
-									width: 100%;
-									height: 100%;
-									left: 0;
-									top: 0;
-								}
-								&.left {
-									width: auto;
-									height: 100%;
-									left: 0;
-									top: 0;
-									transform: rotate(90deg);
-									z-index: 10;
-								}
-								&.right {
-									width: auto;
-									height: 100%;
-									right: 0;
-									top: 0;
-									transform: rotate(-90deg);
-									z-index: 10;
-								}
-							}
 						}
 					}
 					img.nn-signature {
 						width: 250px;
 					}
-
 					.nn-preface-links {
 						clear: both;
 						display: table;
@@ -489,7 +448,6 @@ body.nn-theme {
 							}
 						}
 					}
-
 					ul.nn-footnotes {
 						li {
 							@include smallText;
@@ -512,14 +470,20 @@ body.nn-theme {
 			background-repeat: no-repeat;
 		}
 	}
+	&.nn-preface-theme {
+		//CLASS NEEDS TO BE ADDED TO PREFACE
+		#nn-toc ul li.nn-preface a {
+			border-bottom-color: $black !important;
+		}
+	}
+	&.nn-report-theme {
+		//CLASS NEEDS TO BE ADDED TO REPORT PAGE
+		#nn-toc ul li.nn-current a {
+			border-bottom-color: $black !important;
+		}
+	}
 	&.nn-sl-theme {
-		//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGES
-		.nav-main.menu-main {
-			display: none;
-		}
-		#nn-toc ul li.nn-spotlights {
-			padding-top: 0 !important;
-		}
+		//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGE
 		.nn-sl-link {
 			margin: 0 0 $width2 0;
 			background-color: $lightBlue;
@@ -551,6 +515,7 @@ body.nn-theme {
 				}
 			}
 		}
+		// POPUP SPOTLIGHT MODAL (BLUE BACKGROUND) <- NEEDS ACCESSIBILITY TESTS
 		.nn-sl-modal {
 			width: 100%;
 			height: 100%;
@@ -596,6 +561,9 @@ body.nn-theme {
 		}
 		&.nn-sl-modal-open {
 			overflow: hidden;
+			.nav-main.menu-main {
+				display: none;
+			}
 		}
 	}
 }

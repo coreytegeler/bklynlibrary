@@ -30,7 +30,7 @@ gulp.task('compile-pug', function() {
   return gulp.src(paths.pug)
     .pipe(plumber())
     .pipe(pug())
-    .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
+    // .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'style.min.css' })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'script.min.js' })))
     // .pipe(replace('/imgs/', './assets/imgs/'))

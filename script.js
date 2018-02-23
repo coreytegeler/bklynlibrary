@@ -165,10 +165,10 @@ $(function () {
       if (location.hash.substr(1) !== thisId) {
         history.replaceState(void 0, void 0, '#' + thisId);
       }
-      $currentLink = $toc.find('li.' + thisId);
-      if (!$currentLink.is('.current')) {
-        $toc.find('li.current').removeClass('current');
-        return $currentLink.addClass('current');
+      $currentLink = $toc.find('li.nn-' + thisId);
+      if (!$currentLink.is('.nn-current')) {
+        $toc.find('li.nn-current').removeClass('nn-current');
+        return $currentLink.addClass('nn-current');
       }
     } else {
       return history.replaceState(void 0, void 0, '#');

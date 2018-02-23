@@ -4,35 +4,34 @@ $ ->
 	$toc = $('#nn-toc')
 	chapterPadding = 32
 
+	# TOGGLES ACCORDION TEXT OPEN/CLOSE
 	$('body').on 'click', '.nn-accordion .nn-toggle-title', (e) ->
 		e.preventDefault()
 		$title = $(this)
 		$wrapper = $title.parents('.nn-content-wrapper')
 		$inside = $wrapper.find('.nn-inside')
 		$accordion = $wrapper.parents('.nn-accordion')
-
 		linkHeight = $title.innerHeight()
 		insideHeight = $inside.find('.nn-hidden-content').innerHeight()
 		if $wrapper.is('.nn-opened')
 			newHeight = 0
 		else
 			newHeight = insideHeight
-				
 		$inside.css
 			height: newHeight
 		$wrapper.toggleClass('nn-opened')
 
-
-	#animate scroll to "chapter" if exists on current page
+	# ANIMATE SCROLL TO CHAPTER OR CITATION
 	$('#nn-toc a, .nn-cite').on 'click', (e) ->
 		hash = this.hash
 		target = $(hash)
 		if !target.length
 			return
 		event.preventDefault()
-		#if citation is in accordion, open w/o aniamtion
+		# OPENS ACCORDION IF CITATION IS INSIDE
 		if $wrapper = target.parents('.nn-content-wrapper:not(.nn-opened)')
 			$toggle = $wrapper.find('.nn-toggle-title')
+			# ADDS CLASS TO OPEN ACCORDION W/O ANIMATION
 			$wrapper.addClass('nn-static')
 			$toggle.click()
 		top = target.offset().top - chapterPadding + 5
@@ -42,7 +41,7 @@ $ ->
 			if $wrapper.length
 				$wrapper.removeClass('nn-static')
 
-	#opens spotlight modal
+	# OPENS SPOTLIGHT MODAL
 	$('a.nn-sl-link').on 'click', (e) ->
 		e.preventDefault()
 		sid = $(this).attr('data-spotlight')
@@ -50,7 +49,7 @@ $ ->
 		$('body').addClass('nn-sl-modal-open')
 		$modal.addClass('show')
 
-	#closes spotlight modal
+	# CLOSES SPOTLIGHT MODAL
 	$('.nn-sl-modal .nn-sl-close').on 'click', (e) ->
 		$modal = $(this).parents('.nn-sl-modal')
 		$('body').removeClass('nn-sl-modal-open')
@@ -60,6 +59,7 @@ $ ->
 	$(window).on 'scroll', () ->
 		headerBottom = $header.offset().top + $header.innerHeight()
 		scrolled = $(window).scrollTop()
+		# FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP
 		if scrolled >= headerBottom
 			$toc.addClass('nn-fixed')
 		else
@@ -67,6 +67,7 @@ $ ->
 
 		passedChapters = []
 		nextChapters = []
+		# FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH
 		$('.nn-chapter').each (i, chapter) ->
 			chapterTop = $(chapter).offset().top
 			chapterDistance = chapterTop - chapterPadding - scrolled
@@ -80,18 +81,14 @@ $ ->
 			thisId = $currentChapter.attr('id')
 			if location.hash.substr(1) != thisId
 				history.replaceState(undefined, undefined, '#'+thisId)
-			$currentLink = $toc.find('li.'+thisId)
-			if !$currentLink.is('.current')
-				$toc.find('li.current').removeClass('current')
-				$currentLink.addClass('current')
+			$currentLink = $toc.find('li.nn-'+thisId)
+			if !$currentLink.is('.nn-current')
+				$toc.find('li.nn-current').removeClass('nn-current')
+				$currentLink.addClass('nn-current')
 		else
 			history.replaceState(undefined, undefined, '#')
 
-		# if nextChapters.length
-		# 	console.log nextChapters
-
-
-
+	# CHECKS FOR URL HASH ON PAGE LOAD
 	if location.hash && location.hash.length
 		hash = location.hash
 		if $linkedChapter = $('.nn-chapter'+hash)
@@ -106,6 +103,7 @@ $ ->
 
 
 	$(window).on 'resize', () ->
+		# FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN
 		$('.nn-carousel').each (i, carousel) ->
 			$carousel = $(carousel)
 			$placer = $carousel.parents('.nn-carousel-placer')
@@ -116,6 +114,7 @@ $ ->
 					height: carousel_height
 			, 100
 
+		# RESIZES ACCORDION CONTENT WRAPPER HEIGHT
 		if $opened_wrapper = $('.nn-content-wrapper.nn-opened')
 			$inside = $opened_wrapper.find('.nn-inside')
 			insideHeight = $inside.find('.nn-hidden-content').innerHeight()

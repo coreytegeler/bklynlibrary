@@ -75,7 +75,7 @@ body.nn-theme {
     top: 0;
     left: 0;
     z-index: 100;
-    background: #839cfc; }
+    background-color: #7396f7; }
   body.nn-theme header .bkgd-primary {
     background-color: transparent; }
   body.nn-theme header #HEADER-IMAGE {
@@ -85,7 +85,9 @@ body.nn-theme {
     display: table; }
     body.nn-theme header #HEADER-IMAGE img {
       width: 100%;
-      height: auto; }
+      height: auto;
+      display: table;
+      margin: auto; }
     body.nn-theme header #HEADER-IMAGE #nn-subheader {
       position: absolute;
       left: 230px;
@@ -182,11 +184,8 @@ body.nn-theme {
               line-height: 1.4em;
               transition: none;
               pointer-events: all; }
-            body.nn-theme #CONTENT .page-content .row #nn-toc ul li.current a {
-              border-bottom-color: #000000; }
             body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights {
-              color: #839cfc;
-              padding-top: 16px; }
+              color: #839cfc; }
               body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a {
                 color: #839cfc; }
                 body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a h1 {
@@ -395,30 +394,6 @@ body.nn-theme {
                     font-weight: bold; }
                 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell:hover p {
                   border: 0; }
-            body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient {
-              pointer-events: none;
-              position: absolute;
-              filter: none !important;
-              display: none; }
-              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.bottom {
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0; }
-              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.left {
-                width: auto;
-                height: 100%;
-                left: 0;
-                top: 0;
-                transform: rotate(90deg);
-                z-index: 10; }
-              body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper img.gradient.right {
-                width: auto;
-                height: 100%;
-                right: 0;
-                top: 0;
-                transform: rotate(-90deg);
-                z-index: 10; }
         body.nn-theme #CONTENT .page-content .row .nn-content img.nn-signature {
           width: 250px; }
         body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links {
@@ -443,10 +418,10 @@ body.nn-theme {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat; }
-  body.nn-theme.nn-sl-theme .nav-main.menu-main {
-    display: none; }
-  body.nn-theme.nn-sl-theme #nn-toc ul li.nn-spotlights {
-    padding-top: 0 !important; }
+  body.nn-theme.nn-preface-theme #nn-toc ul li.nn-preface a {
+    border-bottom-color: #000000 !important; }
+  body.nn-theme.nn-report-theme #nn-toc ul li.nn-current a {
+    border-bottom-color: #000000 !important; }
   body.nn-theme.nn-sl-theme .nn-sl-link {
     margin: 0 0 32px 0;
     background-color: #839cfc;
@@ -509,3 +484,5 @@ body.nn-theme {
       background-size: contain; }
   body.nn-theme.nn-sl-theme.nn-sl-modal-open {
     overflow: hidden; }
+    body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
+      display: none; }
