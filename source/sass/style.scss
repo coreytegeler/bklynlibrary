@@ -61,12 +61,12 @@ body.nn-theme {
 		opacity: 0;
 		pointer-events: none;
 	}
-	#bodynav {
-		pointer-events: none;
-		a {
-			pointer-events: all;
-		}
-	}
+	// #bodynav {
+	// 	pointer-events: none;
+	// 	a {
+	// 		pointer-events: none;
+	// 	}
+	// }
 	#CONTENT {
 		padding-top: $width2;
 		.container {
@@ -243,14 +243,14 @@ body.nn-theme {
 								width: $width3;
 								height: $width3;
 								display: inline-block;
-								opacity: 0;
+								opacity: 1;
 								background-image: url(/imgs/nn-arrow-down-black.png);
 								background-repeat: no-repeat;
 								background-position: center;
 						    background-size: 35px;
 						  }
 						  &:hover::after {
-						  	opacity: 1;
+						  	
 						  }
 						}
 						.nn-inside {
@@ -430,8 +430,8 @@ body.nn-theme {
 											position: absolute;
 											left: 0;
 											bottom: 0;
-											width: calc(100% - 10px);
-											margin: 0 5px 5px 5px;
+											width: calc(100% - 20px);
+											margin: 0 10px 10px 10px;
 											color: white;
 											font-weight: bold;
 										}
@@ -514,6 +514,9 @@ body.nn-theme {
 	}
 	&.nn-sl-theme {
 		//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGES
+		.nav-main.menu-main {
+			display: none;
+		}
 		#nn-toc ul li.nn-spotlights {
 			padding-top: 0 !important;
 		}

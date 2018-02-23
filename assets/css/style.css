@@ -107,10 +107,6 @@ body.nn-theme {
   body.nn-theme .nav-main li.scrolled a {
     opacity: 0;
     pointer-events: none; }
-  body.nn-theme #bodynav {
-    pointer-events: none; }
-    body.nn-theme #bodynav a {
-      pointer-events: all; }
   body.nn-theme #CONTENT {
     padding-top: 32px; }
     body.nn-theme #CONTENT .container .row {
@@ -248,13 +244,11 @@ body.nn-theme {
             width: 52px;
             height: 52px;
             display: inline-block;
-            opacity: 0;
+            opacity: 1;
             background-image: url(./../imgs/nn-arrow-down-black.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size: 35px; }
-          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-toggle-title:hover::after {
-            opacity: 1; }
         body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-inside {
           height: 0;
           opacity: 0;
@@ -395,8 +389,8 @@ body.nn-theme {
                     position: absolute;
                     left: 0;
                     bottom: 0;
-                    width: calc(100% - 10px);
-                    margin: 0 5px 5px 5px;
+                    width: calc(100% - 20px);
+                    margin: 0 10px 10px 10px;
                     color: white;
                     font-weight: bold; }
                 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell:hover p {
@@ -449,6 +443,8 @@ body.nn-theme {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat; }
+  body.nn-theme.nn-sl-theme .nav-main.menu-main {
+    display: none; }
   body.nn-theme.nn-sl-theme #nn-toc ul li.nn-spotlights {
     padding-top: 0 !important; }
   body.nn-theme.nn-sl-theme .nn-sl-link {
