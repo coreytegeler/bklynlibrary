@@ -1,8 +1,7 @@
-@import 'reset';
 @import 'vars';
-
-//CLASS NEEDS TO BE ADDED TO ALL PAGES OF STRATEGIC PLAN
+@import 'reset';
 body.nn-theme {
+	/* CLASS NEEDS TO BE ADDED TO ALL PAGES OF STRATEGIC PLAN */
 	color: $black;
 	font-family: $sansSerif;
 	@include mediumText;
@@ -30,12 +29,12 @@ body.nn-theme {
 				display: table;
 				margin: auto;
 			}
-			#nn-subheader {
+			.nn-subheader {
 				position: absolute;
 				left: 230px;
 				bottom: $width1;
+				color: $white;
 				font-size: 32px;
-				font-weight: bolder;
 			}
 		}
 		#HEADER-TITLE {
@@ -57,6 +56,12 @@ body.nn-theme {
 			}
 		}
 	}
+	.nn-subheader {
+		font-weight: bolder;
+		&.mobile {
+			display: none;
+		}
+	}
 	.nav-main li.scrolled a {
 		opacity: 0;
 		pointer-events: none;
@@ -66,6 +71,7 @@ body.nn-theme {
 		.container {
 			.row {
 				margin: 0;
+				color: $black;
 			}
 			h1.nn-title {
 				font-size: 4em;
@@ -131,8 +137,8 @@ body.nn-theme {
 						}
 					}
 				}
-				// RIGHT SIDE NAVIGATION (TABLE OF CONTENTS)
 				#nn-toc {
+					/* RIGHT SIDE NAVIGATION (TABLE OF CONTENTS) */
 					position: absolute;
 					right: 0;
 					top: 0;
@@ -197,8 +203,8 @@ body.nn-theme {
 						}
 					}
 				}
-				// INLINE ACCORDION
 				.nn-accordion {
+					/* INLINE ACCORDION */
 					.nn-toggle-title {
 						position: relative;
 						&::before, &::after {
@@ -277,11 +283,9 @@ body.nn-theme {
 					margin-bottom: 300px;
 				}
 				.nn-content {
-					// max-width: calc(700px - #{$width2});
-					// width: calc(100% - #{$toc} - #{$width2});
 					margin-right: $width2;
 					font-family: $sansSerif;
-					color: black;
+					color: $black;
 					h2 {
 						width: 100%;
 						font-weight: bold;
@@ -300,7 +304,6 @@ body.nn-theme {
 						padding: 16px 32px 32px 0;
 						float: left;
 					}
-					//Inline superscript link to citation footnote
 					a.nn-cite {
 						@include smallText;
 						sup {
@@ -351,8 +354,8 @@ body.nn-theme {
 							@include smallText;
 						}
 					}
-					// CUSTOMIZED SLICK.JS IMAGE SLIDER
 					.nn-carousel-placer {
+						/* CUSTOMIZED SLICK.JS IMAGE SLIDER */
 						position: relative;
 						height: 350px;
 						.carousel-wrapper {
@@ -471,19 +474,19 @@ body.nn-theme {
 		}
 	}
 	&.nn-preface-theme {
-		//CLASS NEEDS TO BE ADDED TO PREFACE
+		/* CLASS NEEDS TO BE ADDED TO PREFACE */
 		#nn-toc ul li.nn-preface a {
 			border-bottom-color: $black !important;
 		}
 	}
 	&.nn-report-theme {
-		//CLASS NEEDS TO BE ADDED TO REPORT PAGE
+		/* CLASS NEEDS TO BE ADDED TO REPORT PAGE */
 		#nn-toc ul li.nn-current a {
 			border-bottom-color: $black !important;
 		}
 	}
 	&.nn-sl-theme {
-		//CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGE
+		/* CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGE */
 		.nn-sl-link {
 			margin: 0 0 $width2 0;
 			background-color: $lightBlue;
@@ -514,9 +517,9 @@ body.nn-theme {
 
 				}
 			}
-		}
-		// POPUP SPOTLIGHT MODAL (BLUE BACKGROUND) <- NEEDS ACCESSIBILITY TESTS
+		}		
 		.nn-sl-modal {
+			/* POPUP SPOTLIGHT MODAL (BLUE BACKGROUND) <- NEEDS ACCESSIBILITY TESTS */
 			width: 100%;
 			height: 100%;
 			position: fixed;
@@ -566,4 +569,5 @@ body.nn-theme {
 			}
 		}
 	}
+	@import 'mobile';
 }
