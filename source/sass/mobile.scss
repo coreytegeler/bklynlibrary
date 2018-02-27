@@ -20,9 +20,9 @@
 		margin: 20px 0 $width3 0;
 	}
 	#CONTENT .page-content .row {
-		#nn-toc {
+		#nn-toc, #nn-toc.nn-fixed {
+			width: 100%;
 			position: static;
-			display: none;
 		}
 		.nn-content {
 			margin: 0;
@@ -44,12 +44,45 @@
 	}
 }
 @media only screen and (max-width:480px) {
-	.container .row [class^=span-] {
+	#CONTENT {
 		padding: 0;
-	}
-	#CONTENT .page-content .row .nn-content blockquote {
-		width: 100%;
-		padding-right: 0;
+		.page-content {
+			.container {
+				padding: 0 !important;
+				.row {
+					#nn-toc, #nn-toc.nn-fixed {
+						ul {
+							width: 100%;
+							max-width: 100%;
+							background-color: $lightBlue;
+							color: $white;
+							border-top: 2px solid $white;
+							li {
+								width: calc(100% - $width2);
+								margin: 0 $width1;
+								&:not(.nn-title) {
+									display: none;
+								}
+								.now-next-text .now::after {
+									background-image: url(/imgs/nn-arrow-right-white.png);
+								}
+								a {
+									color: $white;
+								}
+							}
+						}
+					}
+					&.span-4 {
+						padding: 0;
+						padding: 0 15px;
+					}
+					.nn-content blockquote {
+						width: 100%;
+						padding-right: 0;
+					}
+				}
+			}
+		}
 	}
 	&.nn-sl-theme {
 		.nn-sl-link {

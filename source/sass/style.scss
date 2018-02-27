@@ -116,7 +116,7 @@ body.nn-theme {
 							display: none;
 						}
 						a, .nn-toggle-title {
-							display: table;
+							display: block;
 							position: relative;
 							&::after, &::before {
 								display: inline-block;
@@ -503,9 +503,6 @@ body.nn-theme {
 				}
 				.nn-sl-title {
 					@include displayText;
-				}
-				.nn-sl-desc {
-					
 				}
 			}
 			.nn-sl-image {

@@ -27,17 +27,17 @@ section#CONTENT.main.scroller
 					.nn-chapter#spotlights
 						.nn-content
 							- var spotlights = []
-							- spotlights.push({title: 'Nullam eget tortor vel ipsum', desc: 'Proin nunc ante, condimentum vel nunc ac, vulputate hendrerit quam.', index: 1})
-							- spotlights.push({title: 'Maecenas imperdiet mauris', desc: 'Praesent fringilla, sem accumsan volutpat efficitur, odio augue egestas massa.', index: 2})
-							- spotlights.push({title: 'Aliquam id elementum turpis', desc: 'Curabitur urna est, fringilla eget congue ut, venenatis et elit.', index: 3})
-							- spotlights.push({title: 'Venenatis erat metus', desc: 'Aenean sit amet diam magna. Duis ut justo eget odio mattis ultricies.', index: 4})
+							- spotlights.push({title: 'From Inclusion to Empowerment', dek: 'What it takes to ensure a safe, inspiring environment', index: 1})
+							- spotlights.push({title: 'A Platform for Partnerships', dek: 'A journalism bootcamp and other programs that draw on outside volunteers and organizations', index: 2})
+							- spotlights.push({title: 'A Personal Guide in the Virtual World ', dek: 'Whether online or in person, librarians steer patrons toward an impossibly broad range of titles', index: 3})
+							- spotlights.push({title: 'Expanding the Library’s Reach', dek: 'Bringing joy—and a passion for reading—to families experiencing homelessness', index: 4})
 							each spotlight in spotlights
 								// QUERY CUSTOM PAGE TYPE FOR SPOTLIGHTS
 								a.nn-sl-link(href='#' data-spotlight=spotlight.index)
 									.nn-sl-text
 										.nn-sl-label Spotlight
 										.nn-sl-title= spotlight.title
-										.nn-sl-desc= spotlight.desc
+										.nn-sl-dek= spotlight.dek
 									.nn-sl-image(style='background-image:url(./../assets/imgs/spotlights/image'+spotlight.index+'.jpg)')
 								// PRELOADS MODAL TO REMAIN HIDDEN UNTIL OPENED. COULD ALSO BE AJAX
 								.nn-sl-modal(data-spotlight=spotlight.index)
