@@ -97,6 +97,7 @@ body.nn-theme {
 					width: 100%;
 					max-width: 700px;
 					margin: 0 0 $width3 0;
+			    padding-top: 12px;
 					object, svg {
 						width: 100%;
 						height: auto;
@@ -147,6 +148,8 @@ body.nn-theme {
 					pointer-events: none;
 					ul {
 						max-width: 240px;
+						line-height: 1em;
+						margin-top: -5px;
 						li {
 							width: calc(100% - #{$width2});
 							margin: 0 $width2 0 0;
@@ -168,7 +171,7 @@ body.nn-theme {
 									h1 {
 										display: none;
 										clear: both;
-										padding: 16px 0 0 0;
+										padding: $width1 0 0 0;
 										@include displayText;
 									}
 									span::after {
@@ -301,7 +304,7 @@ body.nn-theme {
 					blockquote {
 						width: 50%;
 						@include displayText;
-						padding: 16px 32px 32px 0;
+						padding: $width1 $width2 0 0;
 						float: left;
 					}
 					a.nn-cite {
@@ -356,8 +359,10 @@ body.nn-theme {
 					}
 					.nn-carousel-placer {
 						/* CUSTOMIZED SLICK.JS IMAGE SLIDER */
-						position: relative;
 						height: 350px;
+						position: relative;
+						margin-top: $width1;
+						display: inline-block;
 						.carousel-wrapper {
 							width: 100vw;
 							height: 100%;
@@ -421,8 +426,8 @@ body.nn-theme {
 											position: absolute;
 											left: 0;
 											bottom: 0;
-											width: calc(100% - 20px);
-											margin: 0 10px 10px 10px;
+											width: calc(100% - 24px);
+											margin: 0 12px 12px 12px;
 											color: white;
 											font-weight: bold;
 										}
@@ -494,8 +499,8 @@ body.nn-theme {
 			display: flex;
 			flex-direction: row;
 			.nn-sl-text {
-				width: calc(#{100%*(2/3)} - #{$width1 + $width2});
-				padding: $width1 $width1 $width3 $width2;
+				width: calc(#{100%*(2/3)} - #{$width1 + $width1});
+				padding: $width1;
 				font-size: 22px;
 		    line-height: 29px;
 				.nn-sl-label {
@@ -537,7 +542,7 @@ body.nn-theme {
 					color: $lighterBlue !important;
 					h1 {
 			    	@include displayText;
-			    	margin: 0 0 132px 0;
+			    	margin: 0 0 $width3 0;
 			    }
 			    .nn-image {
 			    	.nn-image-caption {
@@ -552,6 +557,7 @@ body.nn-theme {
 				position: fixed;
 				right: 32px;
 				top: 32px;
+				z-index: 900;
 				cursor: pointer;
 				background-image: url(/imgs/nn-close.png);
 				background-repeat: no-repeat;
@@ -561,7 +567,7 @@ body.nn-theme {
 		}
 		&.nn-sl-modal-open {
 			overflow: hidden;
-			.nav-main.menu-main {
+			#bodynav {
 				display: none;
 			}
 		}

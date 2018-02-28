@@ -3,13 +3,13 @@ var $;
 $ = jQuery;
 
 $(function() {
-  var $header, $linkedChapter, $toc, chapterPadding, hash, top;
+  var $header, $linkedChapter, $toc, chapterPadding, hash, isSize, top;
   $header = $('header#HEADER');
   $toc = $('#nn-toc');
   chapterPadding = 32;
 
   /** TOGGLES ACCORDION TEXT OPEN/CLOSE */
-  $('body').on('click', '.nn-accordion .nn-toggle-title', function(e) {
+  $('body').on('click touchstart', '.nn-accordion .nn-toggle-title', function(e) {
     var $accordion, $inside, $title, $wrapper, insideHeight, linkHeight, newHeight;
     e.preventDefault();
     $title = $(this);
@@ -29,8 +29,19 @@ $(function() {
     return $wrapper.toggleClass('nn-opened');
   });
 
+  /** CHECKS WHICH MEDIA QUERIES ARE IN USE */
+  isSize = function(check) {
+    var size;
+    size = $('body').css('content').replace(/['"]+/g, '');
+    if (size === check) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   /** ANIMATE SCROLL TO CHAPTER OR CITATION */
-  $('#nn-toc a, .nn-cite').on('click', function(e) {
+  $('#nn-toc a, .nn-cite').on('click touchstart', function(e) {
     var $toggle, $wrapper, hash, target, top;
     hash = this.hash;
     target = $(hash);
@@ -57,8 +68,13 @@ $(function() {
     });
   });
 
+  /** TOGGLES MOBILE NAV */
+  $('#nn-toc').on('click touchstart', function(e) {
+    return $(this).toggleClass('nn-opened');
+  });
+
   /**  OPENS SPOTLIGHT MODAL */
-  $('a.nn-sl-link').on('click', function(e) {
+  $('a.nn-sl-link').on('click touchstart', function(e) {
     var $modal, sid;
     e.preventDefault();
     sid = $(this).attr('data-spotlight');
@@ -68,7 +84,7 @@ $(function() {
   });
 
   /**  CLOSES SPOTLIGHT MODAL */
-  $('.nn-sl-modal .nn-sl-close').on('click', function(e) {
+  $('.nn-sl-modal .nn-sl-close').on('click touchstart', function(e) {
     var $modal;
     $modal = $(this).parents('.nn-sl-modal');
     $('body').removeClass('nn-sl-modal-open');
@@ -82,8 +98,18 @@ $(function() {
     /**  FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP */
     if (scrolled >= headerBottom) {
       $toc.addClass('nn-fixed');
+      if (isSize('tablet') || isSize('mobile')) {
+        $('#CONTENT').css({
+          paddingTop: $toc.innerHeight()
+        });
+      }
     } else {
       $toc.removeClass('nn-fixed');
+      if (isSize('tablet') || isSize('mobile')) {
+        $('#CONTENT').css({
+          paddingTop: 0
+        });
+      }
     }
     passedChapters = [];
     nextChapters = [];

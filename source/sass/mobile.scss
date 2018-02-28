@@ -1,4 +1,5 @@
 @media only screen and (max-width: 768px) {
+	content: 'tablet';
 	#HEADER {
 		#HEADER-IMAGE {
 			position: static;
@@ -19,15 +20,68 @@
 		display: block;
 		margin: 20px 0 $width3 0;
 	}
-	#CONTENT .page-content .row {
-		#nn-toc, #nn-toc.nn-fixed {
-			width: 100%;
-			position: static;
-		}
-		.nn-content {
-			margin: 0;
-			.nn-carousel-placer .carousel-wrapper {
-				left: -30px;
+	#CONTENT {
+		padding: 0;
+		.page-content {
+			.container {
+				padding: 0 !important;
+				.row {
+					#nn-toc {
+						width: 100%;
+						position: static;
+				    pointer-events: all;
+						ul.nn-inline-nav {
+							width: 100%;
+							max-width: 100%;
+							background-color: $lightBlue;
+							color: $white;
+					    margin-top: 2px;
+							li {
+								width: 100%;
+								padding: 5px $width1;
+								// padding: 5px 0;
+								&:not(.nn-title) {
+									display: none;
+								}
+								.now-next-text .now::after {
+									background-image: url(/imgs/nn-arrow-right-white.png);
+								}
+								a {
+									color: $white;
+									pointer-events: none;
+									border: none;
+								}
+							}
+						}
+						&.nn-fixed {
+							width: 100%;
+							position: fixed;
+							top: 0;
+							left: 0;
+							right: auto;
+							ul.nn-inline-nav {
+								margin-top: 0;
+							}
+						}
+						&.nn-opened {
+							ul.nn-inline-nav {
+								li {
+									display: block;
+									border-bottom: 2px solid $white;
+								}
+							}
+						}
+					}
+					&.span-4 {
+						padding: 0 15px;
+					}
+				}
+				.nn-content {
+					margin: 0;
+					.nn-carousel-placer .carousel-wrapper {
+						left: -15px;
+					}
+				}
 			}
 		}
 	}
@@ -44,37 +98,16 @@
 	}
 }
 @media only screen and (max-width:480px) {
+	content: 'mobile';
 	#CONTENT {
-		padding: 0;
 		.page-content {
 			.container {
-				padding: 0 !important;
 				.row {
-					#nn-toc, #nn-toc.nn-fixed {
-						ul {
-							width: 100%;
-							max-width: 100%;
-							background-color: $lightBlue;
-							color: $white;
-							border-top: 2px solid $white;
-							li {
-								width: calc(100% - $width2);
-								margin: 0 $width1;
-								&:not(.nn-title) {
-									display: none;
-								}
-								.now-next-text .now::after {
-									background-image: url(/imgs/nn-arrow-right-white.png);
-								}
-								a {
-									color: $white;
-								}
-							}
-						}
-					}
 					&.span-4 {
-						padding: 0;
-						padding: 0 15px;
+						
+					}
+					.nn-chapter {
+						margin-bottom: 150px;
 					}
 					.nn-content blockquote {
 						width: 100%;
@@ -88,6 +121,15 @@
 		.nn-sl-link {
 			.nn-sl-text {
 				padding: $width1;
+			}
+		}
+		.nn-sl-modal {
+			.nn-sl-container {
+				padding-left: 0;
+				padding-right: 0;
+				.span-4 {
+					width: calc(100% - 15px);
+				}
 			}
 		}
 	}

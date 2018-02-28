@@ -138,7 +138,8 @@ body.nn-theme {
       body.nn-theme #CONTENT .page-content .row .nn-large-title {
         width: 100%;
         max-width: 700px;
-        margin: 0 0 52px 0; }
+        margin: 0 0 52px 0;
+        padding-top: 12px; }
         body.nn-theme #CONTENT .page-content .row .nn-large-title object, body.nn-theme #CONTENT .page-content .row .nn-large-title svg {
           width: 100%;
           height: auto;
@@ -177,7 +178,9 @@ body.nn-theme {
         padding: 0;
         pointer-events: none; }
         body.nn-theme #CONTENT .page-content .row #nn-toc ul {
-          max-width: 240px; }
+          max-width: 240px;
+          line-height: 1em;
+          margin-top: -5px; }
           body.nn-theme #CONTENT .page-content .row #nn-toc ul li {
             width: calc(100% - 32px);
             margin: 0 32px 0 0;
@@ -299,7 +302,7 @@ body.nn-theme {
           font-family: "Franklin Gothic";
           font-size: 79px;
           line-height: 69px;
-          padding: 16px 32px 32px 0;
+          padding: 16px 32px 0 0;
           float: left; }
         body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite {
           font-size: 16px !important;
@@ -341,8 +344,10 @@ body.nn-theme {
             line-height: 21px !important; }
         body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
           /* CUSTOMIZED SLICK.JS IMAGE SLIDER */
+          height: 350px;
           position: relative;
-          height: 350px; }
+          margin-top: 16px;
+          display: inline-block; }
           body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
             width: 100vw;
             height: 100%;
@@ -398,8 +403,8 @@ body.nn-theme {
                     position: absolute;
                     left: 0;
                     bottom: 0;
-                    width: calc(100% - 20px);
-                    margin: 0 10px 10px 10px;
+                    width: calc(100% - 24px);
+                    margin: 0 12px 12px 12px;
                     color: white;
                     font-weight: bold; }
                 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell:hover p {
@@ -445,8 +450,8 @@ body.nn-theme {
       display: flex;
       flex-direction: row; }
       body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
-        width: calc(66.66667% - 48px);
-        padding: 16px 16px 52px 32px;
+        width: calc(66.66667% - 32px);
+        padding: 16px;
         font-size: 22px;
         line-height: 29px; }
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-label {
@@ -485,7 +490,7 @@ body.nn-theme {
             font-family: "Franklin Gothic";
             font-size: 79px;
             line-height: 69px;
-            margin: 0 0 132px 0; }
+            margin: 0 0 52px 0; }
           body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-image .nn-image-caption {
             color: #f2f5ff !important; }
       body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
@@ -494,6 +499,7 @@ body.nn-theme {
         position: fixed;
         right: 32px;
         top: 32px;
+        z-index: 900;
         cursor: pointer;
         background-image: url(./../imgs/nn-close.png);
         background-repeat: no-repeat;
@@ -501,58 +507,82 @@ body.nn-theme {
         background-size: contain; }
     body.nn-theme.nn-sl-theme.nn-sl-modal-open {
       overflow: hidden; }
-      body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
+      body.nn-theme.nn-sl-theme.nn-sl-modal-open #bodynav {
         display: none; }
   @media only screen and (max-width: 768px) {
-    body.nn-theme #HEADER #HEADER-IMAGE {
-      position: static;
-      display: block;
-      min-height: 50vw;
-      padding: 0; }
-    body.nn-theme #HEADER #HEADER-TITLE {
-      display: none; }
-    body.nn-theme #HEADER .nn-subheader {
-      display: none; }
-    body.nn-theme .nn-subheader.mobile {
-      display: block;
-      margin: 20px 0 52px 0; }
-    body.nn-theme #CONTENT .page-content .row #nn-toc, body.nn-theme #CONTENT .page-content .row #nn-toc.nn-fixed {
-      width: 100%;
-      position: static; }
-    body.nn-theme #CONTENT .page-content .row .nn-content {
-      margin: 0; }
-      body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
-        left: -30px; }
-    body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
-      width: 100%;
-      padding: 16px 32px 52px 32px; }
-    body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
-      display: none; } }
+    body.nn-theme {
+      content: 'tablet'; }
+      body.nn-theme #HEADER #HEADER-IMAGE {
+        position: static;
+        display: block;
+        min-height: 50vw;
+        padding: 0; }
+      body.nn-theme #HEADER #HEADER-TITLE {
+        display: none; }
+      body.nn-theme #HEADER .nn-subheader {
+        display: none; }
+      body.nn-theme .nn-subheader.mobile {
+        display: block;
+        margin: 20px 0 52px 0; }
+      body.nn-theme #CONTENT {
+        padding: 0; }
+        body.nn-theme #CONTENT .page-content .container {
+          padding: 0 !important; }
+          body.nn-theme #CONTENT .page-content .container .row #nn-toc {
+            width: 100%;
+            position: static;
+            pointer-events: all; }
+            body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav {
+              width: 100%;
+              max-width: 100%;
+              background-color: #7396f7;
+              color: #fff;
+              margin-top: 2px; }
+              body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li {
+                width: 100%;
+                padding: 5px 16px; }
+                body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li:not(.nn-title) {
+                  display: none; }
+                body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li .now-next-text .now::after {
+                  background-image: url(./../imgs/nn-arrow-right-white.png); }
+                body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a {
+                  color: #fff;
+                  pointer-events: none;
+                  border: none; }
+            body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed {
+              width: 100%;
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: auto; }
+              body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul.nn-inline-nav {
+                margin-top: 0; }
+            body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav li {
+              display: block;
+              border-bottom: 2px solid #fff; }
+          body.nn-theme #CONTENT .page-content .container .row.span-4 {
+            padding: 0 15px; }
+          body.nn-theme #CONTENT .page-content .container .nn-content {
+            margin: 0; }
+            body.nn-theme #CONTENT .page-content .container .nn-content .nn-carousel-placer .carousel-wrapper {
+              left: -15px; }
+      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
+        width: 100%;
+        padding: 16px 32px 52px 32px; }
+      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
+        display: none; } }
   @media only screen and (max-width: 480px) {
-    body.nn-theme #CONTENT {
-      padding: 0; }
-      body.nn-theme #CONTENT .page-content .container {
-        padding: 0 !important; }
-        body.nn-theme #CONTENT .page-content .container .row #nn-toc ul, body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul {
-          width: 100%;
-          max-width: 100%;
-          background-color: #7396f7;
-          color: #fff;
-          border-top: 2px solid #fff; }
-          body.nn-theme #CONTENT .page-content .container .row #nn-toc ul li, body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul li {
-            width: calc(100% - $width2);
-            margin: 0 16px; }
-            body.nn-theme #CONTENT .page-content .container .row #nn-toc ul li:not(.nn-title), body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul li:not(.nn-title) {
-              display: none; }
-            body.nn-theme #CONTENT .page-content .container .row #nn-toc ul li .now-next-text .now::after, body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul li .now-next-text .now::after {
-              background-image: url(./../imgs/nn-arrow-right-white.png); }
-            body.nn-theme #CONTENT .page-content .container .row #nn-toc ul li a, body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul li a {
-              color: #fff; }
-        body.nn-theme #CONTENT .page-content .container .row.span-4 {
-          padding: 0;
-          padding: 0 15px; }
-        body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote {
-          width: 100%;
-          padding-right: 0; }
-    body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
-      padding: 16px; } }
+    body.nn-theme {
+      content: 'mobile'; }
+      body.nn-theme #CONTENT .page-content .container .row .nn-chapter {
+        margin-bottom: 150px; }
+      body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote {
+        width: 100%;
+        padding-right: 0; }
+      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
+        padding: 16px; }
+      body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container {
+        padding-left: 0;
+        padding-right: 0; }
+        body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .span-4 {
+          width: calc(100% - 15px); } }

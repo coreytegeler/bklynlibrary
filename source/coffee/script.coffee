@@ -4,7 +4,7 @@ $ ->
 	$toc = $('#nn-toc')
 	chapterPadding = 32
 	###* TOGGLES ACCORDION TEXT OPEN/CLOSE ###
-	$('body').on 'click', '.nn-accordion .nn-toggle-title', (e) ->
+	$('body').on 'click touchstart', '.nn-accordion .nn-toggle-title', (e) ->
 		e.preventDefault()
 		$title = $(this)
 		$wrapper = $title.parents('.nn-content-wrapper')
@@ -19,8 +19,18 @@ $ ->
 		$inside.css
 			height: newHeight
 		$wrapper.toggleClass('nn-opened')
+
+
+	###* CHECKS WHICH MEDIA QUERIES ARE IN USE  ###
+	isSize = (check) ->
+		size = $('body').css('content').replace(/['"]+/g, '')
+		if size == check
+			return true
+		else
+			return false
+
 	###* ANIMATE SCROLL TO CHAPTER OR CITATION ###
-	$('#nn-toc a, .nn-cite').on 'click', (e) ->
+	$('#nn-toc a, .nn-cite').on 'click touchstart', (e) ->
 		hash = this.hash
 		target = $(hash)
 		if !target.length
@@ -39,8 +49,12 @@ $ ->
 			if $wrapper.length
 				$wrapper.removeClass('nn-static')
 
+	###* TOGGLES MOBILE NAV ###
+	$('#nn-toc').on 'click touchstart', (e) ->
+		$(this).toggleClass('nn-opened')
+
 	###*  OPENS SPOTLIGHT MODAL ###
-	$('a.nn-sl-link').on 'click', (e) ->
+	$('a.nn-sl-link').on 'click touchstart', (e) ->
 		e.preventDefault()
 		sid = $(this).attr('data-spotlight')
 		$modal = $('.nn-sl-modal[data-spotlight="'+sid+'"]')
@@ -48,7 +62,7 @@ $ ->
 		$modal.addClass('show')
 
 	###*  CLOSES SPOTLIGHT MODAL ###
-	$('.nn-sl-modal .nn-sl-close').on 'click', (e) ->
+	$('.nn-sl-modal .nn-sl-close').on 'click touchstart', (e) ->
 		$modal = $(this).parents('.nn-sl-modal')
 		$('body').removeClass('nn-sl-modal-open')
 		$modal.removeClass('show')
@@ -60,8 +74,14 @@ $ ->
 		###*  FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP ###
 		if scrolled >= headerBottom
 			$toc.addClass('nn-fixed')
+			if isSize('tablet') || isSize('mobile')
+				$('#CONTENT').css
+					paddingTop: $toc.innerHeight()
 		else
 			$toc.removeClass('nn-fixed')
+			if isSize('tablet') || isSize('mobile')
+				$('#CONTENT').css
+					paddingTop: 0
 
 		passedChapters = []
 		nextChapters = []
