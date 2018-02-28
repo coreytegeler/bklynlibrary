@@ -9,7 +9,7 @@ $(function() {
   chapterPadding = 32;
 
   /** TOGGLES ACCORDION TEXT OPEN/CLOSE */
-  $('body').on('click touchstart', '.nn-accordion .nn-toggle-title', function(e) {
+  $('body').on('click', '.nn-accordion .nn-toggle-title', function(e) {
     var $accordion, $inside, $title, $wrapper, insideHeight, linkHeight, newHeight;
     e.preventDefault();
     $title = $(this);
@@ -41,7 +41,7 @@ $(function() {
   };
 
   /** ANIMATE SCROLL TO CHAPTER OR CITATION */
-  $('#nn-toc a, .nn-cite').on('click touchstart', function(e) {
+  $('#nn-toc a, .nn-cite').on('click', function(e) {
     var $toggle, $wrapper, hash, target, top;
     hash = this.hash;
     target = $(hash);
@@ -69,12 +69,12 @@ $(function() {
   });
 
   /** TOGGLES MOBILE NAV */
-  $('#nn-toc').on('click touchstart', function(e) {
+  $('#nn-toc').on('click', function(e) {
     return $(this).toggleClass('nn-opened');
   });
 
   /**  OPENS SPOTLIGHT MODAL */
-  $('a.nn-sl-link').on('click touchstart', function(e) {
+  $('a.nn-sl-link').on('click', function(e) {
     var $modal, sid;
     e.preventDefault();
     sid = $(this).attr('data-spotlight');
@@ -84,7 +84,7 @@ $(function() {
   });
 
   /**  CLOSES SPOTLIGHT MODAL */
-  $('.nn-sl-modal .nn-sl-close').on('click touchstart', function(e) {
+  $('.nn-sl-modal .nn-sl-close').on('click', function(e) {
     var $modal;
     $modal = $(this).parents('.nn-sl-modal');
     $('body').removeClass('nn-sl-modal-open');
