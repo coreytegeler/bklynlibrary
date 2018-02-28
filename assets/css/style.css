@@ -536,19 +536,24 @@ body.nn-theme {
               width: 100%;
               max-width: 100%;
               background-color: #7396f7;
-              color: #fff;
-              margin-top: 2px; }
+              margin-top: 2px;
+              background-image: url(./../imgs/nn-mobile-nav-down.png);
+              background-position: calc(100% - 16px) 0.5em;
+              background-repeat: no-repeat;
+              background-size: 1em; }
               body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li {
                 width: 100%;
                 padding: 5px 16px; }
-                body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li:not(.nn-title) {
+                body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li:not(.nn-current) {
                   display: none; }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li .now-next-text .now::after {
                   background-image: url(./../imgs/nn-arrow-right-white.png); }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a {
-                  color: #fff;
+                  color: #f2f5ff !important;
                   pointer-events: none;
                   border: none; }
+                  body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a::selection, body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a ::selection {
+                    color: #f2f5ff !important; }
             body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed {
               width: 100%;
               position: fixed;
@@ -557,9 +562,13 @@ body.nn-theme {
               right: auto; }
               body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul.nn-inline-nav {
                 margin-top: 0; }
-            body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav li {
-              display: block;
-              border-bottom: 2px solid #fff; }
+            body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav {
+              background-image: url(./../imgs/nn-mobile-nav-up.png); }
+              body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav li {
+                display: block;
+                border-bottom: 2px solid #fff; }
+                body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav li a {
+                  pointer-events: all; }
           body.nn-theme #CONTENT .page-content .container .row.span-4 {
             padding: 0 15px; }
           body.nn-theme #CONTENT .page-content .container .nn-content {
