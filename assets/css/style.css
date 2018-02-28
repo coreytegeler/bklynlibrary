@@ -552,6 +552,11 @@ body.nn-theme {
                   color: #f2f5ff !important;
                   pointer-events: none;
                   border: none; }
+                  body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a:hover {
+                    color: #f2f5ff !important;
+                    border: none !important; }
+                    body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a:hover h1, body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a:hover span::before, body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a:hover span::after {
+                      display: none; }
                   body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a::selection, body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a ::selection {
                     color: #f2f5ff !important; }
             body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed {

@@ -148,7 +148,7 @@ $(function () {
     return $(this).toggleClass('nn-opened');
   });
 
-  /**  OPENS SPOTLIGHT MODAL */
+  /** OPENS SPOTLIGHT MODAL */
   $('a.nn-sl-link').on('click', function (e) {
     var $modal, sid;
     e.preventDefault();
@@ -158,7 +158,7 @@ $(function () {
     return $modal.addClass('show');
   });
 
-  /**  CLOSES SPOTLIGHT MODAL */
+  /** CLOSES SPOTLIGHT MODAL */
   $('.nn-sl-modal .nn-sl-close').on('click', function (e) {
     var $modal;
     $modal = $(this).parents('.nn-sl-modal');
@@ -170,7 +170,7 @@ $(function () {
     headerBottom = $header.offset().top + $header.innerHeight();
     scrolled = $(window).scrollTop();
 
-    /**  FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP */
+    /** FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP */
     if (scrolled >= headerBottom) {
       $toc.addClass('nn-fixed');
       if (isSize('tablet') || isSize('mobile')) {
@@ -189,7 +189,7 @@ $(function () {
     passedChapters = [];
     nextChapters = [];
 
-    /**  FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH */
+    /** FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH */
     $('.nn-chapter').each(function (i, chapter) {
       var chapterDistance, chapterTop;
       chapterTop = $(chapter).offset().top;
@@ -217,7 +217,7 @@ $(function () {
     }
   });
 
-  /**  CHECKS FOR URL HASH ON PAGE LOAD */
+  /** CHECKS FOR URL HASH ON PAGE LOAD */
   if (location.hash && location.hash.length) {
     hash = location.hash;
     if ($linkedChapter = $('.nn-chapter' + hash)) {
@@ -233,7 +233,7 @@ $(function () {
   }
   return $(window).on('resize', function () {
 
-    /**  FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN */
+    /** FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN */
     var $inside, $opened_wrapper, insideHeight;
     $('.nn-carousel').each(function (i, carousel) {
       var $carousel, $placer, $wrapper;
@@ -249,7 +249,7 @@ $(function () {
       }, 100);
     });
 
-    /**  RESIZES ACCORDION CONTENT WRAPPER HEIGHT */
+    /** RESIZES ACCORDION CONTENT WRAPPER HEIGHT */
     if ($opened_wrapper = $('.nn-content-wrapper.nn-opened')) {
       $inside = $opened_wrapper.find('.nn-inside');
       insideHeight = $inside.find('.nn-hidden-content').innerHeight();
@@ -258,6 +258,8 @@ $(function () {
       });
     }
   }).resize();
+
+  /** ADDS CLASS TO BODY IF TOUCH SCREEN TO DISABLE CSS HOVER EFFECTS */
 });
 
 /***/ })

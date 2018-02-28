@@ -53,7 +53,7 @@ $ ->
 	$('#nn-toc').on 'click', (e) ->
 		$(this).toggleClass('nn-opened')
 
-	###*  OPENS SPOTLIGHT MODAL ###
+	###* OPENS SPOTLIGHT MODAL ###
 	$('a.nn-sl-link').on 'click', (e) ->
 		e.preventDefault()
 		sid = $(this).attr('data-spotlight')
@@ -61,7 +61,7 @@ $ ->
 		$('body').addClass('nn-sl-modal-open')
 		$modal.addClass('show')
 
-	###*  CLOSES SPOTLIGHT MODAL ###
+	###* CLOSES SPOTLIGHT MODAL ###
 	$('.nn-sl-modal .nn-sl-close').on 'click', (e) ->
 		$modal = $(this).parents('.nn-sl-modal')
 		$('body').removeClass('nn-sl-modal-open')
@@ -71,7 +71,7 @@ $ ->
 	$(window).on 'scroll', () ->
 		headerBottom = $header.offset().top + $header.innerHeight()
 		scrolled = $(window).scrollTop()
-		###*  FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP ###
+		###* FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP ###
 		if scrolled >= headerBottom
 			$toc.addClass('nn-fixed')
 			if isSize('tablet') || isSize('mobile')
@@ -85,7 +85,7 @@ $ ->
 
 		passedChapters = []
 		nextChapters = []
-		###*  FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH ###
+		###* FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH ###
 		$('.nn-chapter').each (i, chapter) ->
 			chapterTop = $(chapter).offset().top
 			chapterDistance = chapterTop - chapterPadding - scrolled
@@ -106,7 +106,7 @@ $ ->
 		else
 			history.replaceState(undefined, undefined, '#')
 
-	###*  CHECKS FOR URL HASH ON PAGE LOAD ###
+	###* CHECKS FOR URL HASH ON PAGE LOAD ###
 	if location.hash && location.hash.length
 		hash = location.hash
 		if $linkedChapter = $('.nn-chapter'+hash)
@@ -121,7 +121,7 @@ $ ->
 
 
 	$(window).on 'resize', () ->
-		###*  FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN ###
+		###* FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN ###
 		$('.nn-carousel').each (i, carousel) ->
 			$carousel = $(carousel)
 			$placer = $carousel.parents('.nn-carousel-placer')
@@ -132,10 +132,36 @@ $ ->
 					height: carousel_height
 			, 100
 
-		###*  RESIZES ACCORDION CONTENT WRAPPER HEIGHT ###
+		###* RESIZES ACCORDION CONTENT WRAPPER HEIGHT ###
 		if $opened_wrapper = $('.nn-content-wrapper.nn-opened')
 			$inside = $opened_wrapper.find('.nn-inside')
 			insideHeight = $inside.find('.nn-hidden-content').innerHeight()
 			$inside.css
 				height: insideHeight
 	.resize()
+
+
+	###* ADDS CLASS TO BODY IF TOUCH SCREEN TO DISABLE CSS HOVER EFFECTS ###
+	# watchForHover = () ->
+	# 	hasHoverClass = false
+	# 	lastTouchTime = 0
+
+	# 	enableHover = () ->
+	# 		if (new Date() - lastTouchTime < 500)
+	# 			return
+	# 		$body.addClass('has_hover')
+	# 		hasHoverClass = true
+
+	# 	disableHover = () ->
+	# 		$body.removeClass('has_hover')
+	# 		hasHoverClass = false
+
+	# 	updateLastTouchTime = () ->
+	# 		lastTouchTime = new Date()
+
+	# 	document.addEventListener('touchstart', updateLastTouchTime, true)
+	# 	document.addEventListener('touchstart', disableHover, true)
+	# 	document.addEventListener('mousemove', enableHover, true)
+	# 	enableHover()
+
+	# watchForHover()

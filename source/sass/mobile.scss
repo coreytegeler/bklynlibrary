@@ -53,6 +53,13 @@
 									color: $lighterBlue !important;
 									pointer-events: none;
 									border: none;
+									&:hover {
+										color: $lighterBlue !important;
+										border: none !important;
+										h1, span::before, span::after {
+											display: none;
+										}
+									}
 									&::selection, ::selection {
 										color: $lighterBlue !important;
 									}
