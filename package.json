@@ -1,9 +1,9 @@
 {
-  "name": "bkylnlibrary",
+  "name": "bpl-now-next",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "repository": "git@github.com:coreytegeler/bkylnlibrary.git",
+  "repository": "git@github.com:coreytegeler/bpl-now-next.git",
   "author": "Corey Tegeler <coreytegeler@gmail.com>",
   "license": "GNU",
   "dependencies": {},

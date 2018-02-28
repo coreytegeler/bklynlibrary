@@ -33,7 +33,7 @@ gulp.task('compile-pug', function() {
     // .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'style.min.css' })))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'script.min.js' })))
-    // .pipe(replace('/imgs/', './assets/imgs/'))
+    .pipe(replace('?v=x', '?v=1.6'))
     .pipe(gulp.dest(dest.html))
   .on('end', function() {
     log('HTML done');
