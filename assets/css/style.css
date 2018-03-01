@@ -114,18 +114,16 @@ body.nn-theme {
   body.nn-theme .nav-main li.scrolled a {
     opacity: 0;
     pointer-events: none; }
+  body.nn-theme .nn-caps-text {
+    text-transform: uppercase;
+    font-family: "Franklin Gothic";
+    font-size: 79px;
+    line-height: 69px; }
   body.nn-theme #CONTENT {
     padding-top: 32px; }
     body.nn-theme #CONTENT .container .row {
       margin: 0;
       color: #000000; }
-    body.nn-theme #CONTENT .container h1.nn-title {
-      font-size: 4em;
-      font-family: "Franklin Gothic";
-      text-transform: uppercase;
-      color: #000000;
-      margin: 0;
-      padding: 0; }
     body.nn-theme #CONTENT .container h2.nn-sub-title {
       font-size: 1.5em;
       font-family: "Franklin Gothic";
@@ -198,14 +196,10 @@ body.nn-theme {
               color: #7396f7; }
               body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a {
                 color: #7396f7; }
-                body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a h1 {
+                body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a .nn-caps-text {
                   display: none;
                   clear: both;
-                  padding: 16px 0 0 0;
-                  text-transform: uppercase;
-                  font-family: "Franklin Gothic";
-                  font-size: 79px;
-                  line-height: 69px; }
+                  padding: 16px 0 0 0; }
                 body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a span::after {
                   width: 1.25em;
                   height: .7em;
@@ -215,7 +209,7 @@ body.nn-theme {
                   background-position: center;
                   background-size: contain;
                   background-repeat: no-repeat; }
-                body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover h1 {
+                body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover .nn-caps-text {
                   display: block; }
                 body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover span::after {
                   display: inline-block; }
@@ -230,16 +224,12 @@ body.nn-theme {
           position: relative; }
           body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before, body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::after {
             position: absolute; }
-          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title h1 {
-            text-transform: uppercase;
-            font-family: "Franklin Gothic";
-            font-size: 79px;
-            line-height: 69px;
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title .nn-caps-text {
             line-height: 75px;
             display: inline; }
           body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover {
             cursor: pointer; }
-            body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover h1 {
+            body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover .nn-caps-text {
               background: linear-gradient(to right, black, black) no-repeat;
               background-size: 100% 6px;
               background-position: left .8em; }
@@ -292,21 +282,17 @@ body.nn-theme {
           font-weight: bold;
           display: table;
           padding: 1em 0; }
-        body.nn-theme #CONTENT .page-content .row .nn-content p {
+        body.nn-theme #CONTENT .page-content .row .nn-content p, body.nn-theme #CONTENT .page-content .row .nn-content .nn-chapter-title {
           margin: 0 0 32px 0; }
-        body.nn-theme #CONTENT .page-content .row .nn-content strong {
+        body.nn-theme #CONTENT .page-content .row .nn-content strong, body.nn-theme #CONTENT .page-content .row .nn-content .nn-chapter-title {
           font-weight: bold; }
         body.nn-theme #CONTENT .page-content .row .nn-content blockquote {
           width: 50%;
-          text-transform: uppercase;
-          font-family: "Franklin Gothic";
-          font-size: 79px;
-          line-height: 69px;
           padding: 16px 32px 0 0;
           float: left; }
         body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite {
           font-size: 16px !important;
-          line-height: 21px !important; }
+          line-height: 24px !important; }
           body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite sup {
             font-weight: normal; }
         body.nn-theme #CONTENT .page-content .row .nn-content ul {
@@ -341,7 +327,7 @@ body.nn-theme {
           body.nn-theme #CONTENT .page-content .row .nn-content .nn-image .nn-image-caption {
             color: #808080;
             font-size: 16px !important;
-            line-height: 21px !important; }
+            line-height: 24px !important; }
         body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
           /* CUSTOMIZED SLICK.JS IMAGE SLIDER */
           height: 350px;
@@ -422,7 +408,7 @@ body.nn-theme {
               border-bottom: 2px solid black; }
         body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
           font-size: 16px !important;
-          line-height: 21px !important;
+          line-height: 24px !important;
           padding-bottom: 16px; }
   body.nn-theme .now-next-text .now::after {
     width: 1.25em;
@@ -456,11 +442,6 @@ body.nn-theme {
         line-height: 29px; }
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-label {
           margin: 0 0 16px 0; }
-        body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-title {
-          text-transform: uppercase;
-          font-family: "Franklin Gothic";
-          font-size: 79px;
-          line-height: 69px; }
       body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
         background-position: cover;
         background-position: center top;
@@ -485,11 +466,7 @@ body.nn-theme {
         padding: 66px 15px 132px 215px; }
         body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content {
           color: #f2f5ff !important; }
-          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content h1 {
-            text-transform: uppercase;
-            font-family: "Franklin Gothic";
-            font-size: 79px;
-            line-height: 69px;
+          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-caps-text {
             margin: 0 0 52px 0; }
           body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-image .nn-image-caption {
             color: #f2f5ff !important; }
@@ -514,12 +491,18 @@ body.nn-theme {
       content: 'tablet'; }
       body.nn-theme #HEADER #HEADER-IMAGE {
         position: static;
-        display: block;
+        display: table;
         min-height: 50vw;
         padding: 0; }
+        body.nn-theme #HEADER #HEADER-IMAGE .nn-subheader {
+          position: relative;
+          left: 0;
+          bottom: 0;
+          padding: 8px 16px;
+          font-size: 22px;
+          line-height: 35px;
+          color: #3d43ac; }
       body.nn-theme #HEADER #HEADER-TITLE {
-        display: none; }
-      body.nn-theme #HEADER .nn-subheader {
         display: none; }
       body.nn-theme .nn-subheader.mobile {
         display: block;
@@ -528,6 +511,11 @@ body.nn-theme {
         padding: 0; }
         body.nn-theme #CONTENT .page-content .container {
           padding: 0 !important; }
+          body.nn-theme #CONTENT .page-content .container .row .nn-chapter-title {
+            display: none; }
+          body.nn-theme #CONTENT .page-content .container .row .nn-chapter {
+            padding-top: 52px;
+            margin-bottom: 150px; }
           body.nn-theme #CONTENT .page-content .container .row #nn-toc {
             width: 100%;
             position: static;
@@ -543,12 +531,15 @@ body.nn-theme {
               background-size: 1em; }
               body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li {
                 width: 100%;
-                padding: 5px 16px; }
+                padding: 0; }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li:not(.nn-current) {
                   display: none; }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li .now-next-text .now::after {
                   background-image: url(./../imgs/nn-arrow-right-white.png); }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a {
+                  width: 100%;
+                  padding: 5px 16px;
+                  display: table;
                   color: #f2f5ff !important;
                   pointer-events: none;
                   border: none; }
@@ -557,6 +548,8 @@ body.nn-theme {
                     border: none !important; }
                   body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a::selection, body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a ::selection {
                     color: #f2f5ff !important; }
+                  body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a.now-next-text {
+                    width: calc(100% - 16px - 2em); }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li.nn-spotlights a:hover h1, body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li.nn-spotlights a:hover span::after {
                   display: none; }
             body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed {
@@ -588,13 +581,36 @@ body.nn-theme {
   @media only screen and (max-width: 480px) {
     body.nn-theme {
       content: 'mobile'; }
-      body.nn-theme #CONTENT .page-content .container .row .nn-chapter {
-        margin-bottom: 150px; }
-      body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote {
-        width: 100%;
-        padding-right: 0; }
-      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
-        padding: 16px; }
+      body.nn-theme #HEADER #HEADER-IMAGE .nn-subheader {
+        font-size: 18px !important;
+        line-height: 26px !important; }
+      body.nn-theme #CONTENT {
+        font-size: 18px !important;
+        line-height: 26px !important; }
+        body.nn-theme #CONTENT .nn-caps-text {
+          font-size: 50px;
+          line-height: 45px; }
+        body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote {
+          width: 100%;
+          padding: 0 0 32px 0; }
+        body.nn-theme #CONTENT .page-content .container .row ul li {
+          padding: 0 0 0 16px; }
+        body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-toggle-title .nn-caps-text {
+          line-height: 50px;
+          background: none !important; }
+        body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-toggle-title::after {
+          width: 32px;
+          height: 32px;
+          background-size: 32px; }
+      body.nn-theme.nn-sl-theme .nn-sl-link {
+        margin: 0 0 16px 0; }
+        body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
+          padding: 16px; }
+      body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
+        width: 16px;
+        height: 16px;
+        right: 8px;
+        top: 8px; }
       body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container {
         padding-left: 0;
         padding-right: 0; }

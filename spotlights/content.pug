@@ -23,7 +23,6 @@ section#CONTENT.main.scroller
 								span Spotlights
 
 				.span-4
-					.nn-subheader.mobile Strategic Plan 2018
 					.nn-chapter#spotlights
 						.nn-content
 							- var spotlights = []
@@ -36,7 +35,7 @@ section#CONTENT.main.scroller
 								a.nn-sl-link(href='#' data-spotlight=spotlight.index)
 									.nn-sl-text
 										.nn-sl-label Spotlight
-										.nn-sl-title!= spotlight.title
+										.nn-sl-title.nn-caps-text!= spotlight.title
 										.nn-sl-dek!= spotlight.dek
 									.nn-sl-image(style='background-image:url(./../assets/imgs/spotlights/image'+spotlight.index+'.jpg)')
 								// PRELOADS MODAL TO REMAIN HIDDEN UNTIL OPENED. COULD ALSO BE AJAX

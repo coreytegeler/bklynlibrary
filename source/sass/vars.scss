@@ -6,17 +6,22 @@ $toc: 300px;
 $white: #fff;
 $gray: #808080;
 $black: #000000;
-$blue: #385bbb;
+$blue: #3d43ac;
 $lightBlue: #7396f7;
 $lighterBlue: #f2f5ff;
 $pink: #fe00ff;
 
 $sansSerif: Helvetica, Arial, sans-serif;
-$display: 'Franklin Gothic';
+$caps: 'Franklin Gothic';
+
+@mixin xSmallText {
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
 
 @mixin smallText {
-	font-size: 16px !important;
-	line-height: 21px !important;
+	font-size: 18px !important;
+	line-height: 26px !important;
 }
 
 @mixin mediumText {
@@ -24,9 +29,9 @@ $display: 'Franklin Gothic';
 	line-height: 35px;
 }
 
-@mixin displayText {
+@mixin capsText {
 	text-transform: uppercase;
-	font-family: $display;
+	font-family: $caps;
 	font-size: 79px;
 	line-height: 69px;
 }

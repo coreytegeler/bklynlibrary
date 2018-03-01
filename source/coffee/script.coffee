@@ -42,6 +42,8 @@ $ ->
 			###* ADDS CLASS TO OPEN ACCORDION W/O ANIMATION ###
 			$wrapper.addClass('nn-static')
 			$toggle.click()
+
+
 		top = target.offset().top - chapterPadding + 5
 		$('html, body').animate
 			scrollTop: top
