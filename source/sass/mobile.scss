@@ -30,9 +30,6 @@
 			.container {
 				padding: 0 !important;
 				.row {
-					.nn-chapter-title {
-						display: none;
-					}
 					.nn-chapter {
 						padding-top: $width3;
 						margin-bottom: 150px;
@@ -182,7 +179,7 @@
 							&::after {
 								width: $width2;
 								height: $width2;
-								background-size: $width2;
+								background-size: calc(#{$width2} - 7px);
 							}
 						}
 						.nn-inside .nn-hidden-content {

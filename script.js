@@ -78,7 +78,7 @@ var $;
 $ = jQuery;
 
 $(function () {
-  var $header, $linkedChapter, $toc, chapterPadding, hash, isSize, top;
+  var $header, $toc, chapterPadding, isMobile, isSize, scrollToSection;
   $header = $('header#HEADER');
   $toc = $('#nn-toc');
   chapterPadding = 32;
@@ -114,26 +114,36 @@ $(function () {
       return false;
     }
   };
+  isMobile = function isMobile() {
+    if (isSize('tablet') || isSize('mobile')) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   /** ANIMATE SCROLL TO CHAPTER OR CITATION */
-  $('#nn-toc a, .nn-cite').on('click', function (e) {
-    var $toggle, $wrapper, hash, target, top;
-    hash = this.hash;
-    target = $(hash);
-    if (!target.length) {
-      return;
-    }
-    event.preventDefault();
+  scrollToSection = function scrollToSection(hash) {
+    var $newTarget, $target, $toggle, $wrapper, id, top;
+    console.log(hash);
+    $target = $(hash);
+    id = hash.replace('#', '');
 
     /** OPENS ACCORDION IF CITATION IS INSIDE */
-    if ($wrapper = target.parents('.nn-content-wrapper:not(.nn-opened)')) {
+    if ($wrapper = $target.parents('.nn-content-wrapper:not(.nn-opened)')) {
       $toggle = $wrapper.find('.nn-toggle-title');
 
       /** ADDS CLASS TO OPEN ACCORDION W/O ANIMATION */
       $wrapper.addClass('nn-static');
       $toggle.click();
     }
-    top = target.offset().top - chapterPadding + 5;
+    top = $target.offset().top - chapterPadding + 5;
+    if (isMobile()) {
+      $newTarget = $target.find('.nn-chapter-title');
+      if (['now', 'next'].indexOf(id) < 0 && $newTarget.length) {
+        top = $newTarget.offset().top;
+      }
+    }
     return $('html, body').animate({
       scrollTop: top
     }, 500, function () {
@@ -141,6 +151,27 @@ $(function () {
         return $wrapper.removeClass('nn-static');
       }
     });
+  };
+
+  /** LISTENER FOR INTERNAL NAVIGATION OR CITATION */
+  $('#nn-toc a, .nn-cite').on('click', function (e) {
+    var $target, hash;
+    hash = $(this).attr('href');
+    $target = $(hash);
+    if (!$target.length) {
+      return;
+    }
+    event.preventDefault();
+    return scrollToSection(this.hash);
+  });
+
+  /** CHECKS FOR URL HASH ON PAGE LOAD */
+  $(document).ready(function () {
+    if (location.hash && location.hash.length) {
+      return setTimeout(function () {
+        return scrollToSection(location.hash);
+      }, 100);
+    }
   });
 
   /** TOGGLES MOBILE NAV */
@@ -173,14 +204,14 @@ $(function () {
     /** FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP */
     if (scrolled >= headerBottom) {
       $toc.addClass('nn-fixed');
-      if (isSize('tablet') || isSize('mobile')) {
+      if (isMobile()) {
         $('#CONTENT').css({
           paddingTop: $toc.innerHeight()
         });
       }
     } else {
       $toc.removeClass('nn-fixed');
-      if (isSize('tablet') || isSize('mobile')) {
+      if (isMobile()) {
         $('#CONTENT').css({
           paddingTop: 0
         });
@@ -216,21 +247,6 @@ $(function () {
       return history.replaceState(void 0, void 0, '#');
     }
   });
-
-  /** CHECKS FOR URL HASH ON PAGE LOAD */
-  if (location.hash && location.hash.length) {
-    hash = location.hash;
-    if ($linkedChapter = $('.nn-chapter' + hash)) {
-      top = $linkedChapter.offset().top - chapterPadding + 5;
-      setTimeout(function () {
-        return $('html, body').animate({
-          scrollTop: top
-        }, 500);
-      }, 100);
-    }
-  } else {
-    $(window).scroll();
-  }
   return $(window).on('resize', function () {
 
     /** FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN */
@@ -258,8 +274,6 @@ $(function () {
       });
     }
   }).resize();
-
-  /** ADDS CLASS TO BODY IF TOUCH SCREEN TO DISABLE CSS HOVER EFFECTS */
 });
 
 /***/ })

@@ -29,27 +29,52 @@ $ ->
 		else
 			return false
 
+	isMobile = () ->
+		if isSize('tablet') || isSize('mobile')
+			return true
+		else
+			return false
+
 	###* ANIMATE SCROLL TO CHAPTER OR CITATION ###
-	$('#nn-toc a, .nn-cite').on 'click', (e) ->
-		hash = this.hash
-		target = $(hash)
-		if !target.length
-			return
-		event.preventDefault()
+	scrollToSection = (hash) ->
+		console.log hash
+		$target = $(hash)
+		id = hash.replace('#','')
 		###* OPENS ACCORDION IF CITATION IS INSIDE ###
-		if $wrapper = target.parents('.nn-content-wrapper:not(.nn-opened)')
+		if $wrapper = $target.parents('.nn-content-wrapper:not(.nn-opened)')
 			$toggle = $wrapper.find('.nn-toggle-title')
 			###* ADDS CLASS TO OPEN ACCORDION W/O ANIMATION ###
 			$wrapper.addClass('nn-static')
 			$toggle.click()
 
-
-		top = target.offset().top - chapterPadding + 5
+		top = $target.offset().top - chapterPadding + 5	
+		if isMobile()
+			$newTarget = $target.find('.nn-chapter-title')
+			if ['now','next'].indexOf(id) < 0 && $newTarget.length
+				top = $newTarget.offset().top
+		
 		$('html, body').animate
 			scrollTop: top
 		, 500, () ->
 			if $wrapper.length
 				$wrapper.removeClass('nn-static')
+
+
+	###* LISTENER FOR INTERNAL NAVIGATION OR CITATION ###
+	$('#nn-toc a, .nn-cite').on 'click', (e) ->
+		hash = $(this).attr('href')
+		$target = $(hash)
+		if !$target.length
+			return
+		event.preventDefault()
+		scrollToSection(this.hash)
+
+	###* CHECKS FOR URL HASH ON PAGE LOAD ###
+	$(document).ready () ->
+		if location.hash && location.hash.length
+			setTimeout () ->
+				scrollToSection(location.hash)
+			, 100
 
 	###* TOGGLES MOBILE NAV ###
 	$('#nn-toc').on 'click', (e) ->
@@ -76,12 +101,12 @@ $ ->
 		###* FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP ###
 		if scrolled >= headerBottom
 			$toc.addClass('nn-fixed')
-			if isSize('tablet') || isSize('mobile')
+			if isMobile()
 				$('#CONTENT').css
 					paddingTop: $toc.innerHeight()
 		else
 			$toc.removeClass('nn-fixed')
-			if isSize('tablet') || isSize('mobile')
+			if isMobile()
 				$('#CONTENT').css
 					paddingTop: 0
 
@@ -108,19 +133,6 @@ $ ->
 		else
 			history.replaceState(undefined, undefined, '#')
 
-	###* CHECKS FOR URL HASH ON PAGE LOAD ###
-	if location.hash && location.hash.length
-		hash = location.hash
-		if $linkedChapter = $('.nn-chapter'+hash)
-			top = $linkedChapter.offset().top - chapterPadding + 5
-			setTimeout () ->
-				$('html, body').animate
-					scrollTop: top
-				, 500
-			, 100
-	else
-		$(window).scroll()
-
 
 	$(window).on 'resize', () ->
 		###* FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN ###
@@ -141,29 +153,3 @@ $ ->
 			$inside.css
 				height: insideHeight
 	.resize()
-
-
-	###* ADDS CLASS TO BODY IF TOUCH SCREEN TO DISABLE CSS HOVER EFFECTS ###
-	# watchForHover = () ->
-	# 	hasHoverClass = false
-	# 	lastTouchTime = 0
-
-	# 	enableHover = () ->
-	# 		if (new Date() - lastTouchTime < 500)
-	# 			return
-	# 		$body.addClass('has_hover')
-	# 		hasHoverClass = true
-
-	# 	disableHover = () ->
-	# 		$body.removeClass('has_hover')
-	# 		hasHoverClass = false
-
-	# 	updateLastTouchTime = () ->
-	# 		lastTouchTime = new Date()
-
-	# 	document.addEventListener('touchstart', updateLastTouchTime, true)
-	# 	document.addEventListener('touchstart', disableHover, true)
-	# 	document.addEventListener('mousemove', enableHover, true)
-	# 	enableHover()
-
-	# watchForHover()

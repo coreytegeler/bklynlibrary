@@ -509,8 +509,6 @@ body.nn-theme {
         padding: 0; }
         body.nn-theme #CONTENT .page-content .container {
           padding: 0 !important; }
-          body.nn-theme #CONTENT .page-content .container .row .nn-chapter-title {
-            display: none; }
           body.nn-theme #CONTENT .page-content .container .row .nn-chapter {
             padding-top: 52px;
             margin-bottom: 150px; }
@@ -613,6 +611,6 @@ body.nn-theme {
           body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-content-wrapper .nn-toggle-title::after {
             width: 32px;
             height: 32px;
-            background-size: 32px; }
+            background-size: calc(32px - 7px); }
           body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-content-wrapper .nn-inside .nn-hidden-content {
             padding-top: 16px; } }
