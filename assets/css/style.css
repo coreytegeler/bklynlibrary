@@ -291,8 +291,8 @@ body.nn-theme {
           padding: 16px 32px 0 0;
           float: left; }
         body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite {
-          font-size: 16px !important;
-          line-height: 24px !important; }
+          font-size: 15px !important;
+          line-height: 18px !important; }
           body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite sup {
             font-weight: normal; }
         body.nn-theme #CONTENT .page-content .row .nn-content ul {
@@ -326,8 +326,8 @@ body.nn-theme {
             width: 100%; }
           body.nn-theme #CONTENT .page-content .row .nn-content .nn-image .nn-image-caption {
             color: #808080;
-            font-size: 16px !important;
-            line-height: 24px !important; }
+            font-size: 15px !important;
+            line-height: 18px !important; }
         body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
           /* CUSTOMIZED SLICK.JS IMAGE SLIDER */
           height: 350px;
@@ -407,8 +407,8 @@ body.nn-theme {
             body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link a {
               border-bottom: 2px solid black; }
         body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
-          font-size: 16px !important;
-          line-height: 24px !important;
+          font-size: 15px !important;
+          line-height: 18px !important;
           padding-bottom: 16px; }
   body.nn-theme .now-next-text .now::after {
     width: 1.25em;
@@ -437,9 +437,7 @@ body.nn-theme {
       flex-direction: row; }
       body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
         width: calc(66.66667% - 32px);
-        padding: 16px;
-        font-size: 22px;
-        line-height: 29px; }
+        padding: 16px; }
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-label {
           margin: 0 0 16px 0; }
       body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
@@ -573,39 +571,13 @@ body.nn-theme {
             margin: 0; }
             body.nn-theme #CONTENT .page-content .container .nn-content .nn-carousel-placer .carousel-wrapper {
               left: -15px; }
-      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
-        width: 100%;
-        padding: 16px 32px 52px 32px; }
-      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
-        display: none; } }
-  @media only screen and (max-width: 480px) {
-    body.nn-theme {
-      content: 'mobile'; }
-      body.nn-theme #HEADER #HEADER-IMAGE .nn-subheader {
-        font-size: 18px !important;
-        line-height: 26px !important; }
-      body.nn-theme #CONTENT {
-        font-size: 18px !important;
-        line-height: 26px !important; }
-        body.nn-theme #CONTENT .nn-caps-text {
-          font-size: 50px;
-          line-height: 45px; }
-        body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote {
-          width: 100%;
-          padding: 0 0 32px 0; }
-        body.nn-theme #CONTENT .page-content .container .row ul li {
-          padding: 0 0 0 16px; }
-        body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-toggle-title .nn-caps-text {
-          line-height: 50px;
-          background: none !important; }
-        body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-toggle-title::after {
-          width: 32px;
-          height: 32px;
-          background-size: 32px; }
       body.nn-theme.nn-sl-theme .nn-sl-link {
         margin: 0 0 16px 0; }
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
+          width: 100%;
           padding: 16px; }
+        body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
+          display: none; }
       body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
         width: 16px;
         height: 16px;
@@ -616,3 +588,31 @@ body.nn-theme {
         padding-right: 0; }
         body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .span-4 {
           width: calc(100% - 15px); } }
+  @media only screen and (max-width: 480px) {
+    body.nn-theme {
+      content: 'mobile'; }
+      body.nn-theme #HEADER #HEADER-IMAGE .nn-subheader {
+        font-size: 17px !important;
+        line-height: 26px !important; }
+      body.nn-theme #CONTENT {
+        font-size: 17px !important;
+        line-height: 26px !important; }
+        body.nn-theme #CONTENT .nn-caps-text {
+          font-size: 45px;
+          line-height: 40px; }
+        body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote {
+          width: 100%;
+          padding: 0 0 32px 0; }
+        body.nn-theme #CONTENT .page-content .container .row ul li {
+          padding: 0 0 0 16px; }
+        body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-content-wrapper {
+          margin: 0 0 16px 0; }
+          body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-content-wrapper .nn-toggle-title .nn-caps-text {
+            line-height: 50px;
+            background: none !important; }
+          body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-content-wrapper .nn-toggle-title::after {
+            width: 32px;
+            height: 32px;
+            background-size: 32px; }
+          body.nn-theme #CONTENT .page-content .container .row .nn-accordion .nn-content-wrapper .nn-inside .nn-hidden-content {
+            padding-top: 16px; } }

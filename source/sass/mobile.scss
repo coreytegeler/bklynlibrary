@@ -123,59 +123,13 @@
 	}
 	&.nn-sl-theme {
 		.nn-sl-link {
+			margin: 0 0 $width1 0;
 			.nn-sl-text {
 				width: 100%;
-				padding: $width1 $width2 $width3 $width2;
+				padding: $width1;
 			}
 			.nn-sl-image {
 				display: none;
-			}
-		}
-	}
-}
-@media only screen and (max-width:480px) {
-	content: 'mobile';
-	#HEADER #HEADER-IMAGE .nn-subheader {
-		@include smallText;
-	}
-	#CONTENT {
-		@include smallText;
-		.nn-caps-text {
-			font-size: 50px;
-			line-height: 45px;
-		}
-		.page-content {
-			.container {
-				.row {
-					.nn-content blockquote {
-						width: 100%;
-						padding: 0 0 $width2 0;
-					}
-					ul {
-						li {
-							padding: 0 0 0 $width1;
-						}
-					}
-					.nn-accordion .nn-toggle-title {
-						.nn-caps-text {
-							line-height: 50px;
-							background: none !important;
-						}
-						&::after {
-							width: $width2;
-							height: $width2;
-							background-size: $width2;
-						}
-					}
-				}
-			}
-		}
-	}
-	&.nn-sl-theme {
-		.nn-sl-link {
-			margin: 0 0 $width1 0;
-			.nn-sl-text {
-				padding: $width1;
 			}
 		}
 		.nn-sl-modal {
@@ -190,6 +144,51 @@
 				padding-right: 0;
 				.span-4 {
 					width: calc(100% - 15px);
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width:480px) {
+	content: 'mobile';
+	#HEADER #HEADER-IMAGE .nn-subheader {
+		@include smallText;
+	}
+	#CONTENT {
+		@include smallText;
+		.nn-caps-text {
+			font-size: 45px;
+			line-height: 40px;
+		}
+		.page-content {
+			.container {
+				.row {
+					.nn-content blockquote {
+						width: 100%;
+						padding: 0 0 $width2 0;
+					}
+					ul {
+						li {
+							padding: 0 0 0 $width1;
+						}
+					}
+					.nn-accordion .nn-content-wrapper {
+						margin: 0 0 $width1 0;
+						.nn-toggle-title {
+							.nn-caps-text {
+								line-height: 50px;
+								background: none !important;
+							}
+							&::after {
+								width: $width2;
+								height: $width2;
+								background-size: $width2;
+							}
+						}
+						.nn-inside .nn-hidden-content {
+							padding-top: $width1;
+						}
+					}
 				}
 			}
 		}

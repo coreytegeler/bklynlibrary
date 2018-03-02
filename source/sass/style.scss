@@ -501,8 +501,6 @@ body.nn-theme {
 			.nn-sl-text {
 				width: calc(#{100%*(2/3)} - #{$width1 + $width1});
 				padding: $width1;
-				font-size: 22px;
-		    line-height: 29px;
 				.nn-sl-label {
 					margin: 0 0 $width1 0;
 				}
