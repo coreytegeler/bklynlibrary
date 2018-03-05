@@ -154,10 +154,11 @@ body.nn-theme {
 						line-height: 1em;
 						margin-top: -5px;
 						li {
-							width: calc(100% - #{$width2});
-							margin: 0 $width2 0 0;
+							// width: calc(100% - #{$width2});
+							// margin: 0 $width2 0 0;
+							width: 100%;
 							line-height: 1em;
-							display: inline-table;
+							display: inline-block;
 							a {
 								display: inline;
 								text-align: left;
@@ -522,13 +523,16 @@ body.nn-theme {
 			position: fixed;
 			left: 0;
 			top: 0;
+			margin-left: -9999999999px;
 			z-index: 900;
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;
 			background-color: $lightBlue;
-			display: none;
 			&.show {
-				display: block;
+				margin-left: 0;
+				.nn-sl-close {
+					display: block;
+				}
 			}
 			.nn-sl-container {
 				display: table;
@@ -541,6 +545,75 @@ body.nn-theme {
 			    .nn-image {
 			    	.nn-image-caption {
 			    		color: $lighterBlue !important;
+			    	}
+			    }
+			    .nn-audio {
+			    	width: 100%;
+			    	margin-bottom: $width2;
+			    	.nn-player {
+			    		height: $width1;
+			    		display: flex;
+				    	flex-direction: row;
+				    	audio {
+				    		display: none;
+				    	}
+				    	button.nn-play {
+				    		width: $width1;
+				    		height: $width1;
+				    		min-width: $width1;
+				    		min-height: $width1;
+				    		background-color: $lighterBlue;
+				    		padding: 0;
+				    		float: left;
+				    		border-radius: 50%;
+				    		background-position: center;
+				    		background-size: 50%;
+				    		background-repeat: no-repeat;
+				    		background-image: url(/imgs/nn-play.png);
+				    	}
+				    	.nn-track {
+				    		width: calc(100% - #{$width1} - 5px);
+				    		margin: 0 5px;
+				    		float: left;
+				    		position: relative;
+				    		cursor: pointer;
+				    		.nn-track-fill {
+				    			width: 100%;
+				    			height: 2px;
+				    			position: absolute;
+				    			left: 0;
+				    			top: 7px;
+				    			background-color: rgba($lighterBlue, .5);
+				    		}
+				    		.nn-track-played-fill {
+				    			width: 0;
+				    			height: 2px;
+				    			position: absolute;
+				    			left: 0;
+				    			top: 7px;
+				    			background-color: $lighterBlue;
+				    			transition: width 100ms linear;
+				    		}
+				    	}
+				    	.nn-time {
+				    		display: flex;
+				    		color: rgba($lighterBlue, .5);
+				    		@include xSmallText;
+				    		span {
+
+				    		}
+				    	}
+				    	&.nn-playing {
+				    		button.nn-play {
+				    			background-image: url(/imgs/nn-pause.png);
+				    		}
+				    	}
+				    }
+			    	h3 {
+
+			    	}
+			    	p {
+			    		@include xSmallText;
 			    	}
 			    }
 				}
@@ -556,7 +629,8 @@ body.nn-theme {
 				background-image: url(/imgs/nn-close.png);
 				background-repeat: no-repeat;
 				background-position: center;
-				background-size: contain;			
+				background-size: contain;	
+				display: none;		
 			}
 		}
 		&.nn-sl-modal-open {

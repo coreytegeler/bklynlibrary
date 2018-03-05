@@ -78,7 +78,7 @@ var $;
 $ = jQuery;
 
 $(function () {
-  var $header, $toc, chapterPadding, isMobile, isSize, scrollToSection;
+  var $header, $toc, chapterPadding, getTime, isMobile, isSize, scrollToSection;
   $header = $('header#HEADER');
   $toc = $('#nn-toc');
   chapterPadding = 32;
@@ -125,7 +125,6 @@ $(function () {
   /** ANIMATE SCROLL TO CHAPTER OR CITATION */
   scrollToSection = function scrollToSection(hash) {
     var $newTarget, $target, $toggle, $wrapper, id, top;
-    console.log(hash);
     $target = $(hash);
     id = hash.replace('#', '');
 
@@ -157,6 +156,9 @@ $(function () {
   $('#nn-toc a, .nn-cite').on('click', function (e) {
     var $target, hash;
     hash = $(this).attr('href');
+    if (!hash.length || hash.substr(0, 1) !== '#') {
+      return;
+    }
     $target = $(hash);
     if (!$target.length) {
       return;
@@ -247,7 +249,7 @@ $(function () {
       return history.replaceState(void 0, void 0, '#');
     }
   });
-  return $(window).on('resize', function () {
+  $(window).on('resize', function () {
 
     /** FIXES HEIGHT OF CAROUSEL SPACER TO ALLOW FOR FULL WIDTH BEYOND CONTENT COLUMN */
     var $inside, $opened_wrapper, insideHeight;
@@ -274,6 +276,62 @@ $(function () {
       });
     }
   }).resize();
+  $('.nn-player').each(function () {
+    var $button, $player, $track, $trackFill, audio;
+    $player = $(this);
+    $button = $player.find('button');
+    audio = $player.find('audio')[0];
+    $track = $player.find('.nn-track');
+    $trackFill = $player.find('.nn-track-played-fill');
+    $button.on('click', function () {
+      if ($player.is('.nn-playing')) {
+        $player.addClass('nn-paused');
+        $player.removeClass('nn-playing');
+        return audio.pause();
+      } else {
+        $player.removeClass('nn-paused');
+        $player.addClass('nn-playing');
+        return audio.play();
+      }
+    });
+    audio.onended = function () {
+      $player = $(this).parents('.nn-audio');
+      $player.addClass('nn-paused');
+      return $player.removeClass('nn-playing');
+    };
+    return $(audio).on('canplaythrough', function () {
+      var duration, trackWidth;
+      duration = audio.duration;
+      $player.find('.nn-dur').html(getTime(duration));
+      trackWidth = $track.innerWidth();
+      $(audio).on('timeupdate', function () {
+        var currentTime, percentPlayed;
+        currentTime = audio.currentTime;
+        $player.find('.nn-played').html(getTime(currentTime));
+        percentPlayed = currentTime / duration;
+        return $trackFill.css({
+          width: $track.innerWidth() * percentPlayed
+        });
+      });
+      return $track.on('click', function (e) {
+        var clickedTime;
+        clickedTime = (e.clientX - $track[0].getBoundingClientRect().left) / trackWidth;
+        return audio.currentTime = duration * clickedTime;
+      });
+    });
+  });
+  return getTime = function getTime(time) {
+    var durM, durS;
+    durM = parseInt(time / 60 % 60);
+    durS = parseInt(time % 60);
+    if (durM < 10) {
+      durM = '0' + durM;
+    }
+    if (durS < 10) {
+      durS = '0' + durS;
+    }
+    return durM + ':' + durS;
+  };
 });
 
 /***/ })

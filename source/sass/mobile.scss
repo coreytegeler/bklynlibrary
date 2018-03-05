@@ -1,3 +1,20 @@
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+	content: 'laptop';
+	#CONTENT .page-content .row .nn-content {
+		margin-right: 0;
+		blockquote {
+			width: 100%;
+			padding-right: 0;
+		}
+	}
+	&.nn-sl-theme {
+		.nn-sl-link {
+			.nn-sl-image {
+				display: none;
+			}
+		}
+	}
+}
 @media only screen and (max-width: 768px) {
 	content: 'tablet';
 	#HEADER {
@@ -124,9 +141,6 @@
 			.nn-sl-text {
 				width: 100%;
 				padding: $width1;
-			}
-			.nn-sl-image {
-				display: none;
 			}
 		}
 		.nn-sl-modal {

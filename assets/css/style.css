@@ -180,10 +180,9 @@ body.nn-theme {
           line-height: 1em;
           margin-top: -5px; }
           body.nn-theme #CONTENT .page-content .row #nn-toc ul li {
-            width: calc(100% - 32px);
-            margin: 0 32px 0 0;
+            width: 100%;
             line-height: 1em;
-            display: inline-table; }
+            display: inline-block; }
             body.nn-theme #CONTENT .page-content .row #nn-toc ul li a {
               display: inline;
               text-align: left;
@@ -452,13 +451,15 @@ body.nn-theme {
       position: fixed;
       left: 0;
       top: 0;
+      margin-left: -9999999999px;
       z-index: 900;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      background-color: #7396f7;
-      display: none; }
+      background-color: #7396f7; }
       body.nn-theme.nn-sl-theme .nn-sl-modal.show {
-        display: block; }
+        margin-left: 0; }
+        body.nn-theme.nn-sl-theme .nn-sl-modal.show .nn-sl-close {
+          display: block; }
       body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container {
         display: table;
         padding: 66px 15px 132px 215px; }
@@ -468,6 +469,59 @@ body.nn-theme {
             margin: 0 0 52px 0; }
           body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-image .nn-image-caption {
             color: #f2f5ff !important; }
+          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio {
+            width: 100%;
+            margin-bottom: 32px; }
+            body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player {
+              height: 16px;
+              display: flex;
+              flex-direction: row; }
+              body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player audio {
+                display: none; }
+              body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player button.nn-play {
+                width: 16px;
+                height: 16px;
+                min-width: 16px;
+                min-height: 16px;
+                background-color: #f2f5ff;
+                padding: 0;
+                float: left;
+                border-radius: 50%;
+                background-position: center;
+                background-size: 50%;
+                background-repeat: no-repeat;
+                background-image: url(./../imgs/nn-play.png); }
+              body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-track {
+                width: calc(100% - 16px - 5px);
+                margin: 0 5px;
+                float: left;
+                position: relative;
+                cursor: pointer; }
+                body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-track .nn-track-fill {
+                  width: 100%;
+                  height: 2px;
+                  position: absolute;
+                  left: 0;
+                  top: 7px;
+                  background-color: rgba(242, 245, 255, 0.5); }
+                body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-track .nn-track-played-fill {
+                  width: 0;
+                  height: 2px;
+                  position: absolute;
+                  left: 0;
+                  top: 7px;
+                  background-color: #f2f5ff;
+                  transition: width 100ms linear; }
+              body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-time {
+                display: flex;
+                color: rgba(242, 245, 255, 0.5);
+                font-size: 15px !important;
+                line-height: 18px !important; }
+              body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player.nn-playing button.nn-play {
+                background-image: url(./../imgs/nn-pause.png); }
+            body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio p {
+              font-size: 15px !important;
+              line-height: 18px !important; }
       body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
         width: 32px;
         height: 32px;
@@ -479,11 +533,22 @@ body.nn-theme {
         background-image: url(./../imgs/nn-close.png);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: contain; }
+        background-size: contain;
+        display: none; }
     body.nn-theme.nn-sl-theme.nn-sl-modal-open {
       overflow: hidden; }
       body.nn-theme.nn-sl-theme.nn-sl-modal-open #bodynav {
         display: none; }
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
+    body.nn-theme {
+      content: 'laptop'; }
+      body.nn-theme #CONTENT .page-content .row .nn-content {
+        margin-right: 0; }
+        body.nn-theme #CONTENT .page-content .row .nn-content blockquote {
+          width: 100%;
+          padding-right: 0; }
+      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
+        display: none; } }
   @media only screen and (max-width: 768px) {
     body.nn-theme {
       content: 'tablet'; }
@@ -574,8 +639,6 @@ body.nn-theme {
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
           width: 100%;
           padding: 16px; }
-        body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
-          display: none; }
       body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
         width: 16px;
         height: 16px;

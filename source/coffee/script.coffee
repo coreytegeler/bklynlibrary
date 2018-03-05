@@ -37,7 +37,6 @@ $ ->
 
 	###* ANIMATE SCROLL TO CHAPTER OR CITATION ###
 	scrollToSection = (hash) ->
-		console.log hash
 		$target = $(hash)
 		id = hash.replace('#','')
 		###* OPENS ACCORDION IF CITATION IS INSIDE ###
@@ -63,6 +62,8 @@ $ ->
 	###* LISTENER FOR INTERNAL NAVIGATION OR CITATION ###
 	$('#nn-toc a, .nn-cite').on 'click', (e) ->
 		hash = $(this).attr('href')
+		if !hash.length || hash.substr(0,1) != '#'
+			return
 		$target = $(hash)
 		if !$target.length
 			return
@@ -153,3 +154,50 @@ $ ->
 			$inside.css
 				height: insideHeight
 	.resize()
+
+
+	$('.nn-player').each () ->
+		$player = $(this)
+		$button = $player.find('button')
+		audio = $player.find('audio')[0]
+		$track = $player.find('.nn-track')
+		$trackFill = $player.find('.nn-track-played-fill')
+
+		$button.on 'click', () ->
+			if $player.is('.nn-playing')
+				$player.addClass('nn-paused')
+				$player.removeClass('nn-playing')
+				audio.pause()
+			else
+				$player.removeClass('nn-paused')
+				$player.addClass('nn-playing')
+				audio.play()
+
+		audio.onended = () ->
+			$player = $(this).parents('.nn-audio')
+			$player.addClass('nn-paused')
+			$player.removeClass('nn-playing')
+
+		$(audio).on 'canplaythrough', () ->
+			duration = audio.duration
+			$player.find('.nn-dur').html(getTime(duration))
+			trackWidth = $track.innerWidth()
+			$(audio).on 'timeupdate', () ->
+				currentTime = audio.currentTime
+				$player.find('.nn-played').html(getTime(currentTime))
+				percentPlayed = currentTime/duration
+				$trackFill.css
+					width: $track.innerWidth() * percentPlayed
+
+			$track.on 'click', (e) ->
+				clickedTime = (e.clientX - $track[0].getBoundingClientRect().left) / trackWidth
+				audio.currentTime = duration * clickedTime
+
+	getTime = (time) ->
+		durM = parseInt((time / 60) % 60)
+		durS = parseInt(time % 60)
+		if durM < 10
+			durM = '0'+durM
+		if durS < 10
+			durS = '0'+durS
+		return durM+':'+durS
