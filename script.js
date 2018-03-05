@@ -295,7 +295,6 @@ $(function () {
       }
     });
     audio.onended = function () {
-      $player = $(this).parents('.nn-audio');
       $player.addClass('nn-paused');
       return $player.removeClass('nn-playing');
     };

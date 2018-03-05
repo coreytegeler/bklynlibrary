@@ -174,7 +174,6 @@ $ ->
 				audio.play()
 
 		audio.onended = () ->
-			$player = $(this).parents('.nn-audio')
 			$player.addClass('nn-paused')
 			$player.removeClass('nn-playing')
 
