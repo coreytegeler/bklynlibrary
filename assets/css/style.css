@@ -89,6 +89,8 @@ body.nn-theme {
       height: auto;
       display: table;
       margin: auto; }
+    body.nn-theme header #HEADER-IMAGE object.nn-mobile {
+      display: none; }
     body.nn-theme header #HEADER-IMAGE .nn-subheader {
       position: absolute;
       left: 230px;
@@ -553,6 +555,7 @@ body.nn-theme {
     body.nn-theme {
       content: 'tablet'; }
       body.nn-theme #HEADER #HEADER-IMAGE {
+        width: 100%;
         position: static;
         display: table;
         min-height: 50vw;
@@ -652,6 +655,13 @@ body.nn-theme {
   @media only screen and (max-width: 480px) {
     body.nn-theme {
       content: 'mobile'; }
+      body.nn-theme #HEADER #HEADER-IMAGE img {
+        display: none; }
+      body.nn-theme #HEADER #HEADER-IMAGE object.nn-mobile {
+        width: calc(100% - 32px) !important;
+        height: auto;
+        display: table;
+        margin: 16px auto; }
       body.nn-theme #HEADER #HEADER-IMAGE .nn-subheader {
         font-size: 17px !important;
         line-height: 26px !important; }

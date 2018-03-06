@@ -29,6 +29,11 @@ body.nn-theme {
 				display: table;
 				margin: auto;
 			}
+			object {
+				&.nn-mobile {
+					display: none;
+				}
+			}
 			.nn-subheader {
 				position: absolute;
 				left: 230px;

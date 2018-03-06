@@ -19,6 +19,7 @@
 	content: 'tablet';
 	#HEADER {
 		#HEADER-IMAGE {
+			width: 100%;
 			position: static;
 	    display: table;
 	    min-height: 50vw;
@@ -162,8 +163,21 @@
 }
 @media only screen and (max-width:480px) {
 	content: 'mobile';
-	#HEADER #HEADER-IMAGE .nn-subheader {
-		@include smallText;
+	#HEADER #HEADER-IMAGE {
+		img {
+			display: none;
+		}
+		object {
+			&.nn-mobile {
+				width: calc(100% - #{$width2}) !important;
+				height: auto;
+				display: table;
+				margin: $width1 auto;
+			}
+		}
+		.nn-subheader {
+			@include smallText;
+		}
 	}
 	#CONTENT {
 		@include smallText;

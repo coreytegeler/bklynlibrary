@@ -155,7 +155,6 @@ $ ->
 				height: insideHeight
 	.resize()
 
-
 	$('.nn-player').each () ->
 		$player = $(this)
 		$button = $player.find('button')
