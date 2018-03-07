@@ -67,7 +67,7 @@ table {
 body.nn-theme {
   /* CLASS NEEDS TO BE ADDED TO ALL PAGES OF STRATEGIC PLAN */
   color: #000000;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, Verdana, san-serif;
   font-size: 22px;
   line-height: 35px; }
   body.nn-theme header#HEADER {
@@ -107,7 +107,7 @@ body.nn-theme {
     body.nn-theme header #HEADER-TITLE h1#page-title.page__title.title {
       font-size: 2em;
       margin-bottom: 15px;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Arial, Verdana, san-serif;
       font-weight: 900; }
   body.nn-theme .nn-subheader {
     font-weight: bolder; }
@@ -283,9 +283,11 @@ body.nn-theme {
             transition: none !important; }
       body.nn-theme #CONTENT .page-content .row .nn-chapter {
         padding: 52px 0 250px 0; }
+        body.nn-theme #CONTENT .page-content .row .nn-chapter:first-child {
+          padding-top: 25px; }
       body.nn-theme #CONTENT .page-content .row .nn-content {
         margin-right: 32px;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: "Helvetica Neue", Helvetica, Arial, Verdana, san-serif;
         color: #000000; }
         body.nn-theme #CONTENT .page-content .row .nn-content h2 {
           width: 100%;
@@ -340,8 +342,8 @@ body.nn-theme {
             body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
               font-size: 15px !important;
               line-height: 18px !important;
-              padding-bottom: 16px;
-              text-indent: 52px; }
+              padding: 0 0 16px 0;
+              text-indent: 16px; }
           body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-bullets li {
             background-image: url(./../imgs/nn-circle.png);
             background-size: 5px;
@@ -349,7 +351,7 @@ body.nn-theme {
             background-repeat: no-repeat; }
         body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
           /* CUSTOMIZED SLICK.JS IMAGE SLIDER */
-          height: 350px;
+          height: 400px;
           position: relative;
           margin-top: 16px;
           display: inline-block; }
@@ -385,6 +387,7 @@ body.nn-theme {
               body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .slick-list, body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .slick-track {
                 height: 100%; }
               body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell {
+                height: 400px;
                 margin: 0;
                 padding: 0;
                 border: none;
@@ -393,6 +396,8 @@ body.nn-theme {
                 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell a {
                   display: table; }
                 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell img {
+                  width: auto;
+                  height: 400px;
                   margin: 0;
                   filter: grayscale(1); }
                 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell .caption {
@@ -426,7 +431,7 @@ body.nn-theme {
             height: 16px;
             display: inline-block;
             opacity: 0;
-            background-image: url(./../imgs/nn-arrow-down-black.png);
+            background-image: url(./../imgs/nn-arrow-right-black.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size: 16px;

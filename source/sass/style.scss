@@ -263,9 +263,6 @@ body.nn-theme {
 								background-position: center;
 						    background-size: 35px;
 						  }
-						  &:hover::after {
-						  	
-						  }
 						}
 						.nn-inside {
 							height: 0;
@@ -302,6 +299,9 @@ body.nn-theme {
 				}
 				.nn-chapter {
 					padding: $width3 0 250px 0;
+					&:first-child {
+						padding-top: 25px;
+					}
 				}
 				.nn-content {
 					margin-right: $width2;
@@ -370,8 +370,8 @@ body.nn-theme {
 							clear: both;
 							li {
 								@include xSmallText;
-								padding-bottom: $width1;
-								text-indent: $width3;
+								padding: 0 0 $width1 0;
+								text-indent: $width1;
 							}
 						}
 						&.nn-bullets {
@@ -384,8 +384,9 @@ body.nn-theme {
 						}
 					}
 					.nn-carousel-placer {
+						$slideHeight: 400px;
 						/* CUSTOMIZED SLICK.JS IMAGE SLIDER */
-						height: 350px;
+						height: $slideHeight;
 						position: relative;
 						margin-top: $width1;
 						display: inline-block;
@@ -427,6 +428,7 @@ body.nn-theme {
 									height: 100%;
 								}
 								.carousel-cell {
+									height: $slideHeight;
 									margin: 0;
 									padding: 0;
 									border: none;
@@ -436,6 +438,8 @@ body.nn-theme {
 										display: table;
 									}
 									img {
+										width: auto;
+										height: $slideHeight;
 										margin: 0;
 										filter: grayscale(1);
 									}
@@ -482,7 +486,7 @@ body.nn-theme {
 								height: $width1;
 								display: inline-block;
 								opacity: 0;
-								background-image: url(/imgs/nn-arrow-down-black.png);
+								background-image: url(/imgs/nn-arrow-right-black.png);
 								background-repeat: no-repeat;
 								background-position: center;
 						    background-size: $width1;

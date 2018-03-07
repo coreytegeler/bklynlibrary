@@ -61,8 +61,10 @@ Drupal.behaviors.carouselBehavior = {
 			$(carouselCols[i]).slick("slickSetOption", "autoplaySpeed", 5000, true);
 		}
 		
-		if ( $('body').hasClass('page-node-156452') ){ // stratplan report page
+		if ( $('body').hasClass('nn-theme') ){ // stratplan report page
 			$(carouselCols[i]).slick("slickSetOption", "variableWidth", true, true);
+			$(carouselCols[i]).slick("slickSetOption", "centerMode", true, true);
+			
 		}
 		
 		if (i >= 4){
@@ -775,9 +777,9 @@ $('#learning_resources').ajaxSuccess(function(){
 // ---------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------
 // DROPDOWNS
-	$('.selectpicker').selectpicker({
-		dropupAuto: false, size: 10, width: 'fit'
-	});
+	// $('.selectpicker').selectpicker({
+	// 	dropupAuto: false, size: 10, width: 'fit'
+	// });
 	
 // ---------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------
@@ -896,11 +898,11 @@ $('#learning_resources').ajaxSuccess(function(){
 	});
 	
 	
-	$('.sharetip').tooltipster({
-		theme: 'tooltipster-light',
-		trigger: 'click',
-		interactive: true
-	});
+	// $('.sharetip').tooltipster({
+	// 	theme: 'tooltipster-light',
+	// 	trigger: 'click',
+	// 	interactive: true
+	// });
 	
 	
 	$(window).load( function() {
