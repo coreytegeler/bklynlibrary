@@ -76,7 +76,7 @@ $(function() {
       return;
     }
     disableScroll();
-    return $('html').stop().animate({
+    return $('html, body').stop().animate({
       scrollTop: top
     }, 500, function() {
       if ($wrapper.length) {

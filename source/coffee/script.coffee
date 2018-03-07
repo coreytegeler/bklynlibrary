@@ -62,7 +62,7 @@ $ ->
 		if $target.is('.nn-scroll-next') && top <= $(window).scrollTop()
 			return
 		disableScroll()
-		$('html').stop().animate
+		$('html, body').stop().animate
 			scrollTop: top
 		, 500, () ->
 			if $wrapper.length
