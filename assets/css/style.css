@@ -645,7 +645,7 @@ body.nn-theme {
                     color: #f2f5ff !important; }
                   body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a.now-next-text {
                     width: calc(100% - 16px - 2em); }
-                body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li.nn-spotlights a:hover h1, body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li.nn-spotlights a:hover span::after {
+                body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li.nn-spotlights a:hover .nn-caps-text {
                   display: none; }
             body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed {
               width: 100%;
