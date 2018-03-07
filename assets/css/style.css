@@ -76,11 +76,11 @@ body.nn-theme {
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: #7396f7; }
+    background-color: #8199ff; }
   body.nn-theme header .bkgd-primary {
     background-color: transparent; }
   body.nn-theme header #HEADER-IMAGE {
-    background: #7396f7;
+    background: #8199ff;
     min-height: auto;
     padding-bottom: 0;
     display: table; }
@@ -113,16 +113,25 @@ body.nn-theme {
     font-weight: bolder; }
     body.nn-theme .nn-subheader.mobile {
       display: none; }
-  body.nn-theme .nav-main li.scrolled a {
-    opacity: 0;
+  body.nn-theme #bodynav {
     pointer-events: none; }
+    body.nn-theme #bodynav header {
+      pointer-events: all; }
+    body.nn-theme #bodynav .nav-main {
+      pointer-events: none; }
+      body.nn-theme #bodynav .nav-main li.scrolled a {
+        opacity: 0;
+        pointer-events: none; }
+    body.nn-theme #bodynav:hover .nav-main li.scrolled a {
+      opacity: 1;
+      pointer-events: all; }
   body.nn-theme .nn-caps-text {
     text-transform: uppercase;
     font-family: "Franklin Gothic";
     font-size: 79px;
-    line-height: 69px; }
+    line-height: 75px; }
   body.nn-theme #CONTENT {
-    padding-top: 32px; }
+    padding-top: 0; }
     body.nn-theme #CONTENT .container .row {
       margin: 0;
       color: #000000; }
@@ -158,22 +167,11 @@ body.nn-theme {
           body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title {
             display: block;
             position: relative; }
-            body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::before, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
-              display: inline-block;
-              content: '';
-              opacity: 0;
-              background-size: contain;
-              background-position: center;
-              position: absolute; }
-            body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::before, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
-              display: none; }
-            body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a:hover::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a:hover::before, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::after, body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::before {
-              opacity: 1; }
       body.nn-theme #CONTENT .page-content .row #nn-toc {
         /* RIGHT SIDE NAVIGATION (TABLE OF CONTENTS) */
         position: absolute;
         right: 0;
-        top: 0;
+        top: 32px;
         z-index: 200;
         padding: 0;
         pointer-events: none; }
@@ -184,19 +182,22 @@ body.nn-theme {
           body.nn-theme #CONTENT .page-content .row #nn-toc ul li {
             width: 100%;
             line-height: 1em;
-            display: inline-block; }
+            display: inline-block;
+            margin-bottom: 5px; }
             body.nn-theme #CONTENT .page-content .row #nn-toc ul li a {
               display: inline;
               text-align: left;
               font-weight: bold;
-              border-bottom: solid 3px transparent;
-              line-height: 1.4em;
+              border-bottom: solid 2px transparent;
+              font-size: 21px;
+              line-height: 1.2em;
               transition: none;
               pointer-events: all; }
             body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights {
-              color: #7396f7; }
+              color: #8199ff;
+              margin-top: 16px; }
               body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a {
-                color: #7396f7; }
+                color: #8199ff; }
                 body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a .nn-caps-text {
                   display: none;
                   clear: both;
@@ -223,10 +224,18 @@ body.nn-theme {
         /* INLINE ACCORDION */ }
         body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title {
           position: relative; }
-          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before, body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::after {
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::after, body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before {
+            display: inline-block;
+            content: '';
+            opacity: 0;
+            background-size: contain;
+            background-position: center;
             position: absolute; }
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before {
+            display: none; }
+          body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover::after, body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover::before {
+            opacity: 1; }
           body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title .nn-caps-text {
-            line-height: 75px;
             display: inline; }
           body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover {
             cursor: pointer; }
@@ -273,7 +282,7 @@ body.nn-theme {
           body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-static .nn-inside {
             transition: none !important; }
       body.nn-theme #CONTENT .page-content .row .nn-chapter {
-        margin-bottom: 300px; }
+        padding: 52px 0 250px 0; }
       body.nn-theme #CONTENT .page-content .row .nn-content {
         margin-right: 32px;
         font-family: Helvetica, Arial, sans-serif;
@@ -286,11 +295,18 @@ body.nn-theme {
         body.nn-theme #CONTENT .page-content .row .nn-content p, body.nn-theme #CONTENT .page-content .row .nn-content .nn-chapter-title {
           margin: 0 0 32px 0; }
         body.nn-theme #CONTENT .page-content .row .nn-content strong, body.nn-theme #CONTENT .page-content .row .nn-content .nn-chapter-title {
-          font-weight: bold; }
-        body.nn-theme #CONTENT .page-content .row .nn-content blockquote {
+          font-weight: bold;
+          font-size: 21px; }
+        body.nn-theme #CONTENT .page-content .row .nn-content blockquote, body.nn-theme #CONTENT .page-content .row .nn-content .nn-image {
           width: 50%;
           padding: 16px 32px 0 0;
           float: left; }
+          body.nn-theme #CONTENT .page-content .row .nn-content blockquote img, body.nn-theme #CONTENT .page-content .row .nn-content .nn-image img {
+            width: 100%; }
+          body.nn-theme #CONTENT .page-content .row .nn-content blockquote .nn-image-caption, body.nn-theme #CONTENT .page-content .row .nn-content .nn-image .nn-image-caption {
+            color: #808080;
+            font-size: 15px !important;
+            line-height: 18px !important; }
         body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite {
           font-size: 15px !important;
           line-height: 18px !important; }
@@ -306,29 +322,31 @@ body.nn-theme {
             margin: 0;
             position: relative; }
             body.nn-theme #CONTENT .page-content .row .nn-content ul li.nn-no-indent {
-              padding: 0; }
+              padding: 0;
+              margin: 0;
+              text-indent: 0 !important; }
             body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-indent {
               padding-left: 52px; }
             body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-li-number {
               position: absolute;
               left: 0;
-              top: 0; }
+              top: 0;
+              text-indent: 0; }
             body.nn-theme #CONTENT .page-content .row .nn-content ul li::before {
               display: none; }
+          body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes {
+            padding-top: 52px;
+            clear: both; }
+            body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
+              font-size: 15px !important;
+              line-height: 18px !important;
+              padding-bottom: 16px;
+              text-indent: 52px; }
           body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-bullets li {
             background-image: url(./../imgs/nn-circle.png);
             background-size: 5px;
             background-position: 0 15px;
             background-repeat: no-repeat; }
-        body.nn-theme #CONTENT .page-content .row .nn-content .nn-image {
-          width: 100%;
-          margin: 0 0 52px 0; }
-          body.nn-theme #CONTENT .page-content .row .nn-content .nn-image img {
-            width: 100%; }
-          body.nn-theme #CONTENT .page-content .row .nn-content .nn-image .nn-image-caption {
-            color: #808080;
-            font-size: 15px !important;
-            line-height: 18px !important; }
         body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
           /* CUSTOMIZED SLICK.JS IMAGE SLIDER */
           height: 350px;
@@ -398,19 +416,23 @@ body.nn-theme {
                   border: 0; }
         body.nn-theme #CONTENT .page-content .row .nn-content img.nn-signature {
           width: 250px; }
-        body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links {
-          clear: both;
-          display: table;
-          margin-bottom: 52px; }
-          body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link {
-            float: left;
-            margin-right: 52px; }
-            body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link a {
-              border-bottom: 2px solid black; }
-        body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
-          font-size: 15px !important;
-          line-height: 18px !important;
-          padding-bottom: 16px; }
+        body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a {
+          border: none; }
+          body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a strong {
+            border-bottom: 2px solid black; }
+          body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            opacity: 0;
+            background-image: url(./../imgs/nn-arrow-down-black.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 16px;
+            margin: 0 0 -2px 5px; }
+          body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a:hover::after {
+            opacity: 1; }
   body.nn-theme .now-next-text .now::after {
     width: 1.25em;
     height: .7em;
@@ -430,10 +452,12 @@ body.nn-theme {
       border-bottom-color: #000000 !important; }
   body.nn-theme.nn-sl-theme {
     /* CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGE */ }
+    body.nn-theme.nn-sl-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover span::after {
+      display: none; }
     body.nn-theme.nn-sl-theme .nn-sl-link {
       margin: 0 0 32px 0;
-      background-color: #7396f7;
-      color: #f2f5ff;
+      background-color: #8199ff;
+      color: #fff;
       display: flex;
       flex-direction: row; }
       body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
@@ -441,6 +465,10 @@ body.nn-theme {
         padding: 16px; }
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-label {
           margin: 0 0 16px 0; }
+        body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-dek {
+          font-size: 22px;
+          line-height: 35px;
+          line-height: 30px; }
       body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
         background-position: cover;
         background-position: center top;
@@ -457,20 +485,20 @@ body.nn-theme {
       z-index: 900;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      background-color: #7396f7; }
+      background-color: #8199ff; }
       body.nn-theme.nn-sl-theme .nn-sl-modal.show {
         margin-left: 0; }
         body.nn-theme.nn-sl-theme .nn-sl-modal.show .nn-sl-close {
           display: block; }
       body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container {
         display: table;
-        padding: 66px 15px 132px 215px; }
+        padding: 66px 15px 100px 215px; }
         body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content {
-          color: #f2f5ff !important; }
-          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-caps-text {
+          color: #fff !important; }
+          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-caps-text:first-child {
             margin: 0 0 52px 0; }
           body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-image .nn-image-caption {
-            color: #f2f5ff !important; }
+            color: #fff !important; }
           body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio {
             width: 100%;
             margin-bottom: 32px; }
@@ -485,7 +513,7 @@ body.nn-theme {
                 height: 16px;
                 min-width: 16px;
                 min-height: 16px;
-                background-color: #f2f5ff;
+                background-color: #fff;
                 padding: 0;
                 float: left;
                 border-radius: 50%;
@@ -505,18 +533,18 @@ body.nn-theme {
                   position: absolute;
                   left: 0;
                   top: 7px;
-                  background-color: rgba(242, 245, 255, 0.5); }
+                  background-color: rgba(255, 255, 255, 0.5); }
                 body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-track .nn-track-played-fill {
                   width: 0;
                   height: 2px;
                   position: absolute;
                   left: 0;
                   top: 7px;
-                  background-color: #f2f5ff;
+                  background-color: #fff;
                   transition: width 100ms linear; }
               body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-time {
                 display: flex;
-                color: rgba(242, 245, 255, 0.5);
+                color: rgba(255, 255, 255, 0.5);
                 font-size: 15px !important;
                 line-height: 18px !important; }
               body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player.nn-playing button.nn-play {
@@ -546,9 +574,11 @@ body.nn-theme {
       content: 'laptop'; }
       body.nn-theme #CONTENT .page-content .row .nn-content {
         margin-right: 0; }
-        body.nn-theme #CONTENT .page-content .row .nn-content blockquote {
+        body.nn-theme #CONTENT .page-content .row .nn-content blockquote, body.nn-theme #CONTENT .page-content .row .nn-content .nn-image {
           width: 100%;
           padding-right: 0; }
+      body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
+        width: 100%; }
       body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
         display: none; } }
   @media only screen and (max-width: 768px) {
@@ -567,7 +597,7 @@ body.nn-theme {
           padding: 8px 16px;
           font-size: 22px;
           line-height: 35px;
-          color: #3d43ac; }
+          color: #3d44ac; }
       body.nn-theme #HEADER #HEADER-TITLE {
         display: none; }
       body.nn-theme .nn-subheader.mobile {
@@ -587,7 +617,7 @@ body.nn-theme {
             body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav {
               width: 100%;
               max-width: 100%;
-              background-color: #7396f7;
+              background-color: #8199ff;
               margin-top: 2px;
               background-image: url(./../imgs/nn-mobile-nav-down.png);
               background-position: calc(100% - 16px) 0.5em;
@@ -595,7 +625,8 @@ body.nn-theme {
               background-size: 1em; }
               body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li {
                 width: 100%;
-                padding: 0; }
+                padding: 0;
+                margin: 0; }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li:not(.nn-current) {
                   display: none; }
                 body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li .now-next-text .now::after {
@@ -671,7 +702,7 @@ body.nn-theme {
         body.nn-theme #CONTENT .nn-caps-text {
           font-size: 45px;
           line-height: 40px; }
-        body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote {
+        body.nn-theme #CONTENT .page-content .container .row .nn-content blockquote, body.nn-theme #CONTENT .page-content .container .row .nn-content .nn-image {
           width: 100%;
           padding: 0 0 32px 0; }
         body.nn-theme #CONTENT .page-content .container .row ul li {

@@ -40,20 +40,31 @@ document.addEventListener('DOMContentLoaded', function () {
 	  });
   }
 });
+
 Drupal.behaviors.carouselBehavior = {
    attach: function () {
-	var carousels = [1, 2, 4, 5, 6, 8, 'x'],
+
+	var carousels = [1, 2, 4, 5, 6, 8],
 		carouselCols = [];
 		
 	// Initialize Carousels for all specified column variations
 	carousels.forEach(function(i) {
-		if(i == 'x'){i=4}
 		carouselCols[i] = $('.carousel.col-'+ i).not('.slick-applied').slick({
 			nextArrow: '<div class="carousel-nav next"><span class="icon-arrow-right"></span></div>',
 			prevArrow: '<div class="carousel-nav prev"><span class="icon-arrow-left"></span></div>',
 			lazyLoad: 'anticipated',
 			slidesToShow: i
 		}).addClass('slick-applied');
+		
+		if ( $('body').hasClass('page-node-134971') || $('body').hasClass('page-node-134972') || $('body').hasClass('page-node-134974') || $('body').hasClass('page-node-134975')  || $('body').hasClass('page-node-134977') ){
+			$(carouselCols[i]).slick("slickSetOption", "autoplay", true, true);
+			$(carouselCols[i]).slick("slickSetOption", "autoplaySpeed", 5000, true);
+		}
+		
+		if ( $('body').hasClass('page-node-156452') ){ // stratplan report page
+			$(carouselCols[i]).slick("slickSetOption", "variableWidth", true, true);
+		}
+		
 		if (i >= 4){
 			$(carouselCols[i]).slick(
 				'slickSetOption',
@@ -103,15 +114,14 @@ Drupal.behaviors.carouselBehavior = {
 	});
 	
 	$('.carousel-wrapper').once('filter', function() {
-		if ( !$('body').hasClass('front') ) {
-			$('.carousel-wrapper.booklist .list-horizontal li:first').trigger('click');
-			//$('.section-mybpl .carousel-wrapper .list-horizontal li:first').trigger('click');
-		} else {
+		//if ( !$('body').hasClass('front') ) {
+		//	$('.carousel-wrapper.booklist .list-horizontal li:first').trigger('click');
+		//} else {
 			var numElements = $('.booklist .list-horizontal li').length+1;
 			var randomNum = Math.floor(Math.random()*numElements);
 			$('.booklist .list-horizontal li:nth-child(' + randomNum + ')').trigger('click');
 			$('.front #carousel-ev .list-horizontal li:first, .front #carousel-lr .list-horizontal li:first').trigger('click');
-		}
+		//}
 	});
    
    }
@@ -765,9 +775,9 @@ $('#learning_resources').ajaxSuccess(function(){
 // ---------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------
 // DROPDOWNS
-	// $('.selectpicker').selectpicker({
-	// 	dropupAuto: false, size: 10, width: 'fit'
-	// });
+	$('.selectpicker').selectpicker({
+		dropupAuto: false, size: 10, width: 'fit'
+	});
 	
 // ---------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------
@@ -886,11 +896,11 @@ $('#learning_resources').ajaxSuccess(function(){
 	});
 	
 	
-	// $('.sharetip').tooltipster({
-	// 	theme: 'tooltipster-light',
-	// 	trigger: 'click',
-	// 	interactive: true
-	// });
+	$('.sharetip').tooltipster({
+		theme: 'tooltipster-light',
+		trigger: 'click',
+		interactive: true
+	});
 	
 	
 	$(window).load( function() {

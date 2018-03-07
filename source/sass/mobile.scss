@@ -2,13 +2,16 @@
 	content: 'laptop';
 	#CONTENT .page-content .row .nn-content {
 		margin-right: 0;
-		blockquote {
+		blockquote, .nn-image {
 			width: 100%;
 			padding-right: 0;
 		}
 	}
 	&.nn-sl-theme {
 		.nn-sl-link {
+			.nn-sl-text {
+				width: 100%;
+			}
 			.nn-sl-image {
 				display: none;
 			}
@@ -68,6 +71,7 @@
 							li {
 								width: 100%;
 								padding: 0;
+								margin: 0;
 								// padding: 5px 0;
 								&:not(.nn-current) {
 									display: none;
@@ -188,9 +192,11 @@
 		.page-content {
 			.container {
 				.row {
-					.nn-content blockquote {
-						width: 100%;
-						padding: 0 0 $width2 0;
+					.nn-content {
+						blockquote, .nn-image {
+							width: 100%;
+							padding: 0 0 $width2 0;
+						}
 					}
 					ul {
 						li {

@@ -3,10 +3,14 @@ var $;
 $ = jQuery;
 
 $(function() {
-  var $header, $toc, chapterPadding, getTime, isMobile, isSize, scrollToSection;
+  var $header, $toc, chapterPadding, disableScroll, enableScroll, getTime, isMobile, isSize, keydown, keys, prevScrollTop, preventDefault, scrollToSection, wheel;
+  $(window).on('load', function() {
+    $('body').addClass('nn-loaded');
+    return $('html').scroll();
+  });
   $header = $('header#HEADER');
   $toc = $('#nn-toc');
-  chapterPadding = 32;
+  chapterPadding = 64;
 
   /** TOGGLES ACCORDION TEXT OPEN/CLOSE */
   $('body').on('click', '.nn-accordion .nn-toggle-title', function(e) {
@@ -61,19 +65,26 @@ $(function() {
       $wrapper.addClass('nn-static');
       $toggle.click();
     }
-    top = $target.offset().top - chapterPadding + 5;
+    top = $target.offset().top;
     if (isMobile()) {
       $newTarget = $target.find('.nn-chapter-title');
       if (['now', 'next'].indexOf(id) < 0 && $newTarget.length) {
         top = $newTarget.offset().top;
       }
     }
-    return $('html, body').animate({
+    if ($target.is('.nn-scroll-next') && top <= $(window).scrollTop()) {
+      return;
+    }
+    disableScroll();
+    return $('html').stop().animate({
       scrollTop: top
     }, 500, function() {
       if ($wrapper.length) {
-        return $wrapper.removeClass('nn-static');
+        $wrapper.removeClass('nn-static');
       }
+      return setTimeout(function() {
+        return enableScroll();
+      }, 1000);
     });
   };
 
@@ -93,13 +104,6 @@ $(function() {
   });
 
   /** CHECKS FOR URL HASH ON PAGE LOAD */
-  $(document).ready(function() {
-    if (location.hash && location.hash.length) {
-      return setTimeout(function() {
-        return scrollToSection(location.hash);
-      }, 100);
-    }
-  });
 
   /** TOGGLES MOBILE NAV */
   $('#nn-toc').on('click', function(e) {
@@ -123,13 +127,17 @@ $(function() {
     $('body').removeClass('nn-sl-modal-open');
     return $modal.removeClass('show');
   });
-  $(window).on('scroll', function() {
-    var $currentChapter, $currentLink, headerBottom, nextChapters, passedChapters, scrolled, thisId;
+  prevScrollTop = 0;
+  $(window).on('scroll', function(e) {
+    var $currentChapter, $currentLink, $nextChapter, headerBottom, nextChapters, nextId, passedChapters, scrollTop, thisId;
+    if (!$('body').is('.nn-loaded')) {
+      return;
+    }
     headerBottom = $header.offset().top + $header.innerHeight();
-    scrolled = $(window).scrollTop();
+    scrollTop = $(window).scrollTop();
 
     /** FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP */
-    if (scrolled >= headerBottom) {
+    if (scrollTop >= headerBottom) {
       $toc.addClass('nn-fixed');
       if (isMobile()) {
         $('#CONTENT').css({
@@ -142,20 +150,22 @@ $(function() {
         $('#CONTENT').css({
           paddingTop: 0
         });
+      } else {
+        $('#CONTENT').attr('styles', '');
       }
     }
-    passedChapters = [];
-    nextChapters = [];
 
     /** FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH */
+    passedChapters = [];
+    nextChapters = [];
     $('.nn-chapter').each(function(i, chapter) {
       var chapterDistance, chapterTop;
       chapterTop = $(chapter).offset().top;
-      chapterDistance = chapterTop - chapterPadding - scrolled;
+      chapterDistance = chapterTop - chapterPadding - scrollTop;
       if (chapterDistance <= 0) {
         passedChapters.push(chapter);
       }
-      if (chapterDistance <= $(window).innerWidth() / 2) {
+      if (chapterDistance <= 500 && i !== 0) {
         return nextChapters.push(chapter);
       }
     });
@@ -168,11 +178,27 @@ $(function() {
       $currentLink = $toc.find('li.nn-' + thisId);
       if (!$currentLink.is('.nn-current')) {
         $toc.find('li.nn-current').removeClass('nn-current');
-        return $currentLink.addClass('nn-current');
+        $currentLink.addClass('nn-current');
+        if (!$body.is('.nn-disabled-scroll')) {
+          setTimeout(function() {
+            return $('.nn-scroll-next').removeClass('nn-scroll-next');
+          }, 500);
+        }
       }
     } else {
-      return history.replaceState(void 0, void 0, '#');
+      history.replaceState(void 0, void 0, '#');
     }
+
+    /** FIND NEXT CHAPTER WHEN SCROLLING DOWN */
+    if (scrollTop > prevScrollTop && nextChapters.length && !$('body').is('.nn-disabled-scroll')) {
+      $nextChapter = $(nextChapters[nextChapters.length - 1]);
+      if (!$('.nn-scroll-next').length) {
+        $nextChapter.addClass('nn-scroll-next');
+        nextId = $nextChapter.attr('id');
+        scrollToSection('#' + nextId);
+      }
+    }
+    return prevScrollTop = scrollTop;
   });
   $(window).on('resize', function() {
 
@@ -244,7 +270,7 @@ $(function() {
       });
     });
   });
-  return getTime = function(time) {
+  getTime = function(time) {
     var durM, durS;
     durM = parseInt((time / 60) % 60);
     durS = parseInt(time % 60);
@@ -255,5 +281,41 @@ $(function() {
       durS = '0' + durS;
     }
     return durM + ':' + durS;
+  };
+  preventDefault = function(e) {
+    e = e || window.event;
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+    return e.returnValue = false;
+  };
+  keys = [37, 38, 39, 40];
+  keydown = function(e) {
+    var i;
+    i = keys.length;
+    while (i--) {
+      if (e.keyCode === keys[i]) {
+        preventDefault(e);
+        return;
+      }
+    }
+  };
+  wheel = function(e) {
+    return preventDefault(e);
+  };
+  disableScroll = function() {
+    $body.addClass('nn-disabled-scroll');
+    if (window.addEventListener) {
+      window.addEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = wheel;
+    return document.onkeydown = keydown;
+  };
+  return enableScroll = function() {
+    $body.removeClass('nn-disabled-scroll');
+    if (window.removeEventListener) {
+      window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    return window.onmousewheel = document.onmousewheel = document.onkeydown = null;
   };
 });

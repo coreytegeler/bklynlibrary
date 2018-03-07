@@ -12,8 +12,7 @@ body.nn-theme {
 			top: 0;
 			left: 0;
 			z-index: 100;
-			// background: $lightBlue;
-			background-color: #7396f7;
+			background-color: $lightBlue;
 		}
 		.bkgd-primary {
 			background-color: transparent;
@@ -67,15 +66,30 @@ body.nn-theme {
 			display: none;
 		}
 	}
-	.nav-main li.scrolled a {
-		opacity: 0;
+	#bodynav {
 		pointer-events: none;
+		header {
+			pointer-events: all;
+		}
+		.nav-main {
+			pointer-events: none;
+			li.scrolled a {
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+		&:hover {
+			.nav-main li.scrolled a {
+				opacity: 1;
+				pointer-events: all;
+			}	
+		}
 	}
 	.nn-caps-text {
 		@include capsText;
 	}
 	#CONTENT {
-		padding-top: $width2;
+		padding-top: 0;
 		.container {
 			.row {
 				margin: 0;
@@ -127,22 +141,6 @@ body.nn-theme {
 						a, .nn-toggle-title {
 							display: block;
 							position: relative;
-							&::after, &::before {
-								display: inline-block;
-								content: '';
-								opacity: 0;
-								background-size: contain;
-								background-position: center;
-								position: absolute;
-							}
-							&::before {
-								display: none;
-							}
-							&:hover {
-								&::after, &::before {
-									opacity: 1;
-								}
-							}
 						}
 					}
 				}
@@ -150,7 +148,7 @@ body.nn-theme {
 					/* RIGHT SIDE NAVIGATION (TABLE OF CONTENTS) */
 					position: absolute;
 					right: 0;
-					top: 0;
+					top: $width2;
 					z-index: 200;
 					padding: 0;
 					pointer-events: none;
@@ -159,22 +157,23 @@ body.nn-theme {
 						line-height: 1em;
 						margin-top: -5px;
 						li {
-							// width: calc(100% - #{$width2});
-							// margin: 0 $width2 0 0;
 							width: 100%;
 							line-height: 1em;
 							display: inline-block;
+							margin-bottom: 5px;
 							a {
 								display: inline;
 								text-align: left;
 								font-weight: bold;
-								border-bottom: solid 3px transparent;
-								line-height: 1.4em;
+								border-bottom: solid 2px transparent;
+								font-size: 21px;
+								line-height: 1.2em;
 								transition: none;
 								pointer-events: all;
 							}
 							&.nn-spotlights {
 								color: $lightBlue;
+								margin-top: $width1;
 								a {
 									color: $lightBlue;
 									.nn-caps-text {
@@ -218,11 +217,23 @@ body.nn-theme {
 					/* INLINE ACCORDION */
 					.nn-toggle-title {
 						position: relative;
-						&::before, &::after {
+						&::after, &::before {
+							display: inline-block;
+							content: '';
+							opacity: 0;
+							background-size: contain;
+							background-position: center;
 							position: absolute;
 						}
+						&::before {
+							display: none;
+						}
+						&:hover {
+							&::after, &::before {
+								opacity: 1;
+							}
+						}
 						.nn-caps-text {
-							line-height: 75px;
 							display: inline;
 						}
 						&:hover {
@@ -290,7 +301,7 @@ body.nn-theme {
 					}
 				}
 				.nn-chapter {
-					margin-bottom: 300px;
+					padding: $width3 0 250px 0;
 				}
 				.nn-content {
 					margin-right: $width2;
@@ -307,11 +318,19 @@ body.nn-theme {
 					}
 					strong, .nn-chapter-title {
 						font-weight: bold;
+						font-size: 21px;
 					}
-					blockquote {
+					blockquote, .nn-image {
 						width: 50%;
 						padding: $width1 $width2 0 0;
 						float: left;
+						img {
+							width: 100%;
+						}
+						.nn-image-caption {
+							color: $gray;
+							@include xSmallText;
+						}
 					}
 					a.nn-cite {
 						@include xSmallText;
@@ -330,6 +349,8 @@ body.nn-theme {
 							position: relative;
 							&.nn-no-indent {
 								padding: 0;
+								margin: 0;
+								text-indent: 0 !important;
 							}
 							.nn-indent {
 								padding-left: $width3;
@@ -338,11 +359,21 @@ body.nn-theme {
 								position: absolute;
 								left: 0;
 								top: 0;
+								text-indent: 0;
 							}
 							&::before {
 								display: none;
 							}
 						}	
+						&.nn-footnotes {
+							padding-top: $width3;
+							clear: both;
+							li {
+								@include xSmallText;
+								padding-bottom: $width1;
+								text-indent: $width3;
+							}
+						}
 						&.nn-bullets {
 							li {
 								background-image: url(/imgs/nn-circle.png);
@@ -350,17 +381,6 @@ body.nn-theme {
 								background-position: 0 15px;
 								background-repeat: no-repeat;
 							}
-						}
-					}
-					.nn-image {
-						width: 100%;
-						margin: 0 0 $width3 0;
-						img {
-							width: 100%;
-						}
-						.nn-image-caption {
-							color: $gray;
-							@include xSmallText;
 						}
 					}
 					.nn-carousel-placer {
@@ -451,21 +471,26 @@ body.nn-theme {
 						width: 250px;
 					}
 					.nn-preface-links {
-						clear: both;
-						display: table;
-						margin-bottom: $width3;
-						.nn-preface-link {
-							float: left;
-							margin-right: $width3;
-							a {
+						a {
+							border: none;
+							strong {
 								border-bottom: 2px solid black;
 							}
-						}
-					}
-					ul.nn-footnotes {
-						li {
-							@include xSmallText;
-							padding-bottom: $width1;
+							&::after {
+								content: '';
+								width: $width1;
+								height: $width1;
+								display: inline-block;
+								opacity: 0;
+								background-image: url(/imgs/nn-arrow-down-black.png);
+								background-repeat: no-repeat;
+								background-position: center;
+						    background-size: $width1;
+						    margin: 0 0 -2px 5px;
+							}
+							&:hover::after {
+								opacity: 1;
+							}
 						}
 					}
 				}
@@ -497,11 +522,14 @@ body.nn-theme {
 		}
 	}
 	&.nn-sl-theme {
+		#CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover span::after {
+			display: none;
+		}
 		/* CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGE */
 		.nn-sl-link {
 			margin: 0 0 $width2 0;
 			background-color: $lightBlue;
-			color: $lighterBlue;
+			color: $white;
 			display: flex;
 			flex-direction: row;
 			.nn-sl-text {
@@ -509,6 +537,10 @@ body.nn-theme {
 				padding: $width1;
 				.nn-sl-label {
 					margin: 0 0 $width1 0;
+				}
+				.nn-sl-dek {
+					@include mediumText;
+					line-height: 30px;
 				}
 			}
 			.nn-sl-image {
@@ -541,15 +573,15 @@ body.nn-theme {
 			}
 			.nn-sl-container {
 				display: table;
-				padding: 66px 15px 132px 215px;
+				padding: 66px 15px 100px 215px;
 				.nn-content {
-					color: $lighterBlue !important;
-					.nn-caps-text {
+					color: $white !important;
+					.nn-caps-text:first-child {
 			    	margin: 0 0 $width3 0;
 			    }
 			    .nn-image {
 			    	.nn-image-caption {
-			    		color: $lighterBlue !important;
+			    		color: $white !important;
 			    	}
 			    }
 			    .nn-audio {
@@ -567,7 +599,7 @@ body.nn-theme {
 				    		height: $width1;
 				    		min-width: $width1;
 				    		min-height: $width1;
-				    		background-color: $lighterBlue;
+				    		background-color: $white;
 				    		padding: 0;
 				    		float: left;
 				    		border-radius: 50%;
@@ -588,7 +620,7 @@ body.nn-theme {
 				    			position: absolute;
 				    			left: 0;
 				    			top: 7px;
-				    			background-color: rgba($lighterBlue, .5);
+				    			background-color: rgba($white, .5);
 				    		}
 				    		.nn-track-played-fill {
 				    			width: 0;
@@ -596,13 +628,13 @@ body.nn-theme {
 				    			position: absolute;
 				    			left: 0;
 				    			top: 7px;
-				    			background-color: $lighterBlue;
+				    			background-color: $white;
 				    			transition: width 100ms linear;
 				    		}
 				    	}
 				    	.nn-time {
 				    		display: flex;
-				    		color: rgba($lighterBlue, .5);
+				    		color: rgba($white, .5);
 				    		@include xSmallText;
 				    		span {
 

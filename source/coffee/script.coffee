@@ -1,8 +1,13 @@
 $ = jQuery
 $ ->
+
+	$(window).on 'load', () ->
+		$('body').addClass('nn-loaded')
+		$('html').scroll()
+
 	$header = $('header#HEADER')
 	$toc = $('#nn-toc')
-	chapterPadding = 32
+	chapterPadding = 64
 	###* TOGGLES ACCORDION TEXT OPEN/CLOSE ###
 	$('body').on 'click', '.nn-accordion .nn-toggle-title', (e) ->
 		e.preventDefault()
@@ -46,17 +51,25 @@ $ ->
 			$wrapper.addClass('nn-static')
 			$toggle.click()
 
-		top = $target.offset().top - chapterPadding + 5	
+		top = $target.offset().top
+		# if !$target.is('.nn-chapter:first-child')
+		# 	top -= chapterPadding
 		if isMobile()
 			$newTarget = $target.find('.nn-chapter-title')
 			if ['now','next'].indexOf(id) < 0 && $newTarget.length
 				top = $newTarget.offset().top
 		
-		$('html, body').animate
+		if $target.is('.nn-scroll-next') && top <= $(window).scrollTop()
+			return
+		disableScroll()
+		$('html').stop().animate
 			scrollTop: top
 		, 500, () ->
 			if $wrapper.length
 				$wrapper.removeClass('nn-static')
+			setTimeout () ->
+				enableScroll()
+			, 1000
 
 
 	###* LISTENER FOR INTERNAL NAVIGATION OR CITATION ###
@@ -71,11 +84,11 @@ $ ->
 		scrollToSection(this.hash)
 
 	###* CHECKS FOR URL HASH ON PAGE LOAD ###
-	$(document).ready () ->
-		if location.hash && location.hash.length
-			setTimeout () ->
-				scrollToSection(location.hash)
-			, 100
+	# $(document).ready () ->
+		# if location.hash && location.hash.length
+		# 	setTimeout () ->
+		# 		scrollToSection(location.hash)
+		# 	, 100
 
 	###* TOGGLES MOBILE NAV ###
 	$('#nn-toc').on 'click', (e) ->
@@ -95,12 +108,14 @@ $ ->
 		$('body').removeClass('nn-sl-modal-open')
 		$modal.removeClass('show')
 
-	
-	$(window).on 'scroll', () ->
+	prevScrollTop = 0
+	$(window).on 'scroll', (e) ->
+		if !$('body').is('.nn-loaded')
+			return
 		headerBottom = $header.offset().top + $header.innerHeight()
-		scrolled = $(window).scrollTop()
+		scrollTop = $(window).scrollTop()
 		###* FIXES RIGHT SIDE NAVIGATION AFTER IT HITS PAGE TOP ###
-		if scrolled >= headerBottom
+		if scrollTop >= headerBottom
 			$toc.addClass('nn-fixed')
 			if isMobile()
 				$('#CONTENT').css
@@ -110,16 +125,17 @@ $ ->
 			if isMobile()
 				$('#CONTENT').css
 					paddingTop: 0
-
+			else
+				$('#CONTENT').attr('styles','')
+		###* FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH ###
 		passedChapters = []
 		nextChapters = []
-		###* FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH ###
 		$('.nn-chapter').each (i, chapter) ->
 			chapterTop = $(chapter).offset().top
-			chapterDistance = chapterTop - chapterPadding - scrolled
+			chapterDistance = chapterTop - chapterPadding - scrollTop
 			if chapterDistance <= 0
 				passedChapters.push(chapter)
-			if chapterDistance <= $(window).innerWidth()/2
+			if chapterDistance <= 500 && i != 0
 				nextChapters.push(chapter)
 
 		if passedChapters.length
@@ -131,8 +147,21 @@ $ ->
 			if !$currentLink.is('.nn-current')
 				$toc.find('li.nn-current').removeClass('nn-current')
 				$currentLink.addClass('nn-current')
+				if !$body.is('.nn-disabled-scroll')
+					setTimeout () ->
+						$('.nn-scroll-next').removeClass('nn-scroll-next')
+					, 500
 		else
 			history.replaceState(undefined, undefined, '#')
+
+		###* FIND NEXT CHAPTER WHEN SCROLLING DOWN ###
+		if scrollTop > prevScrollTop && nextChapters.length && !$('body').is('.nn-disabled-scroll')
+			$nextChapter = $(nextChapters[nextChapters.length-1])
+			if !$('.nn-scroll-next').length
+				$nextChapter.addClass('nn-scroll-next')
+				nextId = $nextChapter.attr('id')
+				scrollToSection('#'+nextId)
+		prevScrollTop = scrollTop
 
 
 	$(window).on 'resize', () ->
@@ -199,3 +228,33 @@ $ ->
 		if durS < 10
 			durS = '0'+durS
 		return durM+':'+durS
+
+	preventDefault = (e) ->
+		e = e || window.event
+		if (e.preventDefault)
+			e.preventDefault()
+		e.returnValue = false; 
+
+	keys = [37, 38, 39, 40]
+	keydown = (e) ->
+		i = keys.length
+		while i--
+			if (e.keyCode == keys[i])
+				preventDefault(e)
+				return
+
+	wheel = (e) ->
+		preventDefault(e)
+
+	disableScroll = () ->
+		$body.addClass('nn-disabled-scroll')
+		if window.addEventListener
+			window.addEventListener('DOMMouseScroll', wheel, false)
+		window.onmousewheel = document.onmousewheel = wheel
+		document.onkeydown = keydown
+
+	enableScroll = () ->
+		$body.removeClass('nn-disabled-scroll')
+		if window.removeEventListener
+			window.removeEventListener('DOMMouseScroll', wheel, false)
+		window.onmousewheel = document.onmousewheel = document.onkeydown = null
