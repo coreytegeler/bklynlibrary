@@ -133,8 +133,17 @@
 				}
 				.nn-content {
 					margin: 0;
-					.nn-carousel-placer .carousel-wrapper {
-						left: -15px;
+					.nn-carousel-placer {
+						height: $medSlideHeight;
+						.carousel-wrapper {
+							left: -15px;
+							.carousel.nn-full-width .carousel-cell {
+								height: $medSlideHeight;
+								img {
+									height: $medSlideHeight;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -197,6 +206,17 @@
 							width: 100%;
 							padding: 0 0 $width2 0;
 						}
+						.nn-carousel-placer {
+							height: $smallSlideHeight;
+							.carousel-wrapper .carousel.nn-full-width .carousel-cell {
+								width: 100vw;
+								height: $smallSlideHeight;
+								img {
+									width: 100%;
+									height: auto;
+								}
+							}
+						}
 					}
 					ul {
 						li {
@@ -204,7 +224,7 @@
 						}
 					}
 					.nn-accordion .nn-content-wrapper {
-						margin: 0 0 $width1 0;
+						padding: $width1 0 0 0;
 						.nn-toggle-title {
 							.nn-caps-text {
 								line-height: 50px;

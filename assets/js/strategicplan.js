@@ -1,8 +1,14 @@
-var $;
+(function ($) {
 
-$ = jQuery;
+  Drupal.behaviors.stratPlan = {
+    attach:function()
+    {
+      stratPlanConfig();
+    }
+  };
 
-$(function() {
+  function stratPlanConfig()  {
+
   var $header, $toc, chapterPadding, disableScroll, enableScroll, getTime, isMobile, isSize, keydown, keys, prevScrollTop, preventDefault, scrollToSection, wheel;
   $(window).on('load', function() {
     $('body').addClass('nn-loaded');
@@ -119,6 +125,7 @@ $(function() {
   });
 
   /** OPENS SPOTLIGHT MODAL */
+  /*
   $('a.nn-sl-link').on('click', function(e) {
     var $modal, sid;
     e.preventDefault();
@@ -127,14 +134,17 @@ $(function() {
     $('body').addClass('nn-sl-modal-open');
     return $modal.addClass('show');
   });
-
+  */
+  
   /** CLOSES SPOTLIGHT MODAL */
+  /*
   $('.nn-sl-modal .nn-sl-close').on('click', function(e) {
     var $modal;
     $modal = $(this).parents('.nn-sl-modal');
     $('body').removeClass('nn-sl-modal-open');
     return $modal.removeClass('show');
   });
+  */
   prevScrollTop = 0;
   $(window).on('scroll', function(e) {
     var $currentChapter, $currentLink, $nextChapter, headerBottom, nextChapters, nextId, passedChapters, scrollTop, thisId;
@@ -162,10 +172,10 @@ $(function() {
         $('#CONTENT').attr('styles', '');
       }
     }
-
     /** FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH */
     passedChapters = [];
     nextChapters = [];
+
     $('.nn-chapter').each(function(i, chapter) {
       var chapterDistance, chapterTop;
       chapterTop = $(chapter).offset().top;
@@ -326,4 +336,7 @@ $(function() {
     }
     return window.onmousewheel = document.onmousewheel = document.onkeydown = null;
   };
-});
+  
+}
+
+})(jQuery);

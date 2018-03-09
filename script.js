@@ -133,7 +133,12 @@ $(function () {
     id = hash.replace('#', '');
 
     /** OPENS ACCORDION IF CITATION IS INSIDE */
-    if ($wrapper = $target.parents('.nn-content-wrapper:not(.nn-opened)')) {
+    if ($target.is('.nn-content-wrapper')) {
+      $wrapper = $target;
+    } else {
+      $wrapper = $target.parents('.nn-content-wrapper:not(.nn-opened)');
+    }
+    if ($wrapper.length) {
       $toggle = $wrapper.find('.nn-toggle-title');
 
       /** ADDS CLASS TO OPEN ACCORDION W/O ANIMATION */
@@ -146,6 +151,9 @@ $(function () {
       if (['now', 'next'].indexOf(id) < 0 && $newTarget.length) {
         top = $newTarget.offset().top;
       }
+    }
+    if ($target.is('.nn-cite')) {
+      top -= 32;
     }
     if ($target.is('.nn-scroll-next') && top <= $(window).scrollTop()) {
       return;
@@ -174,7 +182,7 @@ $(function () {
     if (!$target.length) {
       return;
     }
-    event.preventDefault();
+    e.preventDefault();
     return scrollToSection(this.hash);
   });
 

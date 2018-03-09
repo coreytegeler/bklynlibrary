@@ -85,7 +85,7 @@ body.nn-theme {
 			}	
 		}
 	}
-	.nn-caps-text {
+	.nn-caps-text, blockquote {
 		@include capsText;
 	}
 	#CONTENT {
@@ -206,7 +206,7 @@ body.nn-theme {
 					&.nn-fixed {
 						width: calc((100% - 230px)/3);
 						position: fixed;
-						top: $width2;
+						top: #{$width2*2};
 						right: 15px;
 						ul {
 
@@ -248,8 +248,7 @@ body.nn-theme {
 					.nn-content-wrapper {
 						list-style: none;
 						font-size: inherit;
-						margin: 0 0 $width3 0;
-						padding: 0;
+						padding: $width3 0 0 0;
 						.nn-toggle-title {
 							display: table;
 							&::after {
@@ -324,12 +323,25 @@ body.nn-theme {
 						width: 50%;
 						padding: $width1 $width2 0 0;
 						float: left;
-						img {
-							width: 100%;
-						}
+					}
+					.nn-image, .nn-grid {
+						margin-bottom: $width1;
 						.nn-image-caption {
 							color: $gray;
 							@include xSmallText;
+						}
+						img {
+							width: 100%;
+							margin: 0 0 $width1 0;
+						}
+					}
+					.nn-grid {
+						display: flex;
+						justify-content: space-between;
+						flex-wrap: wrap;
+				    align-items: center;
+						img.half {
+							width: calc(50% - #{$width1/2});
 						}
 					}
 					a.nn-cite {
@@ -384,7 +396,6 @@ body.nn-theme {
 						}
 					}
 					.nn-carousel-placer {
-						$slideHeight: 400px;
 						/* CUSTOMIZED SLICK.JS IMAGE SLIDER */
 						height: $slideHeight;
 						position: relative;
@@ -396,7 +407,7 @@ body.nn-theme {
 							padding-right: 0;
 							position: absolute;
 							top: 0;
-							left: -233px;
+							left: -230px;
 							overflow: hidden;
 							.carousel-nav.next, .carousel-nav.prev {
 								width: #{$width2*3};

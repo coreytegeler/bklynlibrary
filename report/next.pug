@@ -16,11 +16,10 @@
 
 		p These focus areas and the goals and initiatives they encompass were inspired by ideas that surfaced in our charrettes and focus groups. To ensure their successful implementation, the Library will continue to tap staff expertise in all departments and locations.
 
-		p
-			strong Our Three Focus Areas:
+		strong Our Three Focus Areas:
 
 		.nn-inline-nav.nn-accordion
-			.nn-content-wrapper
+			.nn-content-wrapper#fa-i
 				.nn-toggle-title
 					.nn-caps-text I. Establi&shy;shing Prior&shy;ities
 				.nn-inside
@@ -61,8 +60,13 @@
 									.nn-indent Creative Book Displays
 									p BPL is creating a set of tools and guidelines for showcasing books and other materials in an attractive, timely and consistent manner. These displays will reflect community interests and both system wide and branch specific programming themes.
 
-		.nn-inline-nav.nn-accordion
-			.nn-content-wrapper
+						.nn-grid
+							img(src='./../assets/imgs/next/image0.jpg')
+							img(src='./../assets/imgs/next/image1.jpg').half
+							img(src='./../assets/imgs/next/image2.jpg').half
+							.nn-image-caption Top: Making Space, designed by SITU Studio, is being piloted at Flatbush Library; Bottom right: Teens take to the field as a part of the KNRC radio podcasting series at Canarsie Library; Bottom left: Teen readers at their first training for BookMatch Teen, a patron-powered readers’ advisory service.
+
+			.nn-content-wrapper#fa-ii
 				.nn-toggle-title
 					.nn-caps-text II. Focus&shy;ing on Commun&shy;ity
 				.nn-inside
@@ -103,8 +107,14 @@
 									.nn-indent Community Engagement and Outreach
 									p Through the BKLYN Incubator, Outreach Services, and Government and Community Affairs, BPL is creating a series of toolkits and model programs for community engagement events and community partner “meet and greets.” The Library is also working with key staff members at every branch to expand leadership roles in their neighborhoods, including roles in key community-wide meetings, such as community board meetings and Tenant Association meetings at select NYCHA campuses.
 
-		.nn-inline-nav.nn-accordion
-			.nn-content-wrapper
+						.nn-grid
+							img(src='./../assets/imgs/next/image3.jpg').half
+							img(src='./../assets/imgs/next/image4.jpg').half
+							img(src='./../assets/imgs/next/image5.jpg').half
+							img(src='./../assets/imgs/next/image6.jpg').half
+							.nn-image-caption Top: BPL’s Adult Learning team hosts a networking event with over 70 partner agencies; Top right: Staff at all levels of the organization are learning to use data to inform key service decisions; Bottom right: A community-curated DiscoTech (Discovering Technology) event at Stone Avenue Library; Planning a new library with Sunset Park residents, a process designed by Hester Street Collaborative.
+
+			.nn-content-wrapper#fa-iii
 				.nn-toggle-title
 					.nn-caps-text III. Innov&shy;ating through Collabor&shy;ation and Learn&shy;ing
 				.nn-inside
@@ -143,26 +153,10 @@
 									.nn-indent BKLYN Incubator
 									p In addition to providing a safe space for experimentation and testing, BKLYN Incubator is a project-based learning program that offers a variety of interactive workshops. Among other things, participants learn to uncover opportunities for new services in their communities, write compelling proposals, create and deliver dynamic presentations, and use iterative design processes to test new ideas.
 
-		div(class='nn-carousel-placer')
-			div(id='nn-carousel' class='carousel-wrapper')
-				div(class='carousel col-4 nn-full-width')
-					- var slides = []
-					- slides.push('Making Space, designed by SITU Studio, is being piloted at Flatbush Library')
-					- slides.push('Teens take to the field as a part of the KNRC radio podcasting series at Canarsie Library')
-					- slides.push('Teen readers at their first training for BookMatch Teen, a patron-powered readers’ advisory service.')
-					- slides.push('BPL’s Adult Learning team hosts a networking event with over 70 partner agencies')
-					- slides.push('Planning a new library with Sunset Park residents, a process designed by Hester Street Collaborative')
-					- slides.push('Staff at all levels of the organization are learning to use data to inform key service decisions')
-					- slides.push('A community-curated DiscoTech (Discovering Technology) event at Stone Avenue Library')
-					- slides.push('Participants, judges, and audience members prepare for a pitch competition as a part of BKLYN Incubator')
-					- slides.push('A training of Technology Resource Specialists led by NYC First in preparation for BPL’s first Lego Robotics Competition')
-					- slides.push('When choosing a network affiliation, staff will draw from demographic data tied to their service area')
- 
-					each caption, index in slides
-						div(class='carousel-cell' aria-hidden='true')
-							a(href='#')
-								img(alt=' class=' src='./../assets/imgs/next/slide'+index+'.jpg')
-							.caption
-								p= caption
+						.nn-grid
+							img(src='./../assets/imgs/next/image7.jpg')
+							img(src='./../assets/imgs/next/image8.jpg').half
+							img(src='./../assets/imgs/next/image9.jpg').half
+							.nn-image-caption Top: Participants, judges, and audience members prepare for a pitch competition as a part of BKLYN Incubator; Bottom right: When choosing a network affiliation, staff will draw from demographic data tied to their service area; A training of Technology Resource Specialists led by NYC First in preparation for BPL’s first Lego Robotics Competition
 
 //- END NEXT CHAPTER

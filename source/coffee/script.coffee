@@ -45,7 +45,11 @@ $ ->
 		$target = $(hash)
 		id = hash.replace('#','')
 		###* OPENS ACCORDION IF CITATION IS INSIDE ###
-		if $wrapper = $target.parents('.nn-content-wrapper:not(.nn-opened)')
+		if $target.is('.nn-content-wrapper')
+			$wrapper = $target
+		else
+			$wrapper = $target.parents('.nn-content-wrapper:not(.nn-opened)')
+		if $wrapper.length
 			$toggle = $wrapper.find('.nn-toggle-title')
 			###* ADDS CLASS TO OPEN ACCORDION W/O ANIMATION ###
 			$wrapper.addClass('nn-static')
@@ -58,6 +62,9 @@ $ ->
 			$newTarget = $target.find('.nn-chapter-title')
 			if ['now','next'].indexOf(id) < 0 && $newTarget.length
 				top = $newTarget.offset().top
+
+		if $target.is('.nn-cite')
+			top -= 32
 		
 		if $target.is('.nn-scroll-next') && top <= $(window).scrollTop()
 			return
@@ -80,7 +87,7 @@ $ ->
 		$target = $(hash)
 		if !$target.length
 			return
-		event.preventDefault()
+		e.preventDefault()
 		scrollToSection(this.hash)
 
 	###* CHECKS FOR URL HASH ON PAGE LOAD ###

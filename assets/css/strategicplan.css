@@ -1,16 +1,10 @@
 @font-face {
     font-family: 'Franklin Gothic';
-    src: url("./../fonts/ITCFranklinGothicStd-DmXCp.woff2") format("woff2"), url("./../fonts/ITCFranklinGothicStd-DmXCp.woff") format("woff");
+    src: url("/sites/all/themes/bklyn/stratplan/fonts/ITCFranklinGothicStd-DmXCp.woff2") format("woff2"), url("/sites/all/themes/bklyn/stratplan/fonts/ITCFranklinGothicStd-DmXCp.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Bklyn';
-    src: url("./../fonts/Bklyn.ttf") format("truetype"), url("./../fonts/Bklyn.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -23,7 +17,88 @@
 *:after {
     box-sizing: border-box;
 }
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -37,13 +112,23 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* HTML5 display-role reset for older browsers */
 
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 
-body {
-    line-height: 1;
-}
+
+/* body {
+  line-height: 1; } */
 
 ol,
 ul {
@@ -71,9 +156,9 @@ table {
 body.nn-theme {
     /* CLASS NEEDS TO BE ADDED TO ALL PAGES OF STRATEGIC PLAN */
     color: #000000;
-    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, san-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 22px;
-    line-height: 35px;
+    /* line-height: 35px; */
 }
 
 body.nn-theme header#HEADER {
@@ -82,7 +167,7 @@ body.nn-theme header#HEADER {
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: #8199ff;
+    background-color: #7396f7;
 }
 
 body.nn-theme header .bkgd-primary {
@@ -90,10 +175,14 @@ body.nn-theme header .bkgd-primary {
 }
 
 body.nn-theme header #HEADER-IMAGE {
-    background: #8199ff;
+    background: #7396f7;
     min-height: auto;
     padding-bottom: 0;
-    display: table;
+    padding-bottom: 34.333%;
+    display: block;
+    background-size: contain;
+    background-position: 203px 3px;
+    background-repeat: no-repeat;
 }
 
 body.nn-theme header #HEADER-IMAGE img {
@@ -101,10 +190,6 @@ body.nn-theme header #HEADER-IMAGE img {
     height: auto;
     display: table;
     margin: auto;
-}
-
-body.nn-theme header #HEADER-IMAGE object.nn-mobile {
-    display: none;
 }
 
 body.nn-theme header #HEADER-IMAGE .nn-subheader {
@@ -129,7 +214,7 @@ body.nn-theme header #HEADER-TITLE * {
 body.nn-theme header #HEADER-TITLE h1#page-title.page__title.title {
     font-size: 2em;
     margin-bottom: 15px;
-    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, san-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 900;
 }
 
@@ -141,43 +226,27 @@ body.nn-theme .nn-subheader.mobile {
     display: none;
 }
 
-body.nn-theme #bodynav {
-    pointer-events: none;
-}
-
-body.nn-theme #bodynav header {
-    pointer-events: all;
-}
-
-body.nn-theme #bodynav .nav-main {
-    pointer-events: none;
-}
-
-body.nn-theme #bodynav .nav-main li.scrolled a {
+body.nn-theme .nav-main li.scrolled a {
     opacity: 0;
     pointer-events: none;
 }
 
-body.nn-theme #bodynav:hover .nav-main li.scrolled a {
-    opacity: 1;
-    pointer-events: all;
-}
-
-body.nn-theme .nn-caps-text,
-body.nn-theme blockquote {
-    text-transform: uppercase;
-    font-family: "Franklin Gothic";
-    font-size: 79px;
-    line-height: 75px;
-}
-
 body.nn-theme #CONTENT {
-    padding-top: 0;
+    padding-top: 32px;
 }
 
 body.nn-theme #CONTENT .container .row {
     margin: 0;
     color: #000000;
+}
+
+body.nn-theme #CONTENT .container h1.nn-title {
+    font-size: 4em;
+    font-family: "Franklin Gothic";
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+    padding: 0;
 }
 
 body.nn-theme #CONTENT .container h2.nn-sub-title {
@@ -197,7 +266,6 @@ body.nn-theme #CONTENT .page-content .row .nn-large-title {
     width: 100%;
     max-width: 700px;
     margin: 0 0 52px 0;
-    padding-top: 12px;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-large-title object,
@@ -231,11 +299,35 @@ body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title {
     position: relative;
 }
 
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::after,
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::before,
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::after,
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
+    display: inline-block;
+    content: '';
+    opacity: 0;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+}
+
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a::before,
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title::before {
+    display: none;
+}
+
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a:hover::after,
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li a:hover::before,
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::after,
+body.nn-theme #CONTENT .page-content .row ul.nn-inline-nav li .nn-toggle-title:hover::before {
+    opacity: 1;
+}
+
 body.nn-theme #CONTENT .page-content .row #nn-toc {
     /* RIGHT SIDE NAVIGATION (TABLE OF CONTENTS) */
     position: absolute;
-    right: 0;
-    top: 32px;
+    left: 15px;
+    top: 0;
     z-index: 200;
     padding: 0;
     pointer-events: none;
@@ -243,41 +335,41 @@ body.nn-theme #CONTENT .page-content .row #nn-toc {
 
 body.nn-theme #CONTENT .page-content .row #nn-toc ul {
     max-width: 240px;
-    line-height: 1em;
-    margin-top: -5px;
 }
 
 body.nn-theme #CONTENT .page-content .row #nn-toc ul li {
-    width: 100%;
+    width: calc(100% - 32px);
+    margin: 0 32px 0 0;
     line-height: 1em;
-    display: inline-block;
-    margin-bottom: 5px;
+    display: inline-table;
 }
 
 body.nn-theme #CONTENT .page-content .row #nn-toc ul li a {
     display: inline;
     text-align: left;
     font-weight: bold;
-    border-bottom: solid 2px transparent;
-    font-size: 21px;
-    line-height: 1.2em;
+    border-bottom: solid 3px transparent;
+    line-height: 1.4em;
     transition: none;
     pointer-events: all;
 }
 
 body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights {
-    color: #8199ff;
-    margin-top: 16px;
+    color: #7396f7;
 }
 
 body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a {
-    color: #8199ff;
+    color: #7396f7;
 }
 
-body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a .nn-caps-text {
+body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a h1 {
     display: none;
     clear: both;
     padding: 16px 0 0 0;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic";
+    font-size: 79px;
+    line-height: 69px;
 }
 
 body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a span::after {
@@ -285,13 +377,13 @@ body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a span::af
     height: .7em;
     display: none;
     content: '';
-    background-image: url(./../imgs/nn-arrow-right-blue.png);
+    background-image: url(/sites/default/files/images/stratplan/nn-arrow-right-blue.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover .nn-caps-text {
+body.nn-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover h1 {
     display: block;
 }
 
@@ -303,7 +395,7 @@ body.nn-theme #CONTENT .page-content .row #nn-toc.nn-fixed {
     width: calc((100% - 230px)/3);
     position: fixed;
     top: 64px;
-    right: 15px;
+    left: auto;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-accordion {
@@ -314,26 +406,17 @@ body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title {
     position: relative;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::after,
-body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before {
-    display: inline-block;
-    content: '';
-    opacity: 0;
-    background-size: contain;
-    background-position: center;
+body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before,
+body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::after {
     position: absolute;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title::before {
-    display: none;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover::after,
-body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover::before {
-    opacity: 1;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title .nn-caps-text {
+body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title h1 {
+    text-transform: uppercase;
+    font-family: "Franklin Gothic";
+    font-size: 79px;
+    line-height: 69px;
+    line-height: 75px;
     display: inline;
 }
 
@@ -341,10 +424,10 @@ body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover {
     cursor: pointer;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover .nn-caps-text {
+body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title:hover h1 {
     background: linear-gradient(to right, black, black) no-repeat;
     background-size: 100% 6px;
-    background-position: left .8em;
+    background-position: left 1em;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper {
@@ -363,7 +446,7 @@ body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper .nn-
     height: 52px;
     display: inline-block;
     opacity: 1;
-    background-image: url(./../imgs/nn-arrow-down-black.png);
+    background-image: url(/sites/default/files/images/stratplan/nn-arrow-down-black.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 35px;
@@ -403,17 +486,14 @@ body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-s
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-chapter {
-    padding: 52px 0 250px 0;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-chapter:first-child {
-    padding-top: 25px;
+    margin-bottom: 300px;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content {
     margin-right: 32px;
-    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, san-serif;
+    font-family: Helvetica, Arial, sans-serif;
     color: #000000;
+    line-height: 35px
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content h2 {
@@ -423,15 +503,69 @@ body.nn-theme #CONTENT .page-content .row .nn-content h2 {
     padding: 1em 0;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-content p,
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-chapter-title {
+body.nn-theme #CONTENT .page-content .row .nn-content p {
     margin: 0 0 32px 0;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-content strong,
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-chapter-title {
+body.nn-theme #CONTENT .page-content .row .nn-content strong {
     font-weight: bold;
-    font-size: 21px;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content blockquote {
+    width: 50%;
+    text-transform: uppercase;
+    font-family: "Franklin Gothic";
+    font-size: 79px;
+    line-height: 69px;
+    padding: 16px 32px 32px 0;
+    float: left;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite {
+    font-size: 16px !important;
+    line-height: 21px !important;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite sup {
+    font-weight: normal;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content ul {
+    font-size: inherit;
+    padding: 0;
+    margin: 0 0 52px 0;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content ul li {
+    padding: 0 0 0 52px;
+    font-size: inherit;
+    margin: 0;
+    position: relative;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content ul li.nn-no-indent {
+    padding: 0;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-indent {
+    padding-left: 52px;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-li-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content ul li::before {
+    display: none;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-bullets li {
+    background-image: url(/sites/default/files/images/stratplan/nn-circle.png);
+    background-size: 5px;
+    background-position: 0 15px;
+    background-repeat: no-repeat;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content blockquote,
@@ -470,74 +604,10 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-grid img.half {
     width: calc(50% - 8px);
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite {
-    font-size: 15px !important;
-    line-height: 18px !important;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content a.nn-cite sup {
-    font-weight: normal;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul {
-    font-size: inherit;
-    padding: 0;
-    margin: 0 0 52px 0;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul li {
-    padding: 0 0 0 52px;
-    font-size: inherit;
-    margin: 0;
-    position: relative;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul li.nn-no-indent {
-    padding: 0;
-    margin: 0;
-    text-indent: 0 !important;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-indent {
-    padding-left: 52px;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-li-number {
-    position: absolute;
-    left: 0;
-    top: 0;
-    text-indent: 0;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul li::before {
-    display: none;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes {
-    padding-top: 52px;
-    clear: both;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
-    font-size: 15px !important;
-    line-height: 18px !important;
-    padding: 0 0 16px 0;
-    text-indent: 16px;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-bullets li {
-    background-image: url(./../imgs/nn-circle.png);
-    background-size: 5px;
-    background-position: 0 15px;
-    background-repeat: no-repeat;
-}
-
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
     /* CUSTOMIZED SLICK.JS IMAGE SLIDER */
-    height: 550px;
     position: relative;
-    margin-top: 16px;
-    display: inline-block;
+    height: 350px;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
@@ -546,7 +616,7 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carou
     padding-right: 0;
     position: absolute;
     top: 0;
-    left: -230px;
+    left: -233px;
     overflow: hidden;
 }
 
@@ -574,12 +644,12 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carou
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span.icon-arrow-left,
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span.icon-arrow-left {
-    background-image: url(./../imgs/nn-arrow-left-white.png);
+    background-image: url(/sites/default/files/images/stratplan/nn-arrow-left-white.png);
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.next span.icon-arrow-right,
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel-nav.prev span.icon-arrow-right {
-    background-image: url(./../imgs/nn-arrow-right-white.png);
+    background-image: url(/sites/default/files/images/stratplan/nn-arrow-right-white.png);
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width {
@@ -594,7 +664,6 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carou
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell {
-    height: 550px;
     margin: 0;
     padding: 0;
     border: none;
@@ -607,8 +676,6 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carou
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell img {
-    width: auto;
-    height: 550px;
     margin: 0;
     filter: grayscale(1);
 }
@@ -628,8 +695,8 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carou
     position: absolute;
     left: 0;
     bottom: 0;
-    width: calc(100% - 24px);
-    margin: 0 12px 12px 12px;
+    width: calc(100% - 20px);
+    margin: 0 10px 10px 10px;
     color: white;
     font-weight: bold;
 }
@@ -642,29 +709,25 @@ body.nn-theme #CONTENT .page-content .row .nn-content img.nn-signature {
     width: 250px;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a {
-    border: none;
+body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links {
+    clear: both;
+    display: table;
+    margin-bottom: 52px;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a strong {
+body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link {
+    float: left;
+    margin-right: 52px;
+}
+
+body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link a {
     border-bottom: 2px solid black;
 }
 
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    opacity: 0;
-    background-image: url(./../imgs/nn-arrow-right-black.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 16px;
-    margin: 0 0 -2px 5px;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a:hover::after {
-    opacity: 1;
+body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
+    font-size: 16px !important;
+    line-height: 21px !important;
+    padding-bottom: 16px;
 }
 
 body.nn-theme .now-next-text .now::after {
@@ -672,7 +735,7 @@ body.nn-theme .now-next-text .now::after {
     height: .7em;
     display: inline-block;
     content: '';
-    background-image: url(./../imgs/nn-arrow-right-black.png);
+    background-image: url(/sites/default/files/images/stratplan/nn-arrow-right-black.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -698,31 +761,30 @@ body.nn-theme.nn-sl-theme {
     /* CLASS NEEDS TO BE ADDED TO SPOTLIGHT PAGE */
 }
 
-body.nn-theme.nn-sl-theme #CONTENT .page-content .row #nn-toc ul li.nn-spotlights a:hover span::after {
-    display: none;
-}
-
 body.nn-theme.nn-sl-theme .nn-sl-link {
     margin: 0 0 32px 0;
-    background-color: #8199ff;
-    color: #fff;
+    background-color: #7396f7;
+    color: #f2f5ff;
     display: flex;
     flex-direction: row;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
-    width: calc(66.66667% - 32px);
-    padding: 16px;
+    width: calc(66.66667% - 48px);
+    padding: 16px 16px 52px 32px;
+    font-size: 22px;
+    line-height: 29px;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-label {
     margin: 0 0 16px 0;
 }
 
-body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-dek {
-    font-size: 22px;
-    line-height: 35px;
-    line-height: 30px;
+body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-title {
+    text-transform: uppercase;
+    font-family: "Franklin Gothic";
+    font-size: 79px;
+    line-height: 69px;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
@@ -739,109 +801,36 @@ body.nn-theme.nn-sl-theme .nn-sl-modal {
     position: fixed;
     left: 0;
     top: 0;
-    margin-left: -9999999999px;
     z-index: 900;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background-color: #8199ff;
+    background-color: #7396f7;
+    display: none;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-modal.show {
-    margin-left: 0;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal.show .nn-sl-close {
     display: block;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container {
     display: table;
-    padding: 66px 15px 100px 215px;
+    padding: 66px 15px 132px 215px;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content {
-    color: #fff !important;
+    color: #f2f5ff !important;
 }
 
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-caps-text:first-child {
-    margin: 0 0 52px 0;
+body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content h1 {
+    text-transform: uppercase;
+    font-family: "Franklin Gothic";
+    font-size: 79px;
+    line-height: 69px;
+    margin: 0 0 132px 0;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-image .nn-image-caption {
-    color: #fff !important;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio {
-    width: 100%;
-    margin-bottom: 32px;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player {
-    height: 16px;
-    display: flex;
-    flex-direction: row;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player audio {
-    display: none;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player button.nn-play {
-    width: 16px;
-    height: 16px;
-    min-width: 16px;
-    min-height: 16px;
-    background-color: #fff;
-    padding: 0;
-    float: left;
-    border-radius: 50%;
-    background-position: center;
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-image: url(./../imgs/nn-play.png);
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-track {
-    width: calc(100% - 16px - 5px);
-    margin: 0 5px;
-    float: left;
-    position: relative;
-    cursor: pointer;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-track .nn-track-fill {
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    top: 7px;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-track .nn-track-played-fill {
-    width: 0;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    top: 7px;
-    background-color: #fff;
-    transition: width 100ms linear;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player .nn-time {
-    display: flex;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 15px !important;
-    line-height: 18px !important;
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio .nn-player.nn-playing button.nn-play {
-    background-image: url(./../imgs/nn-pause.png);
-}
-
-body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-audio p {
-    font-size: 15px !important;
-    line-height: 18px !important;
+    color: #f2f5ff !important;
 }
 
 body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
@@ -850,41 +839,19 @@ body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
     position: fixed;
     right: 32px;
     top: 32px;
-    z-index: 900;
     cursor: pointer;
-    background-image: url(./../imgs/nn-close.png);
+    background-image: url(/sites/default/files/images/stratplan/nn-close.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    display: none;
 }
 
 body.nn-theme.nn-sl-theme.nn-sl-modal-open {
     overflow: hidden;
 }
 
-body.nn-theme.nn-sl-theme.nn-sl-modal-open #bodynav {
+body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
     display: none;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1000px) {
-    body.nn-theme {
-        content: 'laptop';
-    }
-    body.nn-theme #CONTENT .page-content .row .nn-content {
-        margin-right: 0;
-    }
-    body.nn-theme #CONTENT .page-content .row .nn-content blockquote,
-    body.nn-theme #CONTENT .page-content .row .nn-content .nn-image {
-        width: 100%;
-        padding-right: 0;
-    }
-    body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
-        width: 100%;
-    }
-    body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-image {
-        display: none;
-    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -934,7 +901,7 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open #bodynav {
         max-width: 100%;
         background-color: #8199ff;
         margin-top: 2px;
-        background-image: url(./../imgs/nn-mobile-nav-down.png);
+        background-image: url(/sites/default/files/images/stratplan/nn-mobile-nav-down.png);
         background-position: calc(100% - 16px) 0.5em;
         background-repeat: no-repeat;
         background-size: 1em;
@@ -948,7 +915,7 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open #bodynav {
         display: none;
     }
     body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li .now-next-text .now::after {
-        background-image: url(./../imgs/nn-arrow-right-white.png);
+        background-image: url(/sites/default/files/images/stratplan/nn-arrow-right-white.png);
     }
     body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a {
         width: 100%;
@@ -983,7 +950,7 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open #bodynav {
         margin-top: 0;
     }
     body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav {
-        background-image: url(./../imgs/nn-mobile-nav-up.png);
+        background-image: url(/sites/default/files/images/stratplan/nn-mobile-nav-up.png);
     }
     body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav li {
         display: block;
