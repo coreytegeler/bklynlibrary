@@ -78,7 +78,7 @@ var $;
 $ = jQuery;
 
 $(function () {
-  var $header, $toc, chapterPadding, disableScroll, enableScroll, getTime, isMobile, isSize, keydown, keys, prevScrollTop, preventDefault, scrollToSection, wheel;
+  var $header, $toc, chapterPadding, disableScroll, enableScroll, getTime, hash, isMobile, isSize, keydown, keys, prevScrollTop, preventDefault, scrollToSection, wheel;
   $(window).on('load', function () {
     $('body').addClass('nn-loaded');
     return $('html').scroll();
@@ -394,13 +394,18 @@ $(function () {
     window.onmousewheel = document.onmousewheel = wheel;
     return document.onkeydown = keydown;
   };
-  return enableScroll = function enableScroll() {
+  enableScroll = function enableScroll() {
     $body.removeClass('nn-disabled-scroll');
     if (window.removeEventListener) {
       window.removeEventListener('DOMMouseScroll', wheel, false);
     }
     return window.onmousewheel = document.onmousewheel = document.onkeydown = null;
   };
+  if (hash = window.location.hash) {
+    if ($(hash).is('.nn-content-wrapper')) {
+      return scrollToSection(hash);
+    }
+  }
 });
 
 /***/ })

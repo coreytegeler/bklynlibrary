@@ -170,6 +170,7 @@ body.nn-theme {
 								line-height: 1.2em;
 								transition: none;
 								pointer-events: all;
+								font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
 							}
 							&.nn-spotlights {
 								color: $lightBlue;
@@ -452,7 +453,6 @@ body.nn-theme {
 										width: auto;
 										height: $slideHeight;
 										margin: 0;
-										filter: grayscale(1);
 									}
 									.caption {
 										width: 100%;
@@ -488,6 +488,7 @@ body.nn-theme {
 					.nn-preface-links {
 						a {
 							border: none;
+							font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
 							strong {
 								border-bottom: 2px solid black;
 							}

@@ -265,3 +265,7 @@ $ ->
 		if window.removeEventListener
 			window.removeEventListener('DOMMouseScroll', wheel, false)
 		window.onmousewheel = document.onmousewheel = document.onkeydown = null
+
+	if hash = window.location.hash
+		if $(hash).is('.nn-content-wrapper')
+			scrollToSection(hash)

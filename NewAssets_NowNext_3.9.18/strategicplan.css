@@ -486,7 +486,7 @@ body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-content-wrapper.nn-s
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-chapter {
-    padding: 52px 0 250px 0;
+    margin-bottom: 300px;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content {
@@ -555,7 +555,6 @@ body.nn-theme #CONTENT .page-content .row .nn-content ul li .nn-li-number {
     position: absolute;
     left: 0;
     top: 0;
-    text-indent: 0;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content ul li::before {
@@ -607,10 +606,8 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-grid img.half {
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
     /* CUSTOMIZED SLICK.JS IMAGE SLIDER */
-    height: 650px;
     position: relative;
-    margin-top: 16px;
-    display: inline-block;
+    height: 350px;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
@@ -619,7 +616,7 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carou
     padding-right: 0;
     position: absolute;
     top: 0;
-    left: -230px;
+    left: -233px;
     overflow: hidden;
 }
 
@@ -679,8 +676,6 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carou
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell img {
-    width: auto;
-    height: 650px;
     margin: 0;
     filter: grayscale(1);
 }
@@ -727,23 +722,6 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-pref
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links .nn-preface-link a {
     border-bottom: 2px solid black;
-    font-family: "Helvetica Neue",Helvetica,Arial,Verdana,san-serif;
-}
-
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    opacity: 0;
-    background-image: url(./../imgs/nn-arrow-right-black.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 16px;
-    margin: 0 0 -2px 5px;
-}
-body.nn-theme #CONTENT .page-content .row .nn-content .nn-preface-links a:hover::after {
-    opacity: 1;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content ul.nn-footnotes li {
@@ -946,7 +924,6 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
         color: #f2f5ff !important;
         pointer-events: none;
         border: none;
-        font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
     }
     body.nn-theme #CONTENT .page-content .container .row #nn-toc ul.nn-inline-nav li a:hover {
         color: #f2f5ff !important;
@@ -989,16 +966,16 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
         margin: 0;
     }
     body.nn-theme #CONTENT .page-content .container .nn-content .nn-carousel-placer {
-        height: 500px;
+        height: 425px;
     }
     body.nn-theme #CONTENT .page-content .container .nn-content .nn-carousel-placer .carousel-wrapper {
         left: -15px;
     }
     body.nn-theme #CONTENT .page-content .container .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell {
-        height: 500px;
+        height: 425px;
     }
     body.nn-theme #CONTENT .page-content .container .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell img {
-        height: 500px;
+        height: 425px;
     }
     body.nn-theme.nn-sl-theme .nn-sl-link {
         margin: 0 0 16px 0;
@@ -1006,7 +983,6 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
     body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text {
         width: 100%;
         padding: 16px;
-        font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
     }
     body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-close {
         width: 16px;
@@ -1054,11 +1030,11 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
         padding: 0 0 32px 0;
     }
     body.nn-theme #CONTENT .page-content .container .row .nn-content .nn-carousel-placer {
-        height: 400px;
+        height: 225px;
     }
     body.nn-theme #CONTENT .page-content .container .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell {
         width: 100vw;
-        height: 400px;
+        height: 225px;
     }
     body.nn-theme #CONTENT .page-content .container .row .nn-content .nn-carousel-placer .carousel-wrapper .carousel.nn-full-width .carousel-cell img {
         width: 100%;
