@@ -556,6 +556,9 @@ body.nn-theme {
 				.nn-sl-label {
 					margin: 0 0 $width1 0;
 				}
+				.nn-sl-date {
+					margin: 0 0 $width2 0;
+				}
 				.nn-sl-dek {
 					@include mediumText;
 					line-height: 30px;
@@ -594,7 +597,7 @@ body.nn-theme {
 				padding: 66px 15px 100px 215px;
 				.nn-content {
 					color: $white !important;
-					.nn-caps-text:first-child {
+			    .nn-sl-date {
 			    	margin: 0 0 $width3 0;
 			    }
 			    .nn-image {

@@ -481,6 +481,8 @@ body.nn-theme {
         padding: 16px; }
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-label {
           margin: 0 0 16px 0; }
+        body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-date {
+          margin: 0 0 32px 0; }
         body.nn-theme.nn-sl-theme .nn-sl-link .nn-sl-text .nn-sl-dek {
           font-size: 22px;
           line-height: 35px;
@@ -511,7 +513,7 @@ body.nn-theme {
         padding: 66px 15px 100px 215px; }
         body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content {
           color: #fff !important; }
-          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-caps-text:first-child {
+          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-sl-date {
             margin: 0 0 52px 0; }
           body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .nn-content .nn-image .nn-image-caption {
             color: #fff !important; }

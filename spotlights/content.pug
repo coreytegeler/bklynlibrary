@@ -26,16 +26,17 @@ section#CONTENT.main.scroller
 					.nn-chapter#spotlights
 						.nn-content
 							- var spotlights = []
-							- spotlights.push({title: 'From Inclu&shy;sion to Empower&shy;ment', dek: 'What it takes to ensure a safe, inspiring environ&shy;ment', index: 1})
-							- spotlights.push({title: 'A Plat&shy;form for Partner&shy;ships', dek: 'A journal&shy;ism bootcamp and other programs that draw on outside volun&shy;teers and organiz&shy;ations', index: 2})
-							- spotlights.push({title: 'A Personal Guide in the Virtual World ', dek: 'Whether online or in person, librar&shy;ians steer patrons toward an impossibly broad range of titles', index: 3})
-							- spotlights.push({title: 'Expand&shy;ing the Library’s Reach', dek: 'Bringing joy—and a passion for reading—to families experienc&shy;ing homeless&shy;ness', index: 4})
+							- spotlights.push({title: 'From Inclu&shy;sion to Empower&shy;ment', dek: 'What it takes to ensure a safe, inspiring environ&shy;ment', date: 'June 2018', index: 1})
+							- spotlights.push({title: 'A Plat&shy;form for Partner&shy;ships', dek: 'A journal&shy;ism bootcamp and other programs that draw on outside volun&shy;teers and organiz&shy;ations', date: 'June 2018', index: 2})
+							- spotlights.push({title: 'A Personal Guide in the Virtual World ', dek: 'Whether online or in person, librar&shy;ians steer patrons toward an impossibly broad range of titles', date: 'June 2018', index: 3})
+							- spotlights.push({title: 'Expand&shy;ing the Library’s Reach', dek: 'Bringing joy—and a passion for reading—to families experienc&shy;ing homeless&shy;ness', date: 'June 2018', index: 4})
 							each spotlight in spotlights
 								// QUERY CUSTOM PAGE TYPE FOR SPOTLIGHTS
 								a.nn-sl-link(href='#' data-spotlight=spotlight.index)
 									.nn-sl-text
 										.nn-sl-label Spotlight
 										.nn-sl-title.nn-caps-text!= spotlight.title
+										.nn-sl-date!= spotlight.date
 										.nn-sl-dek!= spotlight.dek
 									.nn-sl-image(style='background-image:url(./../assets/imgs/spotlights/image'+spotlight.index+'.jpg)')
 								// PRELOADS MODAL TO REMAIN HIDDEN UNTIL OPENED. COULD ALSO BE AJAX
