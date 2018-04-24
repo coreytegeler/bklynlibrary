@@ -219,8 +219,8 @@ body.nn-theme {
         body.nn-theme #CONTENT .page-content .row #nn-toc.nn-fixed {
           width: calc((100% - 230px)/3);
           position: fixed;
-          top: 64px;
-          right: 15px; }
+          right: 15px;
+          z-index: 500; }
       body.nn-theme #CONTENT .page-content .row .nn-accordion {
         /* INLINE ACCORDION */ }
         body.nn-theme #CONTENT .page-content .row .nn-accordion .nn-toggle-title {
@@ -364,7 +364,8 @@ body.nn-theme {
           height: 650px;
           position: relative;
           margin-top: 16px;
-          display: inline-block; }
+          display: inline-block;
+          z-index: 600; }
           body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
             width: 100vw;
             height: 100%;
@@ -584,6 +585,41 @@ body.nn-theme {
       overflow: hidden; }
       body.nn-theme.nn-sl-theme.nn-sl-modal-open #bodynav {
         display: none; }
+  body.nn-theme #nn-lang {
+    position: absolute;
+    left: -190px;
+    top: 0;
+    z-index: 1000;
+    padding: 32px 0 0 0;
+    pointer-events: none; }
+    body.nn-theme #nn-lang ul {
+      max-width: 240px;
+      line-height: 1em;
+      margin-top: -5px; }
+      body.nn-theme #nn-lang ul li {
+        list-style: none;
+        width: 100%;
+        line-height: 1em;
+        display: inline-block;
+        margin-bottom: 5px; }
+        body.nn-theme #nn-lang ul li::before {
+          display: none; }
+        body.nn-theme #nn-lang ul li a {
+          display: table !important;
+          text-align: left;
+          font-weight: bold;
+          border-bottom: solid 2px transparent;
+          font-size: 16px;
+          line-height: 1.2em;
+          transition: none;
+          pointer-events: all;
+          font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif; }
+        body.nn-theme #nn-lang ul li.nn-current a {
+          border-bottom-color: #000000 !important; }
+    body.nn-theme #nn-lang.nn-fixed {
+      position: fixed;
+      left: 25px;
+      top: 105px; }
   @media only screen and (min-width: 768px) and (max-width: 1000px) {
     body.nn-theme {
       content: 'laptop'; }
@@ -667,7 +703,8 @@ body.nn-theme {
               position: fixed;
               top: 0;
               left: 0;
-              right: auto; }
+              right: auto;
+              z-index: 900; }
               body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul.nn-inline-nav {
                 margin-top: 0; }
             body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-opened ul.nn-inline-nav {
@@ -703,7 +740,28 @@ body.nn-theme {
         padding-left: 0;
         padding-right: 0; }
         body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .span-4 {
-          width: calc(100% - 15px); } }
+          width: 100%; }
+          body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .span-4 .nn-content {
+            width: 100%;
+            margin: 0; }
+      body.nn-theme #nn-lang, body.nn-theme #nn-lang.nn-fixed {
+        width: 100%;
+        position: relative;
+        left: auto;
+        top: auto;
+        display: table;
+        z-index: auto; }
+        body.nn-theme #nn-lang ul, body.nn-theme #nn-lang.nn-fixed ul {
+          width: 100% !important;
+          max-width: 100% !important;
+          padding: 0 15px !important;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap; }
+          body.nn-theme #nn-lang ul li, body.nn-theme #nn-lang.nn-fixed ul li {
+            width: auto !important;
+            padding-right: 15px;
+            display: block; } }
   @media only screen and (max-width: 480px) {
     body.nn-theme {
       content: 'mobile'; }

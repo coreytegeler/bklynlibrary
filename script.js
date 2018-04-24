@@ -78,12 +78,14 @@ var $;
 $ = jQuery;
 
 $(function () {
-  var $header, $toc, chapterPadding, disableScroll, enableScroll, getTime, hash, isMobile, isSize, keydown, keys, prevScrollTop, preventDefault, scrollToSection, wheel;
+  var $header, $lang, $logo, $toc, chapterPadding, disableScroll, enableScroll, getTime, hash, isMobile, isSize, keydown, keys, prevScrollTop, preventDefault, scrollToSection, wheel;
   $(window).on('load', function () {
     $('body').addClass('nn-loaded');
     return $('html').scroll();
   });
   $header = $('header#HEADER');
+  $logo = $('header.branding');
+  $lang = $('#nn-lang');
   $toc = $('#nn-toc');
   chapterPadding = 64;
 
@@ -236,6 +238,13 @@ $(function () {
       } else {
         $('#CONTENT').attr('styles', '');
       }
+    }
+
+    /** FIXES LEFT SIDE LANGUAGE AFTER IT HITS PAGE TOP */
+    if (scrollTop >= headerBottom - $logo.innerHeight()) {
+      $lang.addClass('nn-fixed');
+    } else {
+      $lang.removeClass('nn-fixed');
     }
 
     /** FINDS CURRENT CHAPTER TO ADD STYLE TO RIGHT SIDE NAV AND UPDATES URL HASH */

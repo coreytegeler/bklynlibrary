@@ -110,6 +110,7 @@
 							top: 0;
 							left: 0;
 							right: auto;
+							z-index: 900;
 							ul.nn-inline-nav {
 								margin-top: 0;
 							}
@@ -168,8 +169,33 @@
 				padding-left: 0;
 				padding-right: 0;
 				.span-4 {
-					width: calc(100% - 15px);
+					width: 100%;
+					.nn-content {
+						width: 100%;
+						margin: 0;
+					}
 				}
+			}
+		}
+	}
+	#nn-lang, #nn-lang.nn-fixed {
+		width: 100%;
+		position: relative;
+		left: auto;
+		top: auto;
+		display: table;
+		z-index: auto;
+		ul {
+			width: 100% !important;
+			max-width: 100% !important;
+			padding: 0 15px !important;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			li {
+				width: auto !important;
+				padding-right: 15px;
+				display: block;
 			}
 		}
 	}

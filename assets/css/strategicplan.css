@@ -396,6 +396,7 @@ body.nn-theme #CONTENT .page-content .row #nn-toc.nn-fixed {
     position: fixed;
     top: 64px;
     left: auto;
+    z-index: 500;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-accordion {
@@ -611,6 +612,7 @@ body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer {
     position: relative;
     margin-top: 16px;
     display: inline-block;
+    z-index: 600;
 }
 
 body.nn-theme #CONTENT .page-content .row .nn-content .nn-carousel-placer .carousel-wrapper {
@@ -968,6 +970,7 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
         top: 0;
         left: 0;
         right: auto;
+        z-index: 900;
     }
     body.nn-theme #CONTENT .page-content .container .row #nn-toc.nn-fixed ul.nn-inline-nav {
         margin-top: 0;
@@ -1019,7 +1022,11 @@ body.nn-theme.nn-sl-theme.nn-sl-modal-open .nav-main.menu-main {
         padding-right: 0;
     }
     body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .span-4 {
-        width: calc(100% - 15px);
+        width: 100%;
+    }
+    body.nn-theme.nn-sl-theme .nn-sl-modal .nn-sl-container .span-4 .nn-content {
+        width: 100%;
+        margin: 0;
     }
 }
 

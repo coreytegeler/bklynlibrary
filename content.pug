@@ -1,5 +1,11 @@
 section#CONTENT.main.scroller
 	article.page-content
+		//- #nn-lang
+		//- 	ul.nn-inline-nav
+		//- 		li.nn-current
+		//- 			a(href="#") English
+		//- 		li
+		//- 			a(href="#") Español
 		a#main-content
 		.container
 			.row
@@ -10,8 +16,6 @@ section#CONTENT.main.scroller
 								span.now NOW
 								span.next NEXT
 						li.nn-intro.nn-current
-							a(href='./report#cp-ii') CP ii
-						li.nn-intro
 							a(href='./report#intro') Introduction
 						li.nn-now
 							a(href='./report#now') Core Principles
@@ -24,6 +28,12 @@ section#CONTENT.main.scroller
 								span Spotlights
 								// TITLE OF MOST RECENT SPOTLIGHT
 								.nn-caps-text Our Core Princ&shy;iples In Action
+				#nn-lang.mobile
+					ul.nn-inline-nav
+						li.nn-current
+							a(href="#") English
+						li
+							a(href="#") Español
 
 				.span-4
 					include preface

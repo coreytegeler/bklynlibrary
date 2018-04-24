@@ -207,8 +207,9 @@ body.nn-theme {
 					&.nn-fixed {
 						width: calc((100% - 230px)/3);
 						position: fixed;
-						top: #{$width2*2};
+						// top: #{$width2*2};
 						right: 15px;
+						z-index: 500;
 						ul {
 
 						}
@@ -402,6 +403,7 @@ body.nn-theme {
 						position: relative;
 						margin-top: $width1;
 						display: inline-block;
+						z-index: 600;
 						.carousel-wrapper {
 							width: 100vw;
 							height: 100%;
@@ -691,6 +693,48 @@ body.nn-theme {
 			#bodynav {
 				display: none;
 			}
+		}
+	}
+	#nn-lang {
+		position: absolute;
+		left: -190px;
+		top: 0;
+		z-index: 1000;
+		padding: $width2 0 0 0;
+		pointer-events: none;
+		ul {
+			max-width: 240px;
+			line-height: 1em;
+			margin-top: -5px;
+			li {
+				list-style: none;
+				width: 100%;
+				line-height: 1em;
+				display: inline-block;
+				margin-bottom: 5px;
+				&::before {
+					display: none;
+				}
+				a {
+					display: table !important;
+					text-align: left;
+					font-weight: bold;
+					border-bottom: solid 2px transparent;
+					font-size: 16px;
+					line-height: 1.2em;
+					transition: none;
+					pointer-events: all;
+					font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+				}
+				&.nn-current a {
+					border-bottom-color: $black !important;
+				}
+			}
+		}
+		&.nn-fixed {
+			position: fixed;
+			left: 25px;
+			top: 105px;
 		}
 	}
 	@import 'mobile';
